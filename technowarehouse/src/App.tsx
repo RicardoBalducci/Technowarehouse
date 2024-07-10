@@ -1,3 +1,25 @@
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <>
+      <Router>
+        <Route path="/">
+          <h1>Home</h1>
+        </Route>
+        <Route path="/about">
+          <h1>About</h1>
+        </Route>
+        <Route path="/contact">
+          <h1>Contact</h1>
+        </Route>
+      </Router>
+    </>
+  );
+}
+
+export default App;
+/*
 import { Tables } from "./types/core";
 import { useState } from "react";
 import { insertData } from "./services/supabase";
@@ -61,3 +83,5 @@ function App() {
 }
 
 export default App;
+s
+*/
