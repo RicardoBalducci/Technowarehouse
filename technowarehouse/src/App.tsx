@@ -1,20 +1,32 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import Admin from "./module/admin";
+import PrincipalAdmin from "./module/admin/pages/principal/principal.admin";
+import "./App.css";
+import PanelProductos from "./module/admin/pages/productos/productos.admin";
+import IngresarProductos from "./module/admin/pages/productos/ingresar/productos.ingresar";
+import ModificarProducto from "./module/admin/pages/productos/modificar/productos.modificar";
 
 function App() {
   return (
-    <>
-      <Router>
-        <Route path="/">
-          <h1>Home</h1>
-        </Route>
-        <Route path="/about">
-          <h1>About</h1>
-        </Route>
-        <Route path="/contact">
-          <h1>Contact</h1>
-        </Route>
-      </Router>
-    </>
+    <Router>
+      {/* Definición de las rutas */}
+      <Routes>
+        {/* Ruta para la página de inicio */}
+        <Route path="/" element={<Admin />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/PrincipalAdmin" element={<PrincipalAdmin />} />
+        <Route path="/Products" element={<PanelProductos />} />
+        <Route path="/ProductsIngresar" element={<IngresarProductos />} />
+        <Route path="/ProductsModificar" element={<ModificarProducto />} />
+        <Route path="*" element={<Navigate to="/" />} />
+        {/* Agrega otras rutas aquí según sea necesario UsuarioRegistro*/}
+      </Routes>
+    </Router>
   );
 }
 
@@ -28,6 +40,7 @@ function App() {
     name: "",
     description: "",
     image: "",
+    stock: 0,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -75,6 +88,14 @@ function App() {
           type="text"
           required
           placeholder="image"
+        />
+        <input
+          name="stock"
+          value={values.stock}
+          onChange={handleChange}
+          type="number"
+          required
+          placeholder="stock"
         />
         <button>Guardar</button>
       </form>

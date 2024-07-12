@@ -1,6 +1,7 @@
 //Indicamos el nombre de las tablas y las podemos exportas
 export enum Tables {
   product = "product",
+  user = "user",
 }
 /*
 con importar Tables y llamarla 
