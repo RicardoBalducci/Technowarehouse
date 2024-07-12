@@ -6,8 +6,8 @@ import {
   //faInfoCircle,
   faUser,
   faBox,
-  faSignOut,
   faInbox,
+  faTruckField,
   //faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -32,22 +32,14 @@ export const Menu = () => {
               <FontAwesomeIcon icon={faBox} className={styles.icon} /> Productos
             </li>
           </Link>
-          <Link to="/ProductsIngresar">
+          <Link to="/Products">
             <li>
+              {" "}
               <FontAwesomeIcon
-                icon={faSignOut}
-                className={styles.submenu_icon}
-              />
-              Registrar
-            </li>
-          </Link>
-          <Link to="/ProductsModificar">
-            <li>
-              <FontAwesomeIcon
-                icon={faSignOut}
-                className={styles.submenu_icon}
-              />
-              Modificar
+                icon={faTruckField}
+                className={styles.icon}
+              />{" "}
+              Proveedores
             </li>
           </Link>
           <Link to="/">
@@ -63,6 +55,20 @@ export const Menu = () => {
 
 export default Menu;
 /*
+
+          <Link to="/ProductsIngresar">
+            <li>
+              <FontAwesomeIcon icon={faSignOut} className={styles.icon} />
+              Registrar
+            </li>
+          </Link>
+          <Link to="/ProductsModificar">
+            <li>
+              <FontAwesomeIcon icon={faSignOut} className={styles.icon} />
+              Modificar
+            </li>
+          </Link>
+
 <div className={styles.sidebar}>
       <nav>
         <div className={styles.portada}>
