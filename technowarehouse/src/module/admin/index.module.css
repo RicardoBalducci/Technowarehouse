@@ -1,5 +1,5 @@
 .container {
-  background-image: url("fondo_admin.jpg");
+  background-image: url("../../assets/fondo_admin.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;

@@ -1,7 +1,7 @@
 export interface Proveedor {
-  id: "id";
-  name: "name";
-  rif: "rif";
-  email: "email";
-  telefono: "telefono";
+  id: number;
+  name: string;
+  rif: string;
+  email: string;
+  telefono: string;
 }

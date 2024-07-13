@@ -11,6 +11,8 @@ import PanelProductos from "./module/admin/pages/productos/productos.admin";
 import IngresarProductos from "./module/admin/pages/productos/ingresar/productos.ingresar";
 import ModificarProducto from "./module/admin/pages/productos/modificar/productos.modificar";
 import PanelProveedores from "./module/admin/pages/proveedores/proveedores.admin";
+import IngresarProveedor from "./module/admin/pages/proveedores/ingresarProveedor/proveedor.ingresar";
+import ModificarProveedor from "./module/admin/pages/proveedores/modificarProveedor/proveedor.modificar";
 function App() {
   return (
     <Router>
@@ -24,8 +26,8 @@ function App() {
         <Route path="/ProductsIngresar" element={<IngresarProductos />} />
         <Route path="/ProductsModificar" element={<ModificarProducto />} />
         <Route path="/Proveedores" element={<PanelProveedores />} />
-        <Route path="/ProveedoresIngresar" element={<PanelProveedores />} />
-        <Route path="/ProveedoresModificar" element={<PanelProveedores />} />
+        <Route path="/ProveedoresIngresar" element={<IngresarProveedor />} />
+        <Route path="/ProveedoresModificar" element={<ModificarProveedor />} />
 
         <Route path="*" element={<Navigate to="/" />} />
         {/* Agrega otras rutas aquí según sea necesario UsuarioRegistro*/}

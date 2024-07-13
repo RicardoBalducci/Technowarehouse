@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 import { viewData } from "../../../../../services/supabase";
-import { Product } from "../../../../../interface/Product.interface";
+import { Proveedor } from "../../../../../interface/Proveedor.interface";
 import { Tables } from "../../../../../types/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,14 +14,14 @@ import Swal from "sweetalert2";
 import styles from "./tabla.module.css";
 import { useNavigate } from "react-router-dom";
 
-function TablaProductos() {
-  const [datos, setDatos] = useState<Product[]>([]);
+function TablaProveedor() {
+  const [datos, setDatos] = useState<Proveedor[]>([]);
   const [search, setSearch] = useState(""); // Estado para almacenar el valor de búsqueda
 
   const navigate = useNavigate();
   useEffect(() => {
     async function fetchData() {
-      const { data, error } = await viewData(Tables.product);
+      const { data, error } = await viewData(Tables.proveedor);
       if (error) {
         console.error(error);
       } else {
@@ -32,7 +32,7 @@ function TablaProductos() {
     fetchData();
   }, [datos]); // Agregar dependencia a datos para que se ejecute nuevamente cuando cambian
 
-  const handleEdit = (row: Product) => {
+  const handleEdit = (row: Proveedor) => {
     Swal.fire({
       title: "Modificar",
       text: "Desea modificar este producto?",
@@ -45,26 +45,23 @@ function TablaProductos() {
       if (result.isConfirmed) {
         const id = row.id.toString();
         const name = row.name.toString();
-        const precio = row.precio.toString();
-        const descripcion = row.description.toString();
-        const stock = row.stock.toString();
-        const proveedor = row.proveedor.toString();
-        const image = row.image.toString();
+        const rif = row.rif.toString();
+        const email = row.email.toString();
+        const telefono = row.telefono.toString();
         const queryParams = new URLSearchParams();
+
         queryParams.append("id", id);
         queryParams.append("name", name);
-        queryParams.append("precio", precio);
-        queryParams.append("descripcion", descripcion);
-        queryParams.append("stock", stock);
-        queryParams.append("proveedor", proveedor);
-        queryParams.append("image", image);
+        queryParams.append("rif", rif);
+        queryParams.append("email", email);
+        queryParams.append("telefono", telefono);
 
-        const url = `/ProductsModificar?${queryParams.toString()}`;
+        const url = `/ProveedoresModificar?${queryParams.toString()}`;
         navigate(url);
       }
     });
   };
-  const handleDelete = async (row: Product) => {
+  const handleDelete = async (row: Proveedor) => {
     Swal.fire({
       title: "Estas seguro?",
       text: "¡No podrás revertir esto!",
@@ -75,11 +72,11 @@ function TablaProductos() {
       confirmButtonText: "¡Sí, eliminalo!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const success = await deleteData(Tables.product, row.id);
+        const success = await deleteData(Tables.proveedor, row.id);
         if (success) {
           Swal.fire({
             title: "Eliminado",
-            text: "El producto ha sido eliminado.",
+            text: "El proveedor ha sido eliminado.",
             icon: "success",
           });
         }
@@ -90,37 +87,27 @@ function TablaProductos() {
   const columns = [
     {
       name: "Nombre",
-      selector: (row: Product) => row.name,
+      selector: (row: Proveedor) => row.name,
       sortable: true,
     },
     {
-      name: "Descripción",
-      selector: (row: Product) => row.description,
+      name: "Correo",
+      selector: (row: Proveedor) => row.email,
       sortable: true,
     },
     {
-      name: "Imagen",
-      selector: (row: Product) => row.image,
+      name: "Rif",
+      selector: (row: Proveedor) => row.rif,
       sortable: true,
     },
     {
-      name: "Proveedor",
-      selector: (row: Product) => row.proveedor,
-      sortable: true,
-    },
-    {
-      name: "Precio ($)",
-      selector: (row: Product) => row.precio,
-      sortable: true,
-    },
-    {
-      name: "Cantidad",
-      selector: (row: Product) => row.stock,
+      name: "Telefono",
+      selector: (row: Proveedor) => row.telefono,
       sortable: true,
     },
     {
       name: "Acciones",
-      cell: (row: Product) => (
+      cell: (row: Proveedor) => (
         <div>
           <FontAwesomeIcon
             icon={faPencil}
@@ -145,8 +132,8 @@ function TablaProductos() {
   const filteredData = datos.filter((item) => {
     return (
       item.name.toLowerCase().includes(search.toLowerCase()) ||
-      item.description.toLowerCase().includes(search.toLowerCase()) ||
-      item.proveedor.toLowerCase().includes(search.toLowerCase())
+      item.rif.toLowerCase().includes(search.toLowerCase()) ||
+      item.email.toLowerCase().includes(search.toLowerCase())
     );
   });
   const customStyles = {
@@ -176,11 +163,11 @@ function TablaProductos() {
         columns={columns}
         data={filteredData}
         pagination
-        paginationPerPage={5}
+        paginationPerPage={10}
         customStyles={customStyles} // Aplicar los estilos personalizados
       />
     </div>
   );
 }
 
-export default TablaProductos;
+export default TablaProveedor;
