@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./panel.product.module.css";
 import Menu from "../components/menu";

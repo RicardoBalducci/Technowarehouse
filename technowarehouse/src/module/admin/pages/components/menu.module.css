@@ -21,6 +21,11 @@
   font-size: 15px;
   color: #fff;
 }
+.titulo {
+  display: inline;
+  font-size: 15px;
+  color: #fff;
+}
 
 .toggle-btn {
   margin: 10px;

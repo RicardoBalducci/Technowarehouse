@@ -34,8 +34,7 @@
   font-weight: bold;
 }
 
-.input,
-.selector {
+.input {
   width: 100%;
   max-width: 400px;
   padding: 10px;

@@ -63,13 +63,7 @@ function TablaProductos() {
         navigate(url);
       }
     });
-    /**/
   };
-  /*
-navigate(
-      `/ProductsModificar?id=${row.id}?name=${row.name}?price=${row.precio}?descripcion=${row.description}?stock=${row.stock}?proveedor=${row.proveedor}?image=${row.image}`
-    );
-*/
   const handleDelete = async (row: Product) => {
     Swal.fire({
       title: "Estas seguro?",

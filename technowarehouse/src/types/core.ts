@@ -2,6 +2,7 @@
 export enum Tables {
   product = "product",
   user = "user",
+  proveedor = "proveedor",
 }
 
 export enum Product {
@@ -13,6 +14,7 @@ export enum Product {
   price = "precio",
   stock = "stock",
 }
+
 /*
 con importar Tables y llamarla 
 Tables.product podremos obtener el nombre preciso de la tabla en cuestion sin preocuparse

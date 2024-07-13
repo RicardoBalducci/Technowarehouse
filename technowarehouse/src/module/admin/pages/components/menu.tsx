@@ -17,34 +17,31 @@ export const Menu = () => {
       <nav>
         <div className={styles.portada}>
           <FontAwesomeIcon icon={faUser} className={styles.icon_bar} />
-          <h1>Bienvenido</h1>
+          <h1>Bienvenido</h1>{" "}
         </div>
         <ul>
           <Link to="/PrincipalAdmin">
             <li>
               <FontAwesomeIcon icon={faHome} className={styles.icon} />{" "}
-              Principal
+              <p className={styles.titulo}>Principal</p>
             </li>
           </Link>
           <Link to="/Products">
             <li>
-              {" "}
-              <FontAwesomeIcon icon={faBox} className={styles.icon} /> Productos
+              <FontAwesomeIcon icon={faBox} className={styles.icon} />{" "}
+              <p className={styles.titulo}>Productos</p>
             </li>
           </Link>
-          <Link to="/Products">
+          <Link to="/Proveedores">
             <li>
-              {" "}
-              <FontAwesomeIcon
-                icon={faTruckField}
-                className={styles.icon}
-              />{" "}
-              Proveedores
+              <FontAwesomeIcon icon={faTruckField} className={styles.icon} />{" "}
+              <p className={styles.titulo}>Proveedores</p>
             </li>
           </Link>
           <Link to="/">
             <li>
-              <FontAwesomeIcon icon={faInbox} className={styles.icon} /> Salida
+              <FontAwesomeIcon icon={faInbox} className={styles.icon} />{" "}
+              <p className={styles.titulo}>Salir</p>
             </li>
           </Link>
         </ul>
@@ -54,61 +51,3 @@ export const Menu = () => {
 };
 
 export default Menu;
-/*
-
-          <Link to="/ProductsIngresar">
-            <li>
-              <FontAwesomeIcon icon={faSignOut} className={styles.icon} />
-              Registrar
-            </li>
-          </Link>
-          <Link to="/ProductsModificar">
-            <li>
-              <FontAwesomeIcon icon={faSignOut} className={styles.icon} />
-              Modificar
-            </li>
-          </Link>
-
-<div className={styles.sidebar}>
-      <nav>
-        <div className={styles.portada}>
-          <FontAwesomeIcon icon={faUser} className={styles.icon_bar} />
-          <h1>Bienvenido</h1>
-        </div>
-        <ul>
-          <li>
-            <Link to="/PrincipalAdmin">
-              <FontAwesomeIcon icon={faHome} className={styles.icon} /> Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/PrincipalAdmin">
-              <FontAwesomeIcon icon={faInfoCircle} className={styles.icon} />
-              About
-            </Link>
-          </li>
-          
-          <li>
-            <FontAwesomeIcon icon={faUsers} className={styles.icon} /> Usuarios
-            <ul className={styles.submenu}>
-              <li>
-                <Link to="PrincipalAdmin">
-                  <FontAwesomeIcon
-                    icon={faUser}
-                    className={styles.submenu_icon}
-                  />
-                  Registrar
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <Link to="/">
-              <FontAwesomeIcon icon={faSignOutAlt} className={styles.icon} />{" "}
-              Salida
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-*/
