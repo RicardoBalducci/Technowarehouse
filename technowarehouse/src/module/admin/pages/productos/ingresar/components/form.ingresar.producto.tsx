@@ -5,6 +5,8 @@ import { insertData } from "../../../../../../services/supabase";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import SelectProveedor from "./select.proveedor";
+import { supabase } from "../../../../../../services/supabase";
+
 function FormProduct() {
   const [values, setValues] = useState({
     name: "",
@@ -21,12 +23,34 @@ function FormProduct() {
       proveedor: selectedProveedorId, // Actualiza el proveedor seleccionado en el estado
     });
   };
+
   const navigate = useNavigate();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues({
       ...values,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+
+    if (file) {
+      const { data, error } = await supabase.storage
+        .from("Technowarehouse")
+        .upload("public/" + file.name, file);
+
+      if (data) {
+        const url = `https://dkmcywdlzsslpgnvfxzy.supabase.co/storage/v1/object/public/Technowarehouse/public/${file.name}`;
+        setValues({
+          ...values,
+          image: url,
+        });
+      } else if (error) {
+        console.log(error);
+      }
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -37,7 +61,7 @@ function FormProduct() {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Ocurrio un error",
+        text: "Ocurrió un error",
       });
       return;
     }
@@ -96,13 +120,11 @@ function FormProduct() {
             <div>
               <p className={styles.titulo}>Imagen</p>
               <input
-                type="text"
+                type="file"
                 className={styles.input}
                 name="image"
-                value={values.image}
-                onChange={handleChange}
+                onChange={handleImageUpload}
                 required
-                placeholder="Ingrese una imagen"
               />
             </div>
             <div>

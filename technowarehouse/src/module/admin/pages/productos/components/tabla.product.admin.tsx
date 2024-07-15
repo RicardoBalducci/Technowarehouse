@@ -4,6 +4,7 @@ import { viewData } from "../../../../../services/supabase";
 import { Product } from "../../../../../interface/Product.interface";
 import { Tables } from "../../../../../types/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faPencil,
   faTrash,
@@ -86,7 +87,6 @@ function TablaProductos() {
       }
     });
   };
-
   const columns = [
     {
       name: "Nombre",
@@ -98,11 +98,22 @@ function TablaProductos() {
       selector: (row: Product) => row.description,
       sortable: true,
     },
-    {
+    /*{
       name: "Imagen",
-      selector: (row: Product) => row.image,
+      cell: (row: Product) => (
+        <>
+          {row.images.map((image, index) => (
+            <img
+              key={index}
+              src={`https://dkmcywdlzsslpgnvfxzy.supabase.co/storage/v1/object/public/Technowarehouse/public/${image}`}
+              className={`${styles.img} ${styles.img_small}`}
+              alt={`Imagen ${index}`}
+            />
+          ))}
+        </>
+      ),
       sortable: true,
-    },
+    },*/
     {
       name: "Proveedor",
       selector: (row: Product) => row.proveedor,

@@ -35,20 +35,6 @@ export async function login(params: { email: string; password: string }) {
     return null;
   }
 }
-export async function verTodasLasImagenes() {
-  const { data, error } = await supabase.storage.from("Technowarehouse").list();
-
-  if (error) {
-    console.log(error);
-    return;
-  }
-
-  if (data) {
-    data.forEach((file) => {
-      console.log(file.name);
-    });
-  }
-}
 
 export async function uploadImage(table: Tables, image: File): Promise<string> {
   const { data, error } = await supabase.storage
