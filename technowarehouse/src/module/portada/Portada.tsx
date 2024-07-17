@@ -1,6 +1,7 @@
 import Cabecera from "./components/Cabecera";
 import Footer from "./components/Footer";
 import Mision from "./components/Mision";
+import Vision from "./components/vision";
 import styles from "./styles.module.css";
 function Portada() {
   return (
@@ -10,10 +11,13 @@ function Portada() {
         <div>
           <p className={styles.Titulo}>Bienvenidos a TechnoWarehouse</p>
           <p className={styles.Subtitulo}>
-            Discover the latest and greatest in technology at our online store.
+            Descubre lo último y lo mejor en tecnología en nuestra tienda
+            online.
           </p>
         </div>
       </div>
+      <Mision />
+      <Vision />
       <Footer />
     </>
   );

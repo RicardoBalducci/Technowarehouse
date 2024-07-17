@@ -2,28 +2,32 @@
   text-align: center;
   justify-content: center;
   height: 50vh;
+  background-image: url("../../assets/portada01.jpg");
   background-color: #01497c;
+  background-blend-mode: overlay;
   display: flex;
   align-items: center;
+  background-size: cover; /* La imagen se adapta al tamaño de la pantalla */
+  background-repeat: no-repeat; /* La imagen no se repite */
 }
-
 .Titulo {
   text-align: center;
   font-weight: 300;
   font-size: 60px;
   display: inline;
   font-weight: bolder;
-  color: #a9d6e5;
+  color: #fff;
   display: block;
   white-space: nowrap;
 }
 .Subtitulo {
   padding: 20px;
   font-size: 20px;
+  font-weight: 500;
   display: block;
-  color: #a9d6e5;
+  color: #fff;
 }
-@media (max-width: 768px) {
+@media (max-width: 1060px) {
   .Principal {
     height: 30vh;
   }
@@ -32,6 +36,15 @@
   }
   .Subtitulo {
     font-size: clamp(10px, 5vw, 15px);
+  }
+}
+
+@media (max-width: 400px) {
+  .Titulo {
+    font-size: clamp(10px, 5vw, 15px);
+  }
+  .Subtitulo {
+    font-size: clamp(10px, 5vw, 12px);
   }
 }
 

@@ -39,6 +39,53 @@ function App() {
 
 export default App;
 /*
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import Admin from "./module/admin";
+import PrincipalAdmin from "./module/admin/pages/principal/principal.admin";
+import PanelProductos from "./module/admin/pages/productos/productos.admin";
+import IngresarProductos from "./module/admin/pages/productos/ingresar/productos.ingresar";
+import ModificarProducto from "./module/admin/pages/productos/modificar/productos.modificar";
+import PanelProveedores from "./module/admin/pages/proveedores/proveedores.admin";
+import IngresarProveedor from "./module/admin/pages/proveedores/ingresarProveedor/proveedor.ingresar";
+import ModificarProveedor from "./module/admin/pages/proveedores/modificarProveedor/proveedor.modificar";
+import Portada from "./module/portada/Portada";
+
+function AdminRoutes() {
+  return (
+    <>
+      <Route path="/PrincipalAdmin" element={<PrincipalAdmin />} />
+      <Route path="/Products" element={<PanelProductos />} />
+      <Route path="/ProductsIngresar" element={<IngresarProductos />} />
+      <Route path="/ProductsModificar" element={<ModificarProducto />} />
+      <Route path="/Proveedores" element={<PanelProveedores />} />
+      <Route path="/ProveedoresIngresar" element={<IngresarProveedor />} />
+      <Route path="/ProveedoresModificar" element={<ModificarProveedor />} />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Portada />} />
+        <Route path="/admin" element={<Admin />}>
+          <Route element={<AdminRoutes />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
 import { Tables } from "./types/core";
 import { useState } from "react";
 import { insertData } from "./services/supabase";
