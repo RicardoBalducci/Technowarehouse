@@ -1,0 +1,97 @@
+.Principal {
+  text-align: center;
+  justify-content: center;
+  height: 50vh;
+  background-color: #01497c;
+  display: flex;
+  align-items: center;
+}
+
+.Titulo {
+  text-align: center;
+  font-weight: 300;
+  font-size: 60px;
+  display: inline;
+  font-weight: bolder;
+  color: #a9d6e5;
+  display: block;
+  white-space: nowrap;
+}
+.Subtitulo {
+  padding: 20px;
+  font-size: 20px;
+  display: block;
+  color: #a9d6e5;
+}
+@media (max-width: 768px) {
+  .Principal {
+    height: 30vh;
+  }
+  .Titulo {
+    font-size: clamp(20px, 5vw, 40px);
+  }
+  .Subtitulo {
+    font-size: clamp(10px, 5vw, 15px);
+  }
+}
+
+/*.Principal {
+  text-align: center;
+  justify-content: center;
+  height: 50vh;
+  background-color: #01497c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Titulo {
+  text-align: center;
+  font-weight: 300;
+  padding: 20px;
+  font-size: 50px;
+  display: inline;
+  font-weight: bolder;
+  color: #a9d6e5;
+  display: block;
+  white-space: nowrap;
+  width: 30ch;
+  overflow: hidden;
+}
+
+.Subtitulo {
+  padding: 20px;
+  font-size: 20px;
+  display: block;
+  color: #a9d6e5;
+}
+
+@keyframes escribiendo {
+  from {
+    width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .Titulo {
+    font-size: 20px;
+    width: 100%;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 576px) {
+  .Titulo {
+    font-size: 15px;
+  }
+  @keyframes escribiendo {
+    from {
+      width: 0;
+    }
+  }
+
+  .Subtitulo {
+    font-size: 16px;
+  }
+}
+*/

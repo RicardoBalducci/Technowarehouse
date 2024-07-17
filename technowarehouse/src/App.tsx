@@ -13,13 +13,14 @@ import ModificarProducto from "./module/admin/pages/productos/modificar/producto
 import PanelProveedores from "./module/admin/pages/proveedores/proveedores.admin";
 import IngresarProveedor from "./module/admin/pages/proveedores/ingresarProveedor/proveedor.ingresar";
 import ModificarProveedor from "./module/admin/pages/proveedores/modificarProveedor/proveedor.modificar";
+import Portada from "./module/portada/Portada";
 function App() {
   return (
     <Router>
       {/* Definición de las rutas */}
       <Routes>
         {/* Ruta para la página de inicio */}
-        <Route path="/" element={<Admin />} />
+        <Route path="/" element={<Portada />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/PrincipalAdmin" element={<PrincipalAdmin />} />
         <Route path="/Products" element={<PanelProductos />} />

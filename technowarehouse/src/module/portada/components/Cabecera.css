@@ -1,0 +1,182 @@
+.Cabecera {
+  background-color: #01497c;
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.Cabecera-h1 {
+  margin: 0;
+}
+
+.Cabecera-a {
+  text-decoration: none;
+  color: white;
+  margin-right: 1em;
+}
+
+.Cabecera-button {
+  display: none;
+  cursor: pointer;
+}
+.Cabecera-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.Cabecera-svg {
+  fill: white;
+  width: 16px;
+  height: 16px;
+}
+
+.Cabecera-nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Cabecera-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  background-color: #01497c;
+
+  text-align: center;
+}
+
+.Cabecera-li {
+  text-align: center;
+  margin-right: 1em;
+  background-color: #01497c;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px; /* Espacio para el subrayado */
+}
+
+.Cabecera-li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px; /* Grosor del subrayado */
+  width: 0;
+  background-color: white; /* Color del subrayado */
+  transition: width 0.3s; /* Animación de la transición del subrayado */
+}
+
+.Cabecera-li:hover::after {
+  width: 100%; /* Ancho completo al pasar el cursor sobre el elemento */
+}
+.Cabecera-li:hover {
+  background-color: #01497c;
+}
+
+@media (max-width: 768px) {
+  .Cabecera-button {
+    display: flex;
+  }
+  .Cabecera-h1 {
+    font-size: clamp(
+      20px,
+      5vw,
+      30px
+    ); /* Tamaño mínimo: 24px, Tamaño máximo: 30px */
+  }
+  .Cabecera-svg {
+    fill: white;
+    width: 30px;
+    height: 30px;
+  }
+  .Cabecera-nav {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 0vh;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  .Cabecera-nav.isActive {
+    height: 20vh;
+    opacity: 1;
+  }
+  .Cabecera-ul {
+    flex-direction: column;
+  }
+  .Cabecera-li {
+    margin: 0.5em 0;
+  }
+}
+/*.Cabecera {
+  width: 100%;
+  background-color: black;
+  padding: 1em;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+}
+.Cabecera-h1 {
+}
+.Cabecera-a {
+}
+.Cabecera-button {
+  display: none;
+  cursor: pointer;
+}
+.Cabecera-svg {
+  width: 2em;
+  height: 2em;
+  fill: white;
+}
+.Cabecera-nav {
+}
+.Cabecera-ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+.Cabecera-li {
+  margin: 0 0.5em;
+}
+@media screen and (max-width: 480px) {
+  .Cabecera-button {
+    display: flex;
+  }
+  .Cabecera-nav {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 0vh;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  .Cabecera-nav.isActive {
+    height: 50vh;
+    opacity: 1;
+  }
+  .Cabecera-ul {
+    flex-direction: column;
+  }
+  .Cabecera-li {
+    margin: 0.5em 0;
+  }
+}
+*/
