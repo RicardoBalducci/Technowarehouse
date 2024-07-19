@@ -53,8 +53,35 @@ export async function uploadImage(table: Tables, image: File): Promise<string> {
 //funcion que nos permite ver los datos
 export async function viewData(table: Tables) {
   const { data, error } = await supabase.from(table).select();
-
   return { data, error };
+}
+
+export async function viewDataLogin(
+  table: Tables,
+  email: string,
+  password: string
+) {
+  try {
+    // Realizar una consulta a la tabla para verificar si existe una coincidencia de email y contraseña
+    const { data, error } = await supabase
+      .from(table)
+      .select("*")
+      .eq("email", email)
+      .eq("password", password)
+      .single();
+
+    if (error) {
+      throw new Error("An error occurred while querying the table");
+    }
+
+    // Si se encuentra una coincidencia, devolver los datos
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+    return null;
+  }
 }
 
 //Funcion que nos permite insertar datos

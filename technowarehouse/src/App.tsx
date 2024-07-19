@@ -14,6 +14,9 @@ import PanelProveedores from "./module/admin/pages/proveedores/proveedores.admin
 import IngresarProveedor from "./module/admin/pages/proveedores/ingresarProveedor/proveedor.ingresar";
 import ModificarProveedor from "./module/admin/pages/proveedores/modificarProveedor/proveedor.modificar";
 import Portada from "./module/portada/Portada";
+import Login from "./module/login/login";
+import SignIn from "./module/login/signup";
+import UserPrincipal from "./module/user/user";
 function App() {
   return (
     <Router>
@@ -23,6 +26,10 @@ function App() {
         <Route path="/" element={<Portada />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/PrincipalAdmin" element={<PrincipalAdmin />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/SignIn" element={<SignIn />} />
+
+        <Route path="/User" element={<UserPrincipal />} />
         <Route path="/Products" element={<PanelProductos />} />
         <Route path="/ProductsIngresar" element={<IngresarProductos />} />
         <Route path="/ProductsModificar" element={<ModificarProducto />} />

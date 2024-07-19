@@ -11,7 +11,7 @@ const Cabecera = () => {
   return (
     <header className="Cabecera">
       <h1 className="Cabecera-h1">
-        <a href="#" className="Cabecera-a">
+        <a href="/" className="Cabecera-a">
           Technowarehouse
         </a>
       </h1>
@@ -35,8 +35,13 @@ const Cabecera = () => {
       <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
         <ul className="Cabecera-ul">
           <li className="Cabecera-li">
-            <a href="#" className="Cabecera-a">
+            <a href="/login" className="Cabecera-a">
               Iniciar Sesion
+            </a>
+          </li>
+          <li className="Cabecera-li">
+            <a href="/SignIn" className="Cabecera-a">
+              Registrarse
             </a>
           </li>
         </ul>
@@ -44,5 +49,5 @@ const Cabecera = () => {
     </header>
   );
 };
-
+//SignIn
 export default Cabecera;
