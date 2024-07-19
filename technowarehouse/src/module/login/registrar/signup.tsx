@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { Tables } from "../../types/core";
-import { insertData } from "../../services/supabase";
+import { Tables } from "../../../types/core";
+import { insertData } from "../../../services/supabase";
 import { useNavigate } from "react-router-dom";
-import Footer from "../portada/components/Footer";
-import Cabecera from "../portada/components/Cabecera";
+import Footer from "../../portada/components/Footer";
+import Cabecera from "../../portada/components/Cabecera";
 function SignIn() {
   const navigate = useNavigate();
 
@@ -106,33 +106,3 @@ function SignIn() {
 }
 
 export default SignIn;
-
-/*
-import React from "react";
-
-function Register() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Aquí puedes agregar la lógica para registrar al usuario
-    // utilizando la información del formulario
-  };
-
-  return (
-    <>
-      <h1>Registrarse</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Correo Electrónico:</label>
-        <input type="email" id="email" required />
-
-        <label htmlFor="password">Contraseña:</label>
-        <input type="password" id="password" required />
-
-        <button type="submit">Registrarse</button>
-      </form>
-    </>
-  );
-}
-
-export default Register;
-En este ejemplo, hemos creado
-*/

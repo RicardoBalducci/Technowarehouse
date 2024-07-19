@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { viewDataLogin } from "../../services/supabase"; // Import the viewDataLogin function
+import { viewDataLogin } from "../../../services/supabase"; // Import the viewDataLogin function
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Tables } from "../../types/core";
-import Footer from "../portada/components/Footer";
-import Cabecera from "../portada/components/Cabecera";
+import { Tables } from "../../../types/core";
+import Footer from "../../portada/components/Footer";
+import Cabecera from "../../portada/components/Cabecera";
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
