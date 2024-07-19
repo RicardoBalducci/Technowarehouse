@@ -39,16 +39,6 @@ const Cabecera = () => {
               Iniciar Sesion
             </a>
           </li>
-          <li className="Cabecera-li">
-            <a href="#" className="Cabecera-a">
-              Acerca de
-            </a>
-          </li>
-          <li className="Cabecera-li">
-            <a href="#" className="Cabecera-a">
-              Contact
-            </a>
-          </li>
         </ul>
       </nav>
     </header>
