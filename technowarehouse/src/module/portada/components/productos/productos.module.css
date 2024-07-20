@@ -2,14 +2,20 @@
   margin: 10px;
 }
 
+.parentContainer {
+  display: flex; /* Places the child elements side by side */
+  flex-wrap: wrap; /* Wraps the child elements to a new line if there is not enough space */
+  justify-content: space-between; /* Distributes the child elements evenly along the main axis */
+}
+
 .container {
   margin: 20px;
-  width: 400px;
+  width: 300px;
   border-radius: 10px;
   display: flex;
   border: 1px solid black;
   flex-direction: column;
-  margin-bottom: 20px; /* Cambiado de 1000px a 20px para evitar un gran espacio en dispositivos más pequeños */
+  margin-bottom: 20px; /* Changed from 1000px to 20px to avoid a large space on smaller devices */
 }
 
 .CenterImg {
