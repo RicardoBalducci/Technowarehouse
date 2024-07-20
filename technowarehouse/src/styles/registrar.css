@@ -20,7 +20,7 @@ body{
 
   .lado-logo{
     background: rgba(255, 255, 255, 0.863);
-    height: 470px;
+    height: 510px;
     width: 400px;
     align-items: center;
 }
@@ -28,12 +28,12 @@ body{
   .login{
     background: #013a63c7;
     width: 400px;
-    height: 470px;  
+    height: 510px;  
 }
   .wrapper{
-    margin-top: 100px;
+    margin-top: 90px;
     width: 800px;
-    height: 470px;  
+    height: 510px;  
     align-items: center;
     display: flex;
     box-shadow: 10px 10px 8px 8px rgba(0, 0, 0, 0.623);
@@ -95,7 +95,7 @@ input{
 background: #013a6300;
 border: none;
 width: 250px;
-height: 30px;
+height: 25px;
 outline: none;
 margin-left: 5px;
 
@@ -103,33 +103,34 @@ margin-left: 5px;
 
 input::placeholder{
   color: white;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .etiqueta{
+    margin-top:50px; 
   color: #012A4A;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .input-box{
   width: 300px;
-  height: 40px;
+  height: 25px;
   border: 2px solid white;
   align-items: center;
   display: flex;
-  margin-top: 40px;
+  margin-top: 12px;
 }
 
 .icono{
-  width: 50px;
-  height: 30px;
+  width: 35px;
+  height: 25px;
 
 }
 
 button{
   width: 110px;
   height: 30px;
-  margin-top: 40px;
+  margin-top: 25px;
   font-size: 15px;
   color: #012A4A;
   background: #A9D6E5;
@@ -155,12 +156,12 @@ a{
 }
 
 
-.register-link{
-  margin-top:55px;
+.login-link{
+  margin-top:25px;
   font-size: 15px;
 }
 
-.register-link p{
+.login-link p{
   color: #89c2d9;
 }
 a:hover{
@@ -171,11 +172,6 @@ a:hover{
 }
 
 
-.access{
-  margin-top: none;
-  height: 60px;
-  width: 70;
-}
 
 #value{
   color: white;
