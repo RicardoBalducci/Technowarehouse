@@ -14,7 +14,7 @@ import PanelProveedores from "./module/admin/pages/proveedores/proveedores.admin
 import IngresarProveedor from "./module/admin/pages/proveedores/ingresarProveedor/proveedor.ingresar";
 import ModificarProveedor from "./module/admin/pages/proveedores/modificarProveedor/proveedor.modificar";
 import Portada from "./module/portada/Portada";
-import Login from "./module/login/login/login";
+import Login from "./module/login/login/login2";
 import SignIn from "./module/login/registrar/signup";
 import UserPrincipal from "./module/user/user";
 function App() {
