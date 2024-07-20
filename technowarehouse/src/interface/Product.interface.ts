@@ -8,6 +8,5 @@ export interface Product {
   precio: number;
   imageUrl: string; // Nueva propiedad para la URL de la imagen
 }
-/*
 
-*/
+//const user =

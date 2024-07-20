@@ -43,9 +43,10 @@ function FormProduct() {
 
       if (data) {
         const url = `https://dkmcywdlzsslpgnvfxzy.supabase.co/storage/v1/object/public/Technowarehouse/public/${file.name}`;
+        console.log("La url es: ", url);
         setValues({
           ...values,
-          image: url,
+          image: url, // Save the uploaded image URL in the values state
         });
       } else if (error) {
         console.log(error);
@@ -91,7 +92,7 @@ function FormProduct() {
               />
             </div>
             <div>
-              <p className={styles.titulo}>Precio</p>
+              <p className={styles.titulo}>Precio ($)</p>
               <input
                 name="precio"
                 value={values.precio}

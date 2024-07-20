@@ -1,0 +1,97 @@
+.containerPrincipal {
+  margin: 10px;
+}
+
+.container {
+  margin: 20px;
+  width: 400px;
+  border-radius: 10px;
+  display: flex;
+  border: 1px solid black;
+  flex-direction: column;
+  margin-bottom: 20px; /* Cambiado de 1000px a 20px para evitar un gran espacio en dispositivos más pequeños */
+}
+
+.CenterImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente el contenido */
+}
+
+.img {
+  margin: 20px;
+  width: 40%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  padding: 0;
+}
+
+.cuadro {
+  margin: 0;
+  width: auto;
+  background-color: #01497c;
+  color: #fff;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+.Nombre {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Descripcion {
+  margin: 20px 0;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.contenedor {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.Precio {
+  margin: 0;
+  font-size: 20px;
+}
+
+.button {
+  padding: 10px 30px; /* Ajuste del padding del botón */
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2c7da0;
+}
+
+.button:hover {
+  background-color: #2c7da0;
+  color: #fff;
+}
+
+/* Media query para dispositivos más pequeños */
+@media (max-width: 600px) {
+  .container {
+    width: 80%; /* Hace que el contenedor ocupe todo el ancho disponible */
+    margin: 10px; /* Ajusta el margen para dispositivos más pequeños */
+  }
+
+  .img {
+    width: 30%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto;
+    margin: 10px 0; /* Ajusta el margen de la imagen para dispositivos más pequeños */
+  }
+
+  .cuadro {
+    padding: 10px; /* Ajusta el padding del cuadro para dispositivos más pequeños */
+  }
+
+  .button {
+    padding: 8px 20px; /* Ajusta el padding del botón para dispositivos más pequeños */
+  }
+}

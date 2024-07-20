@@ -93,27 +93,26 @@ function TablaProductos() {
       selector: (row: Product) => row.name,
       sortable: true,
     },
-    {
+    /*{
       name: "Descripción",
       selector: (row: Product) => row.description,
       sortable: true,
-    },
-    /*{
-      name: "Imagen",
+    },*/
+    {
+      name: "Imagenes",
       cell: (row: Product) => (
-        <>
-          {row.images.map((image, index) => (
-            <img
-              key={index}
-              src={`https://dkmcywdlzsslpgnvfxzy.supabase.co/storage/v1/object/public/Technowarehouse/public/${image}`}
-              className={`${styles.img} ${styles.img_small}`}
-              alt={`Imagen ${index}`}
-            />
-          ))}
-        </>
+        <div>
+          {Array.isArray(row.image) ? (
+            row.image.map((image: string, id: number) => (
+              <img key={id} src={image} alt={row.name} className={styles.img} />
+            ))
+          ) : (
+            <img src={row.image} alt={row.name} className={styles.img} />
+          )}
+        </div>
       ),
       sortable: true,
-    },*/
+    },
     {
       name: "Proveedor",
       selector: (row: Product) => row.proveedor,
@@ -138,7 +137,6 @@ function TablaProductos() {
             onClick={() => handleEdit(row)}
             className={styles.btn_edit}
           />
-
           <FontAwesomeIcon
             icon={faTrash}
             onClick={() => handleDelete(row)}
@@ -163,9 +161,17 @@ function TablaProductos() {
   const customStyles = {
     headRow: {
       style: {
-        backgroundColor: "#468FAF", // Color de fondo negro
-        color: "white", // Texto en color blanco
-        fontWeight: "bold", // Texto en negrita
+        backgroundColor: "#468FAF",
+        color: "white",
+        fontWeight: "bold",
+      },
+    },
+    cells: {
+      style: {
+        maxWidth: "50px", // Ajusta el ancho máximo según sea necesario
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
       },
     },
   };
