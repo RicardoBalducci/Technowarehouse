@@ -8,41 +8,41 @@
   color: white;
 }
 
-.Cabecera-h1 {
+.Cabecera_h1 {
   margin: 0;
-  font-size: 4px;
+  font-size: 40px;
 }
 
-.Cabecera-a {
+.Cabecera_a {
   text-decoration: none;
   color: white;
   margin-right: 1em;
 }
 
-.Cabecera-button {
+.Cabecera_button {
   display: none;
   cursor: pointer;
 }
-.Cabecera-button {
+.Cabecera_button {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-.Cabecera-svg {
+.Cabecera_svg {
   fill: white;
   width: 16px;
   height: 16px;
 }
 
-.Cabecera-nav {
+.Cabecera_nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
   align-items: center;
 }
 
-.Cabecera-ul {
+.Cabecera_ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -52,7 +52,7 @@
   text-align: center;
 }
 
-.Cabecera-li {
+.Cabecera_li {
   text-align: center;
   margin-right: 1em;
   background-color: #01497c;
@@ -61,7 +61,7 @@
   padding-bottom: 5px; /* Espacio para el subrayado */
 }
 
-.Cabecera-li::after {
+.Cabecera_li::after {
   content: "";
   position: absolute;
   left: 0;
@@ -72,15 +72,15 @@
   transition: width 0.5s; /* Animación de la transición del subrayado */
 }
 
-.Cabecera-li:hover::after {
+.Cabecera_li-li:hover::after {
   width: 100%; /* Ancho completo al pasar el cursor sobre el elemento */
 }
-.Cabecera-li:hover {
+.Cabecera_li:hover {
   background-color: #01497c;
 }
 
 @media (max-width: 768px) {
-  .Cabecera-button {
+  .Cabecera_button {
     display: flex;
   }
   .Cabecera-h1 {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-
+import styles from "./menu.module.css";
 const MenuUser = () => {
   const [menu, setMenu] = useState(false);
 
@@ -10,9 +10,9 @@ const MenuUser = () => {
   };
 
   return (
-    <header className="Cabecera">
-      <h1 className="Cabecera-h1">
-        <a href="/User" className="Cabecera-a">
+    <header className={styles.Cabecera}>
+      <h1 className={styles.Cabecera_h1}>
+        <a href="/User" className={styles.Cabecera_a}>
           Technowarehouse
         </a>
       </h1>
@@ -34,9 +34,9 @@ const MenuUser = () => {
       </button>
 
       <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
-        <ul className="Cabecera-ul">
-          <li className="Cabecera-li">
-            <a href="/" className="Cabecera-a">
+        <ul className={styles.Cabecera_ul}>
+          <li className={styles.Cabecera_li}>
+            <a href="/" className={styles.Cabecera_a}>
               <FontAwesomeIcon
                 icon={faArrowRightFromBracket}
                 className="Icono"

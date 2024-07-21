@@ -1,8 +1,9 @@
+import styles from "./login.module.css";
+
 import { useState } from "react";
 import { viewDataLogin } from "../../../services/supabase"; // Import the viewDataLogin function
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import styles from "./login.module.css";
 import { Tables } from "../../../types/core";
 //import Footer from "../../portada/components/Footer";
 //import Cabecera from "../../portada/components/Cabecera";
@@ -40,15 +41,70 @@ function Login() {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.wrapper}>
-          <div className={styles.lado_logo}>
-            <img className={styles.logo} src="logo.png" alt="Logo" />
-            <h1>TECHNO WAREHOUSE</h1>
-            <p className={styles.etiqueta}>
-              © 2024 Techno Warehouse. Todos los derechos reservados.
-            </p>
+        <center>
+          <div className={styles.wrapper}>
+            <div className={styles.lad_logo}>
+              <img className={styles.logo} src="logo.png" alt="Logo" />
+              <h1>TECHNO WAREHOUSE</h1>
+              <p className={styles.etiqueta}>
+                © 2024 Techno Warehouse. Todos los derechos reservados.
+              </p>
+            </div>
+            <div className={styles.login}>
+              <form action="" onSubmit={handleButtonClick}>
+                <h2 className={styles.h2}>INICIAR SESIÓN</h2>
+                <img
+                  className={styles.access}
+                  src="icono3.png"
+                  alt="icono login"
+                />
+                <div className={styles.input_box}>
+                  <input
+                    id="value"
+                    type="email"
+                    placeholder="Ingrese su email"
+                    value={email}
+                    className={styles.input}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <img
+                    className={styles.icono}
+                    src="icono1.png"
+                    alt="icono email"
+                  />
+                </div>
+                <div className={styles.input_box}>
+                  <input
+                    id="value"
+                    type="password"
+                    placeholder="Ingrese su contraseña"
+                    className={styles.input}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                  <img
+                    className={styles.icono}
+                    src="icono2.png"
+                    alt="icono password"
+                  />
+                </div>
+                <button type="submit" className={styles.button}>
+                  Acceder
+                </button>
+                <div className={styles.register_link}>
+                  <p>
+                    ¿Aún no tiene cuenta?{" "}
+                    <a href="/SignIn" className={styles.a}>
+                      Registrar
+                    </a>
+                  </p>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
+        </center>
       </div>
     </>
   );
