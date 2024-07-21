@@ -1,45 +1,76 @@
+/*
+Para mañana.
+1. Acomodar esto, quiero que se vea mejor.
+2. Hacer una pestaña que sea solo para modificar datos del usuario.
+3. Añadir datos a la pestaña principal del proyecto.
+4. Acomodar el login y el registrar de aimel.
+5. Hacer el Registrar de aimel.
+*/
+
 .containerPrincipal {
-  margin: 10px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 0 20px;
+  border: 1px solid black;
+  margin-bottom: 600px;
 }
 
-.parentContainer {
-  display: flex; /* Places the child elements side by side */
-  flex-wrap: wrap; /* Wraps the child elements to a new line if there is not enough space */
-  justify-content: space-between; /* Distributes the child elements evenly along the main axis */
+.Titulo {
+  margin: 20px 0 20px 0;
+  color: #61a5c2;
 }
 
-.container {
+.productosContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.producto {
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+}
+
+.producto {
   margin: 20px;
   width: 300px;
+  height: auto;
   border-radius: 10px;
   display: flex;
   border: 1px solid black;
   flex-direction: column;
-  margin-bottom: 20px; /* Changed from 1000px to 20px to avoid a large space on smaller devices */
+  margin-bottom: 20px;
 }
 
 .CenterImg {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra horizontalmente el contenido */
+  align-items: center;
 }
 
 .img {
   margin: 20px;
-  width: 40%;
-  height: auto;
+  width: 100px;
+  height: 100px;
   border-radius: 10px 10px 0 0;
   padding: 0;
 }
 
 .cuadro {
-  margin: 0;
+  background-color: #2c7da0;
+  height: auto;
+}
+/*
+margin: 0;
   width: auto;
+  height: auto;
   background-color: #01497c;
   color: #fff;
   padding: 20px;
   border-radius: 0 0 10px 10px;
-}
+*/
 
 .Nombre {
   font-size: 20px;
@@ -66,7 +97,7 @@
 }
 
 .button {
-  padding: 10px 30px; /* Ajuste del padding del botón */
+  padding: 10px 30px;
   border-radius: 10px;
   border: 1px solid transparent;
   background-color: #fff;
@@ -80,24 +111,23 @@
   color: #fff;
 }
 
-/* Media query para dispositivos más pequeños */
 @media (max-width: 600px) {
   .container {
-    width: 80%; /* Hace que el contenedor ocupe todo el ancho disponible */
-    margin: 10px; /* Ajusta el margen para dispositivos más pequeños */
+    width: 80%;
+    margin: 10px;
   }
 
   .img {
-    width: 30%; /* La imagen ocupa todo el ancho del contenedor */
+    width: 30%;
     height: auto;
-    margin: 10px 0; /* Ajusta el margen de la imagen para dispositivos más pequeños */
+    margin: 10px 0;
   }
 
   .cuadro {
-    padding: 10px; /* Ajusta el padding del cuadro para dispositivos más pequeños */
+    padding: 10px;
   }
 
   .button {
-    padding: 8px 20px; /* Ajusta el padding del botón para dispositivos más pequeños */
+    padding: 8px 20px;
   }
 }

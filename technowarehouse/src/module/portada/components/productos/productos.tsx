@@ -9,7 +9,11 @@ function Productos() {
   const navigate = useNavigate();
   useEffect(() => {
     async function fetchProductos() {
-      const { data, error } = await supabase.from(Tables.product).select("*");
+      const { data, error } = await supabase
+        .from(Tables.product)
+        .select("*")
+        .order("created_at", { ascending: false })
+        .limit(4); // Fetch only the last 3 products
       if (error) {
         console.error(error);
       } else {
@@ -27,36 +31,34 @@ function Productos() {
   return (
     <>
       <div className={styles.containerPrincipal}>
-        <h1>Productos Destacados</h1>
-
-        {productos.map((producto) => (
-          <div key={producto.id}>
-            <div className={styles.container}>
-              <div className={styles.containerLeft}>
-                <div className={styles.CenterImg}>
-                  <img
-                    src={producto.image}
-                    alt={producto.name}
-                    className={styles.img}
-                  />
-                </div>
+        <h1 className={styles.Titulo}>Productos Destacados</h1>
+        <div className={styles.productosContainer}>
+          {productos.map((producto) => (
+            <div key={producto.id} className={styles.producto}>
+              <div className={styles.CenterImg}>
+                <img
+                  src={producto.image}
+                  alt={producto.name}
+                  className={styles.img}
+                />
               </div>
-
-              <div className={styles.containerRight}>
-                <div className={styles.cuadro}>
-                  <h2 className={styles.Nombre}>{producto.name}</h2>
-                  <h3 className={styles.Descripcion}>{producto.description}</h3>
-                  <div className={styles.contenedor}>
-                    <h3 className={styles.Precio}>${producto.precio}</h3>
-                    <button className={styles.button} onClick={HandleClick}>
-                      Comprar
-                    </button>
-                  </div>
+              <div className={styles.cuadro}>
+                <h2 className={styles.Nombre}>{producto.name}</h2>
+                <h3 className={styles.Descripcion}>
+                  {producto.description.length > 100
+                    ? `${producto.description.substring(0, 100)}...`
+                    : producto.description}
+                </h3>{" "}
+                <div className={styles.contenedor}>
+                  <h3 className={styles.Precio}>${producto.precio}</h3>
+                  <button className={styles.button} onClick={HandleClick}>
+                    Comprar
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
