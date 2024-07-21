@@ -2,6 +2,8 @@ import Cabecera from "./components/Cabecera";
 import Footer from "./components/Footer";
 import Productos from "./components/productos/productos";
 
+import Mision from "./components/Mision/Mision";
+import Vision from "./components/Vision/vision";
 import styles from "./styles.module.css";
 function Portada() {
   return (
@@ -21,8 +23,9 @@ function Portada() {
           <button className={styles.Btn}>Comprar Ahora</button>
         </div>
       </div>
-
       <Productos />
+      <Mision />
+      <Vision />
 
       <Footer />
     </>
@@ -31,8 +34,12 @@ function Portada() {
 
 export default Portada;
 /*
-import Mision from "./components/Mision";
+      
+
+     
+
+      
+
 import Vision from "./components/vision";
-<Mision />
       <Vision />
 */

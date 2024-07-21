@@ -3,7 +3,7 @@ import { faBullseye } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import styles from "./mision.module.css"; // Importa los estilos CSS
 
-import portadaImage from "../../../assets/portada01.jpg"; // Importa la imagen
+import portadaImage from "../../../../assets/portada01.jpg"; // Importa la imagen
 
 function Mision() {
   const [showInfo, setShowInfo] = useState(false);
