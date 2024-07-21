@@ -1,14 +1,14 @@
 // ProductosPage.tsx
-import React from 'react';
-import ProductList from './components/ProductList';
-
-const ProductosPage: React.FC = () => {
+import ProductList from "./components/ProductList";
+import styles from "./ProductosPage.module.css";
+function ProductosPage() {
   return (
-    <div className="productos-page">
+    //MODIFICACION HECHA
+    <div className={styles.productos_page}>
       <h1>Productos</h1>
       <ProductList />
     </div>
   );
-};
+}
 
 export default ProductosPage;

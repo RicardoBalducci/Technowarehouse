@@ -1,0 +1,20 @@
+/* ProductosPage.module.css */
+.productos_page {
+  background-color: #f0f5ff; /* Azul pálido claro */
+  padding: 20px;
+}
+
+/* ProductDetails.module.css */
+.product_details {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.product_details img {
+  max-width: 100%;
+}
+
+/* Personaliza más estilos según tus preferencias */

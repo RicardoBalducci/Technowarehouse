@@ -10,14 +10,16 @@ import "./App.css";
 import PanelProductos from "./module/admin/pages/productos/productos.admin";
 import IngresarProductos from "./module/admin/pages/productos/ingresar/productos.ingresar";
 import ModificarProducto from "./module/admin/pages/productos/modificar/productos.modificar";
+import ProductosPage from "./module/admin/pages/visual_productos/ProductosPage";
 import PanelProveedores from "./module/admin/pages/proveedores/proveedores.admin";
+
 function App() {
   return (
     <Router>
       {/* Definición de las rutas */}
       <Routes>
         {/* Ruta para la página de inicio */}
-        <Route path="/" element={<Admin />} />
+        <Route path="/" element={<ProductosPage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/PrincipalAdmin" element={<PrincipalAdmin />} />
         <Route path="/Products" element={<PanelProductos />} />

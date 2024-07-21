@@ -1,10 +1,10 @@
 // ProductList.tsx
-import React from 'react';
-import ProductDetails from './ProductDetails';
+import React from "react";
+import ProductDetails from "./ProductDetails";
 
 const products = [
   // Sample product data (replace with your actual data)
-  { id: 1, name: 'Producto 1', price: 19.99, imageUrl: 'product1.jpg' },
+  { id: 1, name: "Producto 1", price: 19.99, imageUrl: "/fondo_admin.jpg" },
   // Add more products here...
 ];
 
