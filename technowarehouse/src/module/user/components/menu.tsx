@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import styles from "./menu.module.css";
-const MenuUser = () => {
+import "../../portada/components/Cabecera.css";
+
+const Cabecera = () => {
   const [menu, setMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -10,9 +9,9 @@ const MenuUser = () => {
   };
 
   return (
-    <header className={styles.Cabecera}>
-      <h1 className={styles.Cabecera_h1}>
-        <a href="/User" className={styles.Cabecera_a}>
+    <header className="Cabecera">
+      <h1 className="Cabecera-h1">
+        <a href="/User" className="Cabecera-a">
           Technowarehouse
         </a>
       </h1>
@@ -34,14 +33,10 @@ const MenuUser = () => {
       </button>
 
       <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
-        <ul className={styles.Cabecera_ul}>
-          <li className={styles.Cabecera_li}>
-            <a href="/" className={styles.Cabecera_a}>
-              <FontAwesomeIcon
-                icon={faArrowRightFromBracket}
-                className="Icono"
-              />
-              Cerrar sesión
+        <ul className="Cabecera-ul">
+          <li className="Cabecera-li">
+            <a href="/" className="Cabecera-a">
+              Cerrar Sesion
             </a>
           </li>
         </ul>
@@ -49,7 +44,8 @@ const MenuUser = () => {
     </header>
   );
 };
-export default MenuUser;
+//SignIn
+export default Cabecera;
 
 /*
 <li className="Cabecera-li">

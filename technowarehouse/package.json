@@ -10,13 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@mui/icons-material": "^5.16.4",
+    "@mui/material": "^5.16.4",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@supabase/auth-ui-react": "^0.4.7",
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.44.3",
     "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.7.2",
     "chart.js": "^4.4.3",
     "echarts": "^5.5.1",
     "install": "^0.13.0",
@@ -28,7 +34,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1",
     "react-table": "^7.8.0",
-    "styled-components": "^6.1.11",
+    "styled-components": "^6.1.12",
     "sweetalert2": "^11.12.2"
   },
   "devDependencies": {
@@ -40,7 +46,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "typescript": "^5.2.2",
+    "typescript": "^5.5.3",
     "vite": "^5.3.1"
   }
 }

@@ -17,6 +17,7 @@ import Portada from "./module/portada/Portada";
 import Login from "./module/login/login/login2";
 import SignIn from "./module/login/registrar/signup";
 import UserPrincipal from "./module/user/user";
+import ModificarUsuario from "./module/user/pages/modificarUsuario/modificar";
 function App() {
   return (
     <Router>
@@ -28,8 +29,8 @@ function App() {
         <Route path="/PrincipalAdmin" element={<PrincipalAdmin />} />
         <Route path="/login" element={<Login />} />
         <Route path="/SignIn" element={<SignIn />} />
-
         <Route path="/User" element={<UserPrincipal />} />
+        <Route path="/ModificarUser" element={<ModificarUsuario />} />
         <Route path="/Products" element={<PanelProductos />} />
         <Route path="/ProductsIngresar" element={<IngresarProductos />} />
         <Route path="/ProductsModificar" element={<ModificarProducto />} />

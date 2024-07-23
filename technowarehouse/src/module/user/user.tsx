@@ -1,14 +1,120 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react"; //useEffect
+import { useLocation, useNavigate } from "react-router-dom";
+import styles from "./user.module.css";
+//import { TextField } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import MenuUser from "./components/menu";
+function UserPrincipal() {
+  const nagivate = useNavigate();
+  const location = useLocation();
+  const { user } = location.state;
+  const [editedUser] = useState(user); // State to store the changes made to the user
+  //const navigate = useNavigate();
+
+  const handleEditClick = () => {
+    nagivate("/ModificarUser", { state: { editedUser } }); // Pasar editedUser como parte del estado al navegar a la página "/ModificarUser"
+  };
+
+  return (
+    <>
+      <MenuUser />
+      <div className={styles.container}>
+        <div className={styles.lateral}>
+          <FontAwesomeIcon icon={faUser} className={styles.user_icon} />
+          <p className={styles.TxtBienvenida}>{user.nombre}</p>
+        </div>
+        <div className={styles.informacion}>
+          <h1 className={styles.titulo}>Información</h1>
+          <div className={`${styles.inlineInputs} `}>
+            <div className={styles.inputGroup}>
+              <p className={styles.p}>Nombre</p>
+              <input
+                type="text"
+                name="nombre"
+                value={editedUser.nombre}
+                className={styles.input}
+                disabled
+              />
+            </div>
+            <div className={styles.inputGroup}>
+              <p className={styles.p}>Correo Electrónico</p>
+              <input
+                type="text"
+                name="email"
+                value={editedUser.email}
+                className={styles.input}
+                disabled
+              />
+            </div>
+            <div className={styles.inputGroup}>
+              <p className={styles.p}>Cedula</p>
+              <input
+                type="text"
+                name="cedula"
+                value={editedUser.cedula}
+                className={styles.input}
+                disabled
+              />
+            </div>
+          </div>
+          <div className={`${styles.inlineInputss} `}>
+            <div className={styles.inputGroup}>
+              <p className={styles.p}>Teléfono</p>
+              <input
+                type="text"
+                name="telefono"
+                value={editedUser.telefono}
+                className={styles.input}
+                disabled
+              />
+            </div>
+            <div className={styles.inputGroup}>
+              <p className={styles.p}>Dirección</p>
+              <input
+                type="text"
+                name="direccion"
+                value={editedUser.direccion}
+                className={styles.input}
+                disabled
+              />
+            </div>
+            <div className={styles.inputGroup}>
+              <p className={styles.p}>Contraseña</p>
+              <input
+                type="text"
+                name="password"
+                value={editedUser.password}
+                className={styles.input}
+                disabled
+              />
+            </div>
+          </div>
+          <div className={styles.BtnGrupo}>
+            <button onClick={handleEditClick} className={styles.Boton}>
+              Modificar
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+export default UserPrincipal;
+
+/*
+        
+*/
+
+/*import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "../portada/components/Footer";
 import styles from "./user.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import MenuUser from "./components/menu";
 import { supabase } from "../../services/supabase";
-import { Tables } from "../../types/core";
-import { updateData } from "../../services/supabase";
-import Swal from "sweetalert2";
+
 //import { useNavigate } from "react-router-dom";
 
 interface User {
@@ -23,16 +129,16 @@ interface User {
 }
 //MODIFICAR PARA el UPDATE, sea en otro lugar
 function UserPrincipal() {
+  const nagivate = useNavigate();
   const location = useLocation();
   const { user } = location.state;
-  const [isEditing, setIsEditing] = useState(false);
   const [editedUser, setEditedUser] = useState(user); // State to store the changes made to the user
   //const navigate = useNavigate();
 
   //const maskedPassword = user.password.replace(/./g, "*");
 
   const handleEditClick = () => {
-    setIsEditing(!isEditing);
+    nagivate("/ModificarUser", { state: { editedUser } }); // Pasar editedUser como parte del estado al navegar a la página "/ModificarUser"
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,33 +147,6 @@ function UserPrincipal() {
       ...prevUser,
       [name]: value,
     }));
-  };
-
-  const handleSaveClick = async () => {
-    try {
-      console.log(editedUser);
-      const response = await updateData(Tables.user, editedUser, user.id);
-
-      if (!response) {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Ocurrió un error",
-        });
-
-        console.log(response);
-        return;
-      }
-
-      Swal.fire({
-        title: "Buen trabajo",
-        text: "Modificación exitosa",
-        icon: "success",
-      });
-      setIsEditing(!isEditing);
-    } catch (error) {
-      console.error("Error updating data:", error);
-    }
   };
 
   useEffect(() => {
@@ -111,7 +190,7 @@ function UserPrincipal() {
                 name="nombre"
                 value={editedUser.nombre}
                 className={styles.input}
-                disabled={!isEditing}
+                disabled
                 onChange={handleInputChange}
               />
             </div>
@@ -122,7 +201,7 @@ function UserPrincipal() {
                 name="email"
                 value={editedUser.email}
                 className={styles.input}
-                disabled={!isEditing}
+                disabled
                 onChange={handleInputChange}
               />
             </div>
@@ -133,7 +212,7 @@ function UserPrincipal() {
                 name="cedula"
                 value={editedUser.cedula}
                 className={styles.input}
-                disabled={!isEditing}
+                disabled
                 onChange={handleInputChange}
               />
             </div>
@@ -144,7 +223,7 @@ function UserPrincipal() {
                 name="telefono"
                 value={editedUser.telefono}
                 className={styles.input}
-                disabled={!isEditing}
+                disabled
                 onChange={handleInputChange}
               />
             </div>
@@ -155,7 +234,7 @@ function UserPrincipal() {
                 name="direccion"
                 value={editedUser.direccion}
                 className={styles.input}
-                disabled={!isEditing}
+                disabled
                 onChange={handleInputChange}
               />
             </div>
@@ -166,20 +245,15 @@ function UserPrincipal() {
                 name="password"
                 value={editedUser.password}
                 className={styles.input}
-                disabled={!isEditing}
+                disabled
                 onChange={handleInputChange}
               />
             </div>
           </div>
-          {isEditing ? (
-            <button onClick={handleSaveClick} className={styles.Boton}>
-              Guardar
-            </button>
-          ) : (
-            <button onClick={handleEditClick} className={styles.Boton}>
-              Modificar
-            </button>
-          )}
+
+          <button onClick={handleEditClick} className={styles.Boton}>
+            Modificar
+          </button>
         </div>
       </div>
 
@@ -189,3 +263,4 @@ function UserPrincipal() {
 }
 
 export default UserPrincipal;
+*/

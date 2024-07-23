@@ -1,0 +1,164 @@
+.Cabecera {
+  background-color: #2c7da0;
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.Icono {
+  margin-right: 6px;
+}
+.Cabecera_h1 {
+  margin: 0;
+}
+
+.Cabecera_a {
+  text-decoration: none;
+  color: white;
+  margin-right: 1em;
+}
+
+.Cabecera_button {
+  display: none;
+  cursor: pointer;
+}
+.Cabecera_button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.Cabecera_svg {
+  fill: white;
+  width: 16px;
+  height: 16px;
+}
+
+.Cabecera_nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Cabecera_ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  background-color: #2c7da0;
+
+  text-align: center;
+}
+
+.Cabecera_li {
+  text-align: center;
+  margin-right: 1em;
+  background-color: #2c7da0;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px; /* Espacio para el subrayado */
+}
+
+.Cabecera_li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px; /* Grosor del subrayado */
+  width: 0;
+  background-color: white; /* Color del subrayado */
+  transition: width 0.3s; /* Animación de la transición del subrayado */
+}
+
+.Cabecera_li:hover::after {
+  width: 100%; /* Ancho completo al pasar el cursor sobre el elemento */
+}
+.Cabecera_li:hover {
+  background-color: #2c7da0;
+}
+
+@media (max-width: 890px) {
+  .Cabecera_button {
+    display: flex;
+  }
+  .Cabecera_h1 {
+    font-size: clamp(
+      15px,
+      5vw,
+      15px
+    ); /* Tamaño mínimo: 24px, Tamaño máximo: 30px */
+  }
+  .Cabecera_a {
+    font-size: clamp(15px, 5vw, 25px);
+  }
+  .Cabecera_svg {
+    fill: white;
+    width: 30px;
+    height: 30px;
+  }
+  .Cabecera_nav {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 0vh;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  .Cabecera_nav.isActive {
+    height: 20vh;
+    opacity: 1;
+  }
+  .Cabecera_ul {
+    flex-direction: column;
+  }
+  .Cabecera_li {
+    margin: 0.5em 0;
+  }
+}
+@media (max-width: 790px) {
+  .Cabecera_h1 {
+    font-size: clamp(
+      15px,
+      5vw,
+      18px
+    ); /* Tamaño mínimo: 24px, Tamaño máximo: 30px */
+  }
+  .Cabecera_a {
+    font-size: clamp(10px, 5vw, 16px);
+  }
+  .Cabecera_nav.isActive {
+    height: 20vh;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 590px) {
+  .Cabecera_h1 {
+    font-size: clamp(
+      15px,
+      5vw,
+      15px
+    ); /* Tamaño mínimo: 24px, Tamaño máximo: 30px */
+  }
+  .Cabecera_a {
+    font-size: clamp(10px, 5vw, 14px);
+  }
+}
+@media (max-width: 390px) {
+  .Cabecera_h1 {
+    font-size: clamp(
+      10px,
+      5vw,
+      10px
+    ); /* Tamaño mínimo: 24px, Tamaño máximo: 30px */
+  }
+  .Cabecera_a {
+    font-size: clamp(10px, 5vw, 12px);
+  }
+}
