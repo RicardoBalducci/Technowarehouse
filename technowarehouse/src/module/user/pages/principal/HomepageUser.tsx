@@ -30,6 +30,7 @@ function HomePageUser() {
       <Cabecera />;
       <div className={styles.containerPrincipal}>
         <h1 className={styles.Titulo}>Productos Destacados</h1>
+        <h5>Modificar a lo que haga adrian</h5>
         <div className={styles.productosContainer}>
           {productos.map((producto) => (
             <div key={producto.id} className={styles.producto}>

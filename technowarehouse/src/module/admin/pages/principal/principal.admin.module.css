@@ -1,31 +1,82 @@
 .container {
   display: flex;
+  height: auto;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.img_small {
-  width: 100px;
-  height: auto;
+.titulo {
+  font-size: 40px;
+  margin: 20px;
 }
 .content {
   flex: 1;
-  padding: 20px;
   text-align: center;
+  border: 1px solid black;
+  padding: 10px; /* Decrease the padding to make it smaller */
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
+.ordenar {
+  width: auto;
+  margin: 15px; /* Decrease the margin to make it closer to the content */
+  height: auto;
+}
 
-  .menu {
-    width: 100%;
-  }
+.ordenar > div {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 0.5em; /* Decrease the padding to make it smaller */
+  font-size: 30px; /* Decrease the font size to make it smaller */
+}
+.seven {
+  background-color: #10b981;
+  color: #fff;
+}
+.one {
+  border: 2px solid transparent;
+  background-color: #3b82f6;
+  color: #fff;
+}
+.two {
+  border: 2px solid transparent;
+  background-color: brown;
+  color: #fff;
+}
+.ordenar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(150px, auto);
+}
+.tres {
+  grid-column: 1 / 3;
+  grid-row: 2 / 5;
+}
+.foer {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: chartreuse;
+  color: #fff;
+}
+.for {
+  grid-column: 3;
+  grid-row: 2;
+  background-color: purple;
+  color: #fff;
+}
+.five {
+  grid-column: 3;
+  grid-row: 3;
+  color: #fff;
+  background-color: rgb(70, 224, 224);
+}
+.six {
+  grid-column: 3;
+  grid-row: 4;
+  background-color: cadetblue;
+  color: #fff;
+}
+
+.Numero {
+  font-size: 30px;
+  margin: 20px;
+  text-align: start;
 }
