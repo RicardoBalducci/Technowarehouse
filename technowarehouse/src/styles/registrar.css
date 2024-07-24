@@ -12,25 +12,24 @@ body{
       margin: 20px;
     }
   
-    .input,
-    .submit {
+    .submit, .ingresar {
       width: 100%;
     }
   }
 
-  .lado-logo{
+  .lado-logo-r{
     background: rgba(255, 255, 255, 0.863);
     height: 510px;
     width: 400px;
     align-items: center;
 }
 
-  .login{
+  .login-r{
     background: #013a63c7;
     width: 400px;
     height: 510px;  
 }
-  .wrapper{
+  .wrapper-r{
     margin-top: 90px;
     width: 800px;
     height: 510px;  
@@ -40,7 +39,7 @@ body{
 
 }
 
-.container{
+.container-r{
     position: absolute;
     left: 0;
     top: 0;
@@ -65,7 +64,7 @@ body{
     }
 }
 
-h1{
+.titulo-r{
     background: linear-gradient(to right, #012A4A, #014F86, #2C7DA0, #2C7DA0, #014F86, #012A4A);
   background-size: cover;
   -webkit-background-clip: text;
@@ -75,7 +74,7 @@ h1{
 }
 
 
-h2{
+.titulo2-r{
   background: linear-gradient(to right, white, #89C2D9, #A9D6E5, #89C2D9, white);
 background-size: cover;
 -webkit-background-clip: text;
@@ -84,14 +83,14 @@ margin-top: 35px;
 margin-bottom: none;
 }
 
-.logo{
+.logo-r{
   margin-top: 105px;
   height: 250px;
   width: 280px;
 }
 
 
-input{
+.ingresar-r{
 background: #013a6300;
 border: none;
 width: 250px;
@@ -101,18 +100,18 @@ margin-left: 5px;
 
 }
 
-input::placeholder{
+.ingresar-r::placeholder{
   color: white;
   font-size: 14px;
 }
 
-.etiqueta{
+.etiqueta-r{
     margin-top:50px; 
   color: #012A4A;
   font-size: 15px;
 }
 
-.input-box{
+.input-box-r{
   width: 300px;
   height: 25px;
   border: 2px solid white;
@@ -121,13 +120,13 @@ input::placeholder{
   margin-top: 12px;
 }
 
-.icono{
+.icono-r{
   width: 35px;
   height: 25px;
 
 }
 
-button{
+.sbmt-r{
   width: 110px;
   height: 30px;
   margin-top: 25px;
@@ -140,7 +139,7 @@ button{
   text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-button:hover{
+.sbmt-r:hover{
   transform: rotate(45deg), scaleX(130%);
   cursor: pointer;
   background: rgba(255,255,255,0.1);

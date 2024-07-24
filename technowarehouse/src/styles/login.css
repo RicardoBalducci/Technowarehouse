@@ -12,7 +12,7 @@ body{
       margin: 20px;
     }
   
-    .input,
+    .ingresar,
     .submit {
       width: 100%;
     }
@@ -65,7 +65,7 @@ body{
     }
 }
 
-h1{
+.titulo{
     background: linear-gradient(to right, #012A4A, #014F86, #2C7DA0, #2C7DA0, #014F86, #012A4A);
   background-size: cover;
   -webkit-background-clip: text;
@@ -75,7 +75,7 @@ h1{
 }
 
 
-h2{
+.titulo2{
   background: linear-gradient(to right, white, #89C2D9, #A9D6E5, #89C2D9, white);
 background-size: cover;
 -webkit-background-clip: text;
@@ -91,7 +91,7 @@ margin-bottom: none;
 }
 
 
-input{
+.ingresar{
 background: #013a6300;
 border: none;
 width: 250px;
@@ -101,7 +101,7 @@ margin-left: 5px;
 
 }
 
-input::placeholder{
+.ingresar::placeholder{
   color: white;
   font-size: 15px;
 }
@@ -126,7 +126,7 @@ input::placeholder{
 
 }
 
-button{
+.sbmt{
   width: 110px;
   height: 30px;
   margin-top: 40px;
@@ -139,7 +139,7 @@ button{
   text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-button:hover{
+.sbmt:hover{
   transform: rotate(45deg), scaleX(130%);
   cursor: pointer;
   background: rgba(255,255,255,0.1);
