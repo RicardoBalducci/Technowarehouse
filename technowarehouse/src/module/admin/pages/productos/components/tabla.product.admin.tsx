@@ -51,6 +51,7 @@ function TablaProductos() {
         const stock = row.stock.toString();
         const proveedor = row.proveedor.toString();
         const image = row.image.toString();
+        const marca = row.Marca.toString();
         const queryParams = new URLSearchParams();
         queryParams.append("id", id);
         queryParams.append("name", name);
@@ -59,7 +60,7 @@ function TablaProductos() {
         queryParams.append("stock", stock);
         queryParams.append("proveedor", proveedor);
         queryParams.append("image", image);
-
+        queryParams.append("Marca", marca);
         const url = `/ProductsModificar?${queryParams.toString()}`;
         navigate(url);
       }
@@ -116,6 +117,16 @@ function TablaProductos() {
     {
       name: "Proveedor",
       selector: (row: Product) => row.proveedor,
+      sortable: true,
+    },
+    {
+      name: "Categoría",
+      selector: (row: Product) => row.categoria,
+      sortable: true,
+    },
+    {
+      name: "Marca",
+      selector: (row: Product) => row.Marca,
       sortable: true,
     },
     {

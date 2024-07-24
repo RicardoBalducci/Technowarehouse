@@ -6,6 +6,7 @@ import "./form.modificar.producto.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import SelectProveedor from "../../ingresar/components/select.proveedor";
+import { opcionesMarca } from "../../ingresar/components/opciones";
 
 function FormModificar() {
   const location = useLocation();
@@ -18,11 +19,18 @@ function FormModificar() {
   const [description, setDescription] = useState<string>(
     queryParams.get("descripcion") || ""
   );
+  const [Marca, setMarcaSeleccionado] = useState<string>(
+    queryParams.get("Marca") || ""
+  );
   const [stock, setStock] = useState<string>(queryParams.get("stock") || "");
   const [proveedorSeleccionado, setProveedorSeleccionado] = useState<string>(
     queryParams.get("proveedor") || ""
   );
   const [image, setImage] = useState<string>(queryParams.get("image") || "");
+
+  const handleMarcaChange = (selectedProveedorId: string) => {
+    setMarcaSeleccionado(selectedProveedorId);
+  };
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -57,6 +65,7 @@ function FormModificar() {
       description,
       stock,
       proveedor: proveedorSeleccionado, // Cambiado a 'proveedor' en lugar de 'proveedorSeleccionado'
+      Marca,
       image,
     };
     const response = await updateData(Tables.product, values, values.id);
@@ -125,6 +134,22 @@ function FormModificar() {
                 onChange={handleImageChange}
                 className="input"
               />
+            </div>
+            <div>
+              <p className="titulo">Marca</p>
+              <select
+                name="Marca"
+                value={Marca}
+                onChange={(e) => handleMarcaChange(e.target.value)}
+                className="input"
+                required
+              >
+                {opcionesMarca.map((opcion) => (
+                  <option key={opcion.value} value={opcion.value}>
+                    {opcion.label}
+                  </option>
+                ))}
+              </select>
             </div>
             <div>
               <p className="titulo">Descripción</p>

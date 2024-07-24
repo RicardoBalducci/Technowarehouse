@@ -6,13 +6,16 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import SelectProveedor from "./select.proveedor";
 import { supabase } from "../../../../../../services/supabase";
-
+import { opcionesMarca } from "./opciones";
+import { opcionesCategoria } from "./opcionCategoria";
 function FormProduct() {
   const [values, setValues] = useState({
     name: "",
     description: "",
+    Marca: "",
     image: "",
     proveedor: "",
+    categoria: "",
     precio: 0,
     stock: 0,
   });
@@ -32,7 +35,18 @@ function FormProduct() {
       [e.target.name]: e.target.value,
     });
   };
-
+  const handleMarcaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setValues({
+      ...values,
+      Marca: e.target.value, // Actualiza la marca seleccionada en el estado
+    });
+  };
+  const handleCategoriaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setValues({
+      ...values,
+      categoria: e.target.value, // Actualiza la marca seleccionada en el estado
+    });
+  };
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
 
@@ -46,6 +60,7 @@ function FormProduct() {
         console.log("La url es: ", url);
         setValues({
           ...values,
+
           image: url, // Save the uploaded image URL in the values state
         });
       } else if (error) {
@@ -74,6 +89,7 @@ function FormProduct() {
     });
     navigate("/Products");
   };
+
   return (
     <>
       <div className={styles.container}>
@@ -139,6 +155,38 @@ function FormProduct() {
                 placeholder="description"
                 required
               />
+            </div>
+            <div>
+              <p className={styles.titulo}>Marca</p>
+              <select
+                name="Marca"
+                value={values.Marca}
+                onChange={handleMarcaChange}
+                className={styles.input}
+                required
+              >
+                {opcionesMarca.map((opcion) => (
+                  <option key={opcion.value} value={opcion.value}>
+                    {opcion.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <p className={styles.titulo}>Categoría</p>
+              <select
+                name="Categoria"
+                value={values.categoria}
+                onChange={handleCategoriaChange}
+                className={styles.input}
+                required
+              >
+                {opcionesCategoria.map((opcion) => (
+                  <option key={opcion.value} value={opcion.value}>
+                    {opcion.label}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           <button className={"button"}>Guardar</button>

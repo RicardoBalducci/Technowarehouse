@@ -1,87 +1,32 @@
-//import styles from "./modificar.module.css";
-//
+import { useState, ChangeEvent, FormEvent } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Tables } from "../../../../types/core";
+import { updateData, viewDataLogin } from "../../../../services/supabase";
+import Swal from "sweetalert2";
 
 function ModificarUsuario() {
-  return (
-    <>
-      <h1>hola</h1>
-    </>
-  );
-}
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { editedUser } = location.state;
 
-export default ModificarUsuario;
+  const [userData, setUserData] = useState({
+    nombre: editedUser.nombre,
+    cedula: editedUser.cedula,
+    email: editedUser.email,
+    password: editedUser.password,
+    telefono: editedUser.telefono,
+    direccion: editedUser.direccion,
+  });
 
-//const { editedUser } = location.state; // Acceder a editedUser desde la ubicación (location) del componente
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setUserData({ ...userData, [name]: value });
+  };
 
-// Ahora puedes utilizar editedUser en esta página para mostrar o modificar los datos según sea necesario
-
-/* 
-const location = useLocation();<form action="">
-        <div className={styles.inputGroup}>
-          <p className={styles.p}>Nombre</p>
-          <input
-            type="text"
-            name="nombre"
-            value={editedUser.nombre}
-            className={styles.input}
-          />
-        </div>
-        <div className={styles.inputGroup}>
-          <p className={styles.p}>Correo Electrónico</p>
-          <input
-            type="text"
-            name="email"
-            value={editedUser.email}
-            className={styles.input}
-          />
-        </div>
-        <div className={styles.inputGroup}>
-          <p className={styles.p}>Cedula</p>
-          <input
-            type="text"
-            name="cedula"
-            value={editedUser.cedula}
-            className={styles.input}
-          />
-        </div>
-        <div className={styles.inputGroup}>
-          <p className={styles.p}>Teléfono</p>
-          <input
-            type="text"
-            name="telefono"
-            value={editedUser.telefono}
-            className={styles.input}
-          />
-        </div>
-        <div className={styles.inputGroup}>
-          <p className={styles.p}>Dirección</p>
-          <input
-            type="text"
-            name="direccion"
-            value={editedUser.direccion}
-            className={styles.input}
-          />
-        </div>
-        <div className={styles.inputGroup}>
-          <p className={styles.p}>Contraseña</p>
-          <input
-            type="text"
-            name="password"
-            value={editedUser.password}
-            className={styles.input}
-          />
-        </div>
-      </form>*/
-
-/*
-
-
-import { supabase } from "../../../../services/supabase";
-import { Tables } from "../../../../types/core";
-import { updateData } from "../../../../services/supabase";
-const handleSaveClick = async () => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     try {
-      const response = await updateData(Tables.user, editedUser, user.id);
+      const response = await updateData(Tables.user, userData, editedUser.id);
 
       if (!response) {
         Swal.fire({
@@ -99,8 +44,66 @@ const handleSaveClick = async () => {
         text: "Modificación exitosa",
         icon: "success",
       });
+      const user = await viewDataLogin(
+        Tables.user,
+        editedUser.email,
+        editedUser.password
+      );
+      navigate("/User", { replace: true, state: { user: user } });
     } catch (error) {
-      console.error("Error updating data:", error);
+      alert("Error al guardar"); // Mostrar alerta de error
     }
   };
-*/
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <p>nombre</p>
+      <input
+        type="text"
+        name="nombre"
+        value={userData.nombre}
+        onChange={handleInputChange}
+      />
+      <p>cedula</p>
+      <input
+        type="text"
+        name="cedula"
+        value={userData.cedula}
+        onChange={handleInputChange}
+      />
+      <p>Correo Electronico</p>
+      <input
+        type="text"
+        name="email"
+        value={userData.email}
+        disabled
+        onChange={handleInputChange}
+      />
+      <p>Telefono</p>
+      <input
+        type="text"
+        name="telefono"
+        value={userData.telefono}
+        onChange={handleInputChange}
+      />
+      <p>Contraseña</p>
+      <input
+        type="text"
+        name="password"
+        value={userData.password}
+        disabled
+        onChange={handleInputChange}
+      />
+      <p>Direccion</p>
+      <input
+        type="text"
+        name="direccion"
+        value={userData.direccion}
+        onChange={handleInputChange}
+      />
+      <button type="submit">Guardar</button>
+    </form>
+  );
+}
+
+export default ModificarUsuario;

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "../../portada/components/Cabecera.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+//<FontAwesomeIcon icon={faCartShopping} />
 const Cabecera = () => {
   const [menu, setMenu] = useState(false);
 
@@ -11,7 +13,7 @@ const Cabecera = () => {
   return (
     <header className="Cabecera">
       <h1 className="Cabecera-h1">
-        <a href="/User" className="Cabecera-a">
+        <a href="/HomePageUser" className="Cabecera-a">
           Technowarehouse
         </a>
       </h1>
@@ -34,6 +36,21 @@ const Cabecera = () => {
 
       <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
         <ul className="Cabecera-ul">
+          <li className="Cabecera-li">
+            <a href="/User" className="Cabecera-a">
+              Products
+            </a>
+          </li>
+          <li className="Cabecera-li">
+            <a href="/User" className="Cabecera-a">
+              <FontAwesomeIcon icon={faCartShopping} />
+            </a>
+          </li>
+          <li className="Cabecera-li">
+            <a href="/User" className="Cabecera-a">
+              user
+            </a>
+          </li>
           <li className="Cabecera-li">
             <a href="/" className="Cabecera-a">
               Cerrar Sesion

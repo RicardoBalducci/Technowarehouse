@@ -1,7 +1,6 @@
 import { useState } from "react"; //useEffect
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./user.module.css";
-//import { TextField } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import MenuUser from "./components/menu";
@@ -9,8 +8,7 @@ function UserPrincipal() {
   const nagivate = useNavigate();
   const location = useLocation();
   const { user } = location.state;
-  const [editedUser] = useState(user); // State to store the changes made to the user
-  //const navigate = useNavigate();
+  const [editedUser] = useState(user);
 
   const handleEditClick = () => {
     nagivate("/ModificarUser", { state: { editedUser } }); // Pasar editedUser como parte del estado al navegar a la página "/ModificarUser"
