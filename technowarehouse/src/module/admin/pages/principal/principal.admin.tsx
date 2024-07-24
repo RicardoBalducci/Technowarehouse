@@ -1,69 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Menu from "../components/menu";
-import { supabase } from "../../../../services/supabase";
+import useStockData from "./hook/useStockData";
+import useUserData from "./hook/useUserData";
 import styles from "./principal.admin.module.css";
-import DataTable from "react-data-table-component";
-
-interface ImageObject {
-  name: string;
-  // Otras propiedades de la imagen, si las hay
-}
-
+import useProveedorData from "./hook/useProveedorData";
 function PrincipalAdmin() {
-  const [imageUrl, setImageUrl] = useState(""); // Estado para almacenar la URL de la imagen
-  const [imageList, setImageList] = useState<ImageObject[]>([]); // Estado para almacenar la lista de imágenes
-
-  useEffect(() => {
-    verTodasLasImagenes();
-  }, []);
-
-  async function verTodasLasImagenes() {
-    const { data, error } = await supabase.storage
-      .from("Technowarehouse")
-      .list("public/");
-
-    if (error) {
-      console.log(error);
-      return;
-    }
-
-    if (data) {
-      setImageList(data);
-    }
-  }
-
-  const columns = [
-    {
-      name: "Imagen",
-      cell: (row: ImageObject) => (
-        <img
-          src={`https://dkmcywdlzsslpgnvfxzy.supabase.co/storage/v1/object/public/Technowarehouse/public/${row.name}`}
-          alt={row.name}
-          className={`${styles.img} ${styles.img_small}`} // Apply CSS classes for smaller images
-        />
-      ),
-      sortable: true,
-    },
-  ];
-
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-
-    if (file) {
-      const { data, error } = await supabase.storage
-        .from("Technowarehouse")
-        .upload("public/" + file.name, file);
-
-      if (data) {
-        alert("Subido");
-        const url = `https://dkmcywdlzsslpgnvfxzy.supabase.co/storage/v1/object/public/Technowarehouse/public/${file.name}`; // Obtener la URL de la imagen subida
-        setImageUrl(url); // Actualizar el estado con la URL de la imagen subida
-        verTodasLasImagenes(); // Actualizar la lista de imágenes
-      } else if (error) {
-        console.log(error);
-      }
-    }
-  };
+  const totalStock = useStockData();
+  const totalProveedor = useProveedorData();
+  const totalUsers = useUserData();
 
   return (
     <div className={styles.container}>
@@ -72,15 +16,9 @@ function PrincipalAdmin() {
       </nav>
       <div className={styles.content}>
         <h1>Panel de Control</h1>
-        <input type="file" accept="image/*" onChange={handleUpload} />
-        {imageUrl && <img src={imageUrl} alt="Imagen subida" />}
-        <h2>Imágenes subidas:</h2>
-        <DataTable
-          columns={columns}
-          data={imageList}
-          pagination
-          paginationPerPage={5}
-        />
+        <p>Total Stock: {totalStock}</p>
+        <p>Total Users: {totalUsers}</p>
+        <p>Total Proveedor: {totalProveedor}</p>
       </div>
     </div>
   );

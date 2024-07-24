@@ -52,6 +52,7 @@ function TablaProductos() {
         const proveedor = row.proveedor.toString();
         const image = row.image.toString();
         const marca = row.Marca.toString();
+        const categoria = row.categoria.toString();
         const queryParams = new URLSearchParams();
         queryParams.append("id", id);
         queryParams.append("name", name);
@@ -61,6 +62,7 @@ function TablaProductos() {
         queryParams.append("proveedor", proveedor);
         queryParams.append("image", image);
         queryParams.append("Marca", marca);
+        queryParams.append("categoria", categoria);
         const url = `/ProductsModificar?${queryParams.toString()}`;
         navigate(url);
       }

@@ -22,6 +22,9 @@ function HomePageUser() {
 
     fetchProductos();
   }, []);
+  //Hacer que cuando este conectado me lleve a otra pestaña en donde me de la descripcion detallada
+  //De cada articulo
+  //Crea un boton que al presionarlo, me limite a la peticion
   return (
     <>
       <Cabecera />;

@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import SelectProveedor from "../../ingresar/components/select.proveedor";
 import { opcionesMarca } from "../../ingresar/components/opciones";
-
+import { opcionesCategoria } from "../../ingresar/components/opcionCategoria";
 function FormModificar() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -28,6 +28,13 @@ function FormModificar() {
   );
   const [image, setImage] = useState<string>(queryParams.get("image") || "");
 
+  const [categoria, setCategoriaSeleccionado] = useState<string>(
+    queryParams.get("categoria") || ""
+  );
+  //ACCIONES
+  const handleCategoriaChange = (selectedProveedorId: string) => {
+    setCategoriaSeleccionado(selectedProveedorId);
+  };
   const handleMarcaChange = (selectedProveedorId: string) => {
     setMarcaSeleccionado(selectedProveedorId);
   };
@@ -66,6 +73,7 @@ function FormModificar() {
       stock,
       proveedor: proveedorSeleccionado, // Cambiado a 'proveedor' en lugar de 'proveedorSeleccionado'
       Marca,
+      categoria,
       image,
     };
     const response = await updateData(Tables.product, values, values.id);
@@ -135,6 +143,16 @@ function FormModificar() {
                 className="input"
               />
             </div>
+
+            <div>
+              <p className="titulo">Descripción</p>
+              <input
+                type="text"
+                value={description}
+                onChange={handleDescriptionChange}
+                className="input"
+              />
+            </div>
             <div>
               <p className="titulo">Marca</p>
               <select
@@ -151,16 +169,25 @@ function FormModificar() {
                 ))}
               </select>
             </div>
+
             <div>
-              <p className="titulo">Descripción</p>
-              <input
-                type="text"
-                value={description}
-                onChange={handleDescriptionChange}
+              <p className="titulo">Categoría</p>
+              <select
+                name="Categoria"
+                value={categoria}
+                onChange={(e) => handleCategoriaChange(e.target.value)}
                 className="input"
-              />
+                required
+              >
+                {opcionesCategoria.map((opcion) => (
+                  <option key={opcion.value} value={opcion.value}>
+                    {opcion.label}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
+
           <button className="button">Actualizar</button>
           <button
             type="button"
@@ -176,3 +203,6 @@ function FormModificar() {
 }
 
 export default FormModificar;
+/*
+ 
+*/
