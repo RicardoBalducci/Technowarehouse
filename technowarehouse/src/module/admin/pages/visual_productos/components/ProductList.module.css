@@ -1,0 +1,9 @@
+.product_list {
+    display: flex;
+    flex-wrap: wrap; /* Envolver en varias filas */
+    gap: 20px; /* Espacio entre los productos */
+  }
+  .product_list > * {
+    flex-basis: calc(20% - 20px); /* 20% de ancho con espacio entre los productos */
+  }
+  

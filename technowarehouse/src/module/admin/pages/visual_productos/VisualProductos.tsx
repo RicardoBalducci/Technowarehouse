@@ -1,5 +1,6 @@
-// ProductosPage.tsx
+// visual_productos.tsx
 import ProductList from "./components/ProductList";
+import ProductDetails from "./components/ProductDetails";
 import styles from "./ProductosPage.module.css";
 function ProductosPage() {
   return (
