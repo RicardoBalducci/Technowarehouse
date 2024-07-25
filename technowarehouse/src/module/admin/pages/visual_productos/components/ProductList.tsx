@@ -18,7 +18,7 @@ const products = [
 const ProductList: React.FC = () => {
   return (
     <div className={styles.product_list_container}>
-      <h2 className={styles.product_list_title}>Productos Destacados</h2>
+      
       <div className={styles.product_list}>
         {products.map((product) => (
           <ProductDetails key={product.id} product={product} />
