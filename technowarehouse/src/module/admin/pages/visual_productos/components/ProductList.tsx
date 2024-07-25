@@ -1,10 +1,8 @@
-// ProductList.tsx
 import React from "react";
 import ProductDetails from "./ProductDetails";
 import styles from './ProductList.module.css';
 
 const products = [
-  // Datos de ejemplo del producto (reemplaza con tus datos reales)
   { id: 1, name: "Producto A", price: 29.99, imageUrl: "/../../../assets/aa.webp" },
   { id: 2, name: "Producto B", price: 19.99, imageUrl: "/../../../assets/b.webp" },
   { id: 3, name: "Producto C", price: 9.99, imageUrl: "/../../../assets/c.webp"},
@@ -19,10 +17,13 @@ const products = [
 
 const ProductList: React.FC = () => {
   return (
-    <div className={styles.product_list}>
-      {products.map((product) => (
-        <ProductDetails key={product.id} product={product} />
-      ))}
+    <div className={styles.product_list_container}>
+      <h2 className={styles.product_list_title}>Productos Destacados</h2>
+      <div className={styles.product_list}>
+        {products.map((product) => (
+          <ProductDetails key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
 };

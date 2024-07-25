@@ -1,13 +1,24 @@
-// visual_productos.tsx
 import ProductList from "./components/ProductList";
-import ProductDetails from "./components/ProductDetails";
 import styles from "./ProductosPage.module.css";
+
 function ProductosPage() {
   return (
-    //MODIFICACION HECHA
     <div className={styles.productos_page}>
-      <h1>Productos</h1>
-      <ProductList />
+      <header className={styles.header}>
+        <h1 className={styles.logo}>Technowarehouse</h1>
+        <nav className={styles.nav}>
+          <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#"><i className="cart-icon">🛒</i></a></li>
+            <li><a href="#">user</a></li>
+            <li><a href="#">Cerrar Sesion</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main className={styles.main_content}>
+        <h2 className={styles.section_title}>Productos Destacados</h2>
+        <ProductList />
+      </main>
     </div>
   );
 }

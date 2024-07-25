@@ -1,9 +1,13 @@
 .product_list {
-    display: flex;
-    flex-wrap: wrap; /* Envolver en varias filas */
-    gap: 20px; /* Espacio entre los productos */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .product_list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
   }
-  .product_list > * {
-    flex-basis: calc(20% - 20px); /* 20% de ancho con espacio entre los productos */
-  }
-  
+}
