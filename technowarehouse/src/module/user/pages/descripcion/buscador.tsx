@@ -7,7 +7,6 @@ import styles from "./buscador.module.css";
 const Buscador: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
   const [resultados, setResultados] = useState<Product[]>([]);
-  const [mostrarTodos, setMostrarTodos] = useState(false);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);

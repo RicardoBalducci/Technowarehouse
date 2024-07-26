@@ -1,9 +1,12 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Tables } from "../../../../types/core";
+
 import { updateData, viewDataLogin } from "../../../../services/supabase";
 import Swal from "sweetalert2";
-
+import Cabecera from "../../components/menu";
+import Footer from "../../../portada/components/Footer";
+import styles from "./modificar.module.css";
 function ModificarUsuario() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -56,53 +59,81 @@ function ModificarUsuario() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>nombre</p>
-      <input
-        type="text"
-        name="nombre"
-        value={userData.nombre}
-        onChange={handleInputChange}
-      />
-      <p>cedula</p>
-      <input
-        type="text"
-        name="cedula"
-        value={userData.cedula}
-        onChange={handleInputChange}
-      />
-      <p>Correo Electronico</p>
-      <input
-        type="text"
-        name="email"
-        value={userData.email}
-        disabled
-        onChange={handleInputChange}
-      />
-      <p>Telefono</p>
-      <input
-        type="text"
-        name="telefono"
-        value={userData.telefono}
-        onChange={handleInputChange}
-      />
-      <p>Contraseña</p>
-      <input
-        type="text"
-        name="password"
-        value={userData.password}
-        disabled
-        onChange={handleInputChange}
-      />
-      <p>Direccion</p>
-      <input
-        type="text"
-        name="direccion"
-        value={userData.direccion}
-        onChange={handleInputChange}
-      />
-      <button type="submit">Guardar</button>
-    </form>
+    <div>
+      <Cabecera />
+      <div className={styles.container}>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <h1 className={styles.texto}>Modificar Usuario</h1>
+          <div className={styles.cuadro}>
+            <p>nombre</p>
+            <input
+              type="text"
+              name="nombre"
+              value={userData.nombre}
+              onChange={handleInputChange}
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.cuadro}>
+            <p>cedula</p>
+            <input
+              type="text"
+              name="cedula"
+              value={userData.cedula}
+              onChange={handleInputChange}
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.cuadro}>
+            <p>Correo Electronico</p>
+            <input
+              type="text"
+              name="email"
+              value={userData.email}
+              disabled
+              onChange={handleInputChange}
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.cuadro}>
+            <p>Telefono</p>
+            <input
+              type="text"
+              name="telefono"
+              value={userData.telefono}
+              onChange={handleInputChange}
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.cuadro}>
+            <p>Contraseña</p>
+            <input
+              type="text"
+              name="password"
+              value={userData.password}
+              disabled
+              onChange={handleInputChange}
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.cuadro}>
+            <p>Direccion</p>
+            <input
+              type="text"
+              name="direccion"
+              value={userData.direccion}
+              onChange={handleInputChange}
+              className={styles.input}
+            />
+          </div>
+          <button type="submit" className={styles.btn}>
+            Guardar
+          </button>
+        </form>
+      </div>
+
+      <Footer></Footer>
+    </div>
   );
 }
 

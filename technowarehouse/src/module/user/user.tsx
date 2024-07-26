@@ -4,6 +4,7 @@ import styles from "./user.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import MenuUser from "./components/menu";
+import Footer from "../portada/components/Footer";
 function UserPrincipal() {
   const nagivate = useNavigate();
   const location = useLocation();
@@ -94,6 +95,7 @@ function UserPrincipal() {
             </button>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );
