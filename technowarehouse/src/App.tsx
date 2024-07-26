@@ -20,6 +20,7 @@ import UserPrincipal from "./module/user/user";
 import ModificarUsuario from "./module/user/pages/modificarUsuario/modificar";
 import HomePageUser from "./module/user/pages/principal/HomepageUser";
 import Informacion from "./module/user/pages/informacion/informacion";
+import ProductosPage from "./module/user/pages/visual_productos/VisualProductos";
 function App() {
   return (
     <Router>
@@ -33,6 +34,7 @@ function App() {
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/User" element={<UserPrincipal />} />
         <Route path="/Informacion" element={<Informacion />} />
+        <Route path="/PageProducts" element={<ProductosPage />} />
         <Route path="/HomePageUser" element={<HomePageUser />} />
         <Route path="/ModificarUser" element={<ModificarUsuario />} />
         <Route path="/Products" element={<PanelProductos />} />
@@ -41,7 +43,6 @@ function App() {
         <Route path="/Proveedores" element={<PanelProveedores />} />
         <Route path="/ProveedoresIngresar" element={<IngresarProveedor />} />
         <Route path="/ProveedoresModificar" element={<ModificarProveedor />} />
-
         <Route path="*" element={<Navigate to="/" />} />
         {/* Agrega otras rutas aquí según sea necesario UsuarioRegistro*/}
       </Routes>

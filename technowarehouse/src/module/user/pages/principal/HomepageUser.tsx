@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../../../services/supabase";
 import { Tables } from "../../../../types/core";
 import { Product } from "../../../../interface/Product.interface";
+
 import styles from "./homepage.module.css";
 import { useNavigate } from "react-router-dom";
 function HomePageUser() {

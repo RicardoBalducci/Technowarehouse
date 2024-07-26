@@ -2,18 +2,34 @@ import { useState } from "react";
 import "../../portada/components/Cabecera.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-//<FontAwesomeIcon icon={faCartShopping} />
+import { viewDataLogin } from "../../../services/supabase";
+import { Tables } from "../../../types/core";
+import { useNavigate } from "react-router-dom";
+import Buscador from "../pages/descripcion/buscador";
+
 const Cabecera = () => {
   const [menu, setMenu] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenu(!menu);
   };
 
+  const Prueba = async () => {
+    // Assuming user.email and user.password are defined
+    const user = { email: "t@gmail.com", password: "1" };
+    const userData = await viewDataLogin(
+      Tables.user,
+      user.email,
+      user.password
+    );
+    navigate("/User", { replace: true, state: { user: userData } });
+  };
+
   return (
     <header className="Cabecera">
       <h1 className="Cabecera-h1">
-        <a href="/HomePageUser" className="Cabecera-a">
+        <a href="/PageProducts" className="Cabecera-a">
           Technowarehouse
         </a>
       </h1>
@@ -28,16 +44,16 @@ const Cabecera = () => {
           viewBox="0 0 16 16"
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
           />
         </svg>
       </button>
-
+      <Buscador />
       <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
         <ul className="Cabecera-ul">
           <li className="Cabecera-li">
-            <a href="/User" className="Cabecera-a">
+            <a href="/PageProducts" className="Cabecera-a">
               Products
             </a>
           </li>
@@ -47,7 +63,7 @@ const Cabecera = () => {
             </a>
           </li>
           <li className="Cabecera-li">
-            <a href="/User" className="Cabecera-a">
+            <a href="/User" onClick={Prueba} className="Cabecera-a">
               user
             </a>
           </li>
@@ -61,7 +77,7 @@ const Cabecera = () => {
     </header>
   );
 };
-//SignIn
+
 export default Cabecera;
 
 /*
