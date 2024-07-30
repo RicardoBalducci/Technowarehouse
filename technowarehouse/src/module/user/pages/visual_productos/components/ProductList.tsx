@@ -5,6 +5,8 @@ import { Product } from "../../../../../interface/Product.interface";
 import ProductDetails from "./ProductDetails";
 import styles from "./ProductList.module.css";
 import { opcionesMarca } from "../../../../admin/pages/productos/ingresar/components/opciones";
+import { opcionesCategoria } from "../../../../admin/pages/productos/ingresar/components/opcionCategoria";
+
 const ProductList: React.FC = () => {
   const [productos, setProductos] = useState<Product[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -42,11 +44,26 @@ const ProductList: React.FC = () => {
     }
   };
 
+  const handleFilterClickCategory = async (category: string) => {
+    setSelectedCategory(category);
+    setSearchTerm("");
+    const { data, error } = await supabase
+      .from(Tables.product)
+      .select("*")
+      .eq("categoria", category); // Assuming "categoria" is the column to filter by category
+
+    if (error) {
+      console.error(error);
+    } else {
+      setProductos(data);
+    }
+  };
+
   const handleSearchTermChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setSearchTerm(event.target.value);
-    setSelectedCategory(""); // Reset the selected brand when the search term changes
+    setSelectedCategory(""); // Reset the selected category when the search term changes
   };
 
   const handleResetClick = async () => {
@@ -61,6 +78,7 @@ const ProductList: React.FC = () => {
       setProductos(data);
       setSelectedCategory("");
       setSearchTerm("");
+      window.location.reload();
     }
   };
 
@@ -84,6 +102,7 @@ const ProductList: React.FC = () => {
         placeholder="Buscar producto..."
         value={searchTerm}
         onChange={handleSearchTermChange}
+        className={styles.input}
       />
       <select
         name="Marca"
@@ -97,7 +116,20 @@ const ProductList: React.FC = () => {
           </option>
         ))}
       </select>
-      <button onClick={handleResetClick}>Vaciar</button>{" "}
+      <select
+        name="Categoria"
+        className={styles.input}
+        onChange={(e) => handleFilterClickCategory(e.target.value)}
+      >
+        {opcionesCategoria.map((opcion) => (
+          <option key={opcion.value} value={opcion.value}>
+            {opcion.label}
+          </option>
+        ))}
+      </select>
+      <button onClick={handleResetClick} className={styles.button}>
+        Vaciar
+      </button>{" "}
       <div className={styles.product_list}>
         {filteredProductos.length === 0 &&
         searchTerm !== "" &&

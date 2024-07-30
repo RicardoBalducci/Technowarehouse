@@ -13,16 +13,6 @@ function ProductosPage() {
     <div className={styles.productos_page}>
       <Cabecera />
       <div className={styles.content_wrapper}>
-        <aside className={styles.filters_sidebar}>
-          <button className={styles.button} onClick={handleCategoryFilterClick}>
-            Categoría
-          </button>
-          {showCategoryFilter && (
-            <ul>
-              <button className={styles.bts}>Televisor</button>{" "}
-            </ul>
-          )}
-        </aside>
         <main className={styles.main_content}>
           <h2 className={styles.section_title}>Productos Destacados</h2>
           <ProductList />{" "}

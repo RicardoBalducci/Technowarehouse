@@ -6,7 +6,6 @@ import { supabase } from "../../../../services/supabase";
 import Cabecera from "../../components/menu";
 import styles from "./informacion.module.css";
 import Footer from "../../../portada/components/Footer";
-import Swal from "sweetalert2";
 
 function Informacion() {
   const navigate = useNavigate();
@@ -14,26 +13,14 @@ function Informacion() {
   const productId = new URLSearchParams(location.search).get("id");
   const [product, setProduct] = useState<Product | null>(null);
   const [cantidad, setCantidad] = useState<number | null>(null);
-  const stocks = product?.stock ?? 0;
-  const Eleccion = cantidad ?? 0;
 
   const handleCantidadChange = () => {
-    const nuevoStock = stocks - Eleccion;
+    const nuevoStock = (product?.stock ?? 0) - (cantidad ?? 0);
 
     if (nuevoStock !== null && nuevoStock !== undefined) {
-      // Actualizar la cantidad en la base de datos utilizando supabase
-      supabase
-        .from(Tables.product)
-        .update({ stock: nuevoStock })
-        .eq("id", productId)
-        .then(() => {
-          Swal.fire({
-            title: "Felicidades!",
-            text: "Compra exitosa",
-            icon: "success",
-          });
-          navigate("/HomePageUser");
-        });
+      navigate("/Carrito", {
+        state: { producto: product, cantidad: cantidad },
+      });
     }
   };
 
@@ -43,13 +30,14 @@ function Informacion() {
       .select("*")
       .eq("id", productId)
       .then((response) => {
-        // Actualizar el estado del producto con la respuesta de la consulta
         if (response.data !== null) {
           setProduct(response.data[0]);
         }
       });
   }, [productId]);
-  const CambioBs = product?.precio * 36.6667;
+
+  const CambioBs = product?.precio ? product.precio * 36.6667 : 0;
+
   return (
     <div>
       <Cabecera />
@@ -89,6 +77,19 @@ function Informacion() {
 
 export default Informacion;
 
+/*// Actualizar la cantidad en la base de datos utilizando supabase
+      supabase
+        .from(Tables.product)
+        .update({ stock: nuevoStock })
+        .eq("id", productId)
+        .then(() => {
+          Swal.fire({
+            title: "Felicidades!",
+            text: "Compra exitosa",
+            icon: "success",
+          });
+          navigate("/HomePageUser");
+        });*/
 /*
       <h1>{product?.name}</h1>
       <input

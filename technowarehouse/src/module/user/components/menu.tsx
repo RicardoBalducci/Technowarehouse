@@ -5,7 +5,6 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { viewDataLogin } from "../../../services/supabase";
 import { Tables } from "../../../types/core";
 import { useNavigate } from "react-router-dom";
-import Buscador from "../pages/descripcion/buscador";
 
 const Cabecera = () => {
   const [menu, setMenu] = useState(false);
@@ -49,7 +48,6 @@ const Cabecera = () => {
           />
         </svg>
       </button>
-      <Buscador />
       <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
         <ul className="Cabecera-ul">
           <li className="Cabecera-li">
@@ -58,7 +56,7 @@ const Cabecera = () => {
             </a>
           </li>
           <li className="Cabecera-li">
-            <a href="/User" className="Cabecera-a">
+            <a href="/Carrito" className="Cabecera-a">
               <FontAwesomeIcon icon={faCartShopping} />
             </a>
           </li>

@@ -18,9 +18,10 @@ import Login from "./module/login/login/login2";
 import SignIn from "./module/login/registrar/signup";
 import UserPrincipal from "./module/user/user";
 import ModificarUsuario from "./module/user/pages/modificarUsuario/modificar";
-import HomePageUser from "./module/user/pages/principal/HomepageUser";
 import Informacion from "./module/user/pages/informacion/informacion";
 import ProductosPage from "./module/user/pages/visual_productos/VisualProductos";
+import Carrito from "./module/user/pages/carrito/carritoCompra";
+
 function App() {
   return (
     <Router>
@@ -35,8 +36,9 @@ function App() {
         <Route path="/User" element={<UserPrincipal />} />
         <Route path="/Informacion" element={<Informacion />} />
         <Route path="/PageProducts" element={<ProductosPage />} />
-        <Route path="/HomePageUser" element={<HomePageUser />} />
+        <Route path="/HomePageUser" element={<ProductosPage />} />
         <Route path="/ModificarUser" element={<ModificarUsuario />} />
+        <Route path="/Carrito" element={<Carrito />} />
         <Route path="/Products" element={<PanelProductos />} />
         <Route path="/ProductsIngresar" element={<IngresarProductos />} />
         <Route path="/ProductsModificar" element={<ModificarProducto />} />
@@ -52,7 +54,7 @@ function App() {
 
 export default App;
 /*
-
+HomePageUser
 import {
   BrowserRouter as Router,
   Route,
