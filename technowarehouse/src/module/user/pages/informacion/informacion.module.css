@@ -50,6 +50,8 @@
   background-color: rgb(97, 214, 93);
   border: 1px solid transparent;
   border-radius: 5px;
+  font-size: 25px;
+  color: white;
   cursor: pointer;
 }
 .btn:hover {

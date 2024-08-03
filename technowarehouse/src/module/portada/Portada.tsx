@@ -1,6 +1,8 @@
 import Cabecera from "./components/Cabecera";
 import Footer from "./components/Footer";
+import Mision from "./components/Mision/Mision";
 import Productos from "./components/productos/productos";
+import Vision from "./components/Vision/vision";
 
 import styles from "./styles.module.css";
 function Portada() {
@@ -22,7 +24,8 @@ function Portada() {
         </div>
       </div>
       <Productos />
-
+      <Mision />
+      <Vision />
       <Footer />
     </>
   );

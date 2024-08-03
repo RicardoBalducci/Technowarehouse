@@ -50,6 +50,13 @@ function Carrito() {
 export default Carrito;
 
 /*
+
+ 
+}
+
+*/
+
+/*
 import { useLocation } from "react-router-dom";
 
 function Carrito() {

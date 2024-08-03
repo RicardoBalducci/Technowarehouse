@@ -66,7 +66,7 @@ function Informacion() {
             onChange={(e) => setCantidad(Number(e.target.value))}
           />
           <button onClick={handleCantidadChange} className={styles.btn}>
-            Click Aqui
+            Añadir al carrito
           </button>
         </div>
       </div>

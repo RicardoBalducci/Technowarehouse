@@ -21,6 +21,7 @@ import ModificarUsuario from "./module/user/pages/modificarUsuario/modificar";
 import Informacion from "./module/user/pages/informacion/informacion";
 import ProductosPage from "./module/user/pages/visual_productos/VisualProductos";
 import Carrito from "./module/user/pages/carrito/carritoCompra";
+import Pedido from "./module/admin/pages/pedidos/pedido";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/PageProducts" element={<ProductosPage />} />
         <Route path="/HomePageUser" element={<ProductosPage />} />
         <Route path="/ModificarUser" element={<ModificarUsuario />} />
+        <Route path="/Pedido" element={<Pedido />} />
         <Route path="/Carrito" element={<Carrito />} />
         <Route path="/Products" element={<PanelProductos />} />
         <Route path="/ProductsIngresar" element={<IngresarProductos />} />
