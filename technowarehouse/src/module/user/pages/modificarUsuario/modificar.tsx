@@ -131,8 +131,9 @@ function ModificarUsuario() {
           </button>
         </form>
       </div>
-
-      <Footer></Footer>
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </div>
   );
 }

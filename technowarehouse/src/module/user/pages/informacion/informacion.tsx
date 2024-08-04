@@ -17,10 +17,12 @@ function Informacion() {
   const handleCantidadChange = () => {
     const nuevoStock = (product?.stock ?? 0) - (cantidad ?? 0);
 
-    if (nuevoStock !== null && nuevoStock !== undefined) {
+    if (nuevoStock >= 0) {
       navigate("/Carrito", {
         state: { producto: product, cantidad: cantidad },
       });
+    } else {
+      alert("No hay suficiente stock disponible.");
     }
   };
 

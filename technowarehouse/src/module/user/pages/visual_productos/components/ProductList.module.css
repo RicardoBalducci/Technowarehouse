@@ -116,13 +116,33 @@
   border-color: #4a90e2; /* Cambia el color del borde al enfocar */
   box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Sombra al enfocar */
 }
+
+.button {
+  padding: 15px 30px;
+  background-color: #55aae2;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #4a90e2;
+}
+
 /* Media query para pantallas de hasta 700px de ancho */
 @media (max-width: 700px) {
   .input {
-    width: 97%;
-    margin: 10px;
+    width: 100%;
+    margin-top: 5px;
     padding: 5px;
     font-size: 15px;
+  }
+  .button {
+    padding: 10px 30px;
+    font-size: 18px;
+    margin-top: 10px;
+    width: 100%;
   }
   .content_wrapper {
     flex-direction: column;

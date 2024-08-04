@@ -1,48 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { Product } from "../../../../interface/Product.interface";
+import React from "react";
+import { useLocation } from "react-router-dom";
+import styles from "./carrito.module.css";
 
 function Carrito() {
-  const [productos, setProductos] = useState<Product[]>([]);
-
-  useEffect(() => {
-    const storedProductos = localStorage.getItem("productos");
-    if (storedProductos) {
-      setProductos(JSON.parse(storedProductos));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("productos", JSON.stringify(productos));
-  }, [productos]);
-
-  const agregarProducto = (producto: Product) => {
-    setProductos([...productos, producto]);
+  const location = useLocation();
+  const { producto, cantidad } = location.state || {
+    producto: null,
+    cantidad: 0,
   };
+
+  // Suponiendo que el precio está en el objeto producto
+  const total = producto ? producto.precio * cantidad : 0;
 
   return (
     <div>
-      <h1>Tienes un carrito de compras</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Precio</th>
-          </tr>
-        </thead>
-        <tbody>
-          {productos.map((producto, index) => (
-            <tr key={index}>
-              <td>{producto.name}</td>
-              <td>{producto.precio}</td>
+      <h1>Carrito de Compras</h1>
+      {producto ? (
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Precio Unitario</th>
+              <th>Total</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <button
-        onClick={() => agregarProducto({ name: "Producto 1", precio: "$10" })}
-      >
-        Agregar Producto
-      </button>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{producto.name}</td>
+              <td>{cantidad}</td>
+              <td>{producto.precio} $</td>
+              <td>{total.toFixed(2)} $</td>
+            </tr>
+          </tbody>
+        </table>
+      ) : (
+        <p>No hay productos en el carrito.</p>
+      )}
+      <h2>Total: {total.toFixed(2)} $</h2>
     </div>
   );
 }

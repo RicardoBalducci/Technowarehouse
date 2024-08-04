@@ -28,7 +28,7 @@ const ProductDetails: React.FC<{ product: Product }> = ({ product }) => {
         <h3 className={styles.product_name}>{product.name}</h3>
         <p className={styles.product_price}>${product.precio.toFixed(2)}</p>
         <button onClick={handleProductClick} className={styles.buy_button}>
-          Comprar
+          Ver más
         </button>
       </div>
     </div>

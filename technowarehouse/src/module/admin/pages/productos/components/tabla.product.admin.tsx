@@ -122,11 +122,6 @@ function TablaProductos() {
       sortable: true,
     },
     {
-      name: "Categoría",
-      selector: (row: Product) => row.categoria,
-      sortable: true,
-    },
-    {
       name: "Marca",
       selector: (row: Product) => row.Marca,
       sortable: true,

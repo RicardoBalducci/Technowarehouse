@@ -95,7 +95,9 @@ function UserPrincipal() {
             </button>
           </div>
         </div>
-        <Footer />
+        <div className={styles.footer}>
+          <Footer />
+        </div>
       </div>
     </>
   );

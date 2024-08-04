@@ -7,4 +7,5 @@ export const opcionesCategoria = [
   { value: "PC", label: "PC" },
   { value: "Audífonos", label: "Audífonos" },
   { value: "Micrófono", label: "Micrófono" },
+  { value: "Router", label: "Router" },
 ];
