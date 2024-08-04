@@ -51,6 +51,7 @@ export const opcionesMarca = [
   { value: "Skullcandy", label: "Skullcandy" },
   { value: "Sony", label: "Sony" },
   { value: "Toshiba", label: "Toshiba" },
+  { value: "TP-Link", label: "TP-Link" },
   { value: "Vivo", label: "Vivo" },
   { value: "Xiaomi", label: "Xiaomi" },
   { value: "Zoom H5", label: "Zoom H5" },

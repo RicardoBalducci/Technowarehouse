@@ -22,35 +22,40 @@ import Informacion from "./module/user/pages/informacion/informacion";
 import ProductosPage from "./module/user/pages/visual_productos/VisualProductos";
 import Carrito from "./module/user/pages/carrito/carritoCompra";
 import Pedido from "./module/admin/pages/pedidos/pedido";
-
+import { ContadorProvider } from "./module/user/ts/contador";
 function App() {
   return (
-    <Router>
-      {/* Definición de las rutas */}
-      <Routes>
-        {/* Ruta para la página de inicio */}
-        <Route path="/" element={<Portada />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/PrincipalAdmin" element={<PrincipalAdmin />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/SignIn" element={<SignIn />} />
-        <Route path="/User" element={<UserPrincipal />} />
-        <Route path="/Informacion" element={<Informacion />} />
-        <Route path="/PageProducts" element={<ProductosPage />} />
-        <Route path="/HomePageUser" element={<ProductosPage />} />
-        <Route path="/ModificarUser" element={<ModificarUsuario />} />
-        <Route path="/Pedido" element={<Pedido />} />
-        <Route path="/Carrito" element={<Carrito />} />
-        <Route path="/Products" element={<PanelProductos />} />
-        <Route path="/ProductsIngresar" element={<IngresarProductos />} />
-        <Route path="/ProductsModificar" element={<ModificarProducto />} />
-        <Route path="/Proveedores" element={<PanelProveedores />} />
-        <Route path="/ProveedoresIngresar" element={<IngresarProveedor />} />
-        <Route path="/ProveedoresModificar" element={<ModificarProveedor />} />
-        <Route path="*" element={<Navigate to="/" />} />
-        {/* Agrega otras rutas aquí según sea necesario UsuarioRegistro*/}
-      </Routes>
-    </Router> //PanelProveedores
+    <ContadorProvider>
+      <Router>
+        {/* Definición de las rutas */}
+        <Routes>
+          {/* Ruta para la página de inicio */}
+          <Route path="/" element={<Portada />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/PrincipalAdmin" element={<PrincipalAdmin />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/User" element={<UserPrincipal />} />
+          <Route path="/Informacion" element={<Informacion />} />
+          <Route path="/PageProducts" element={<ProductosPage />} />
+          <Route path="/HomePageUser" element={<ProductosPage />} />
+          <Route path="/ModificarUser" element={<ModificarUsuario />} />
+          <Route path="/Pedido" element={<Pedido />} />
+          <Route path="/Carrito" element={<Carrito />} />
+          <Route path="/Products" element={<PanelProductos />} />
+          <Route path="/ProductsIngresar" element={<IngresarProductos />} />
+          <Route path="/ProductsModificar" element={<ModificarProducto />} />
+          <Route path="/Proveedores" element={<PanelProveedores />} />
+          <Route path="/ProveedoresIngresar" element={<IngresarProveedor />} />
+          <Route
+            path="/ProveedoresModificar"
+            element={<ModificarProveedor />}
+          />
+          <Route path="*" element={<Navigate to="/" />} />
+          {/* Agrega otras rutas aquí según sea necesario UsuarioRegistro*/}
+        </Routes>
+      </Router>{" "}
+    </ContadorProvider>
   );
 }
 

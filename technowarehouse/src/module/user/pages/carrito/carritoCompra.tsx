@@ -1,21 +1,33 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./carrito.module.css";
+import Cabecera from "../../components/menu";
+import Footer from "../../../portada/components/Footer";
 
 function Carrito() {
-  const location = useLocation();
-  const { producto, cantidad } = location.state || {
-    producto: null,
-    cantidad: 0,
+  const [carrito, setCarrito] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedCarrito = JSON.parse(localStorage.getItem("carrito") || "[]");
+    setCarrito(storedCarrito);
+  }, []);
+
+  const limpiarCarrito = () => {
+    localStorage.removeItem("carrito");
+    setCarrito([]);
   };
 
-  // Suponiendo que el precio está en el objeto producto
-  const total = producto ? producto.precio * cantidad : 0;
+  const total = carrito.reduce(
+    (acc, item) => acc + item.producto.precio * item.cantidad,
+    0
+  );
 
   return (
     <div>
+      <Cabecera />
       <h1>Carrito de Compras</h1>
-      {producto ? (
+      {carrito.length > 0 ? (
         <table className={styles.table}>
           <thead>
             <tr>
@@ -26,18 +38,24 @@ function Carrito() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>{producto.name}</td>
-              <td>{cantidad}</td>
-              <td>{producto.precio} $</td>
-              <td>{total.toFixed(2)} $</td>
-            </tr>
+            {carrito.map((item, index) => (
+              <tr key={index}>
+                <td>{item.producto.name}</td>
+                <td>{item.cantidad}</td>
+                <td>{item.producto.precio} $</td>
+                <td>{(item.producto.precio * item.cantidad).toFixed(2)} $</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       ) : (
         <p>No hay productos en el carrito.</p>
       )}
       <h2>Total: {total.toFixed(2)} $</h2>
+      <button onClick={limpiarCarrito} className={styles.btn}>
+        Limpiar Carrito
+      </button>
+      <Footer />
     </div>
   );
 }

@@ -13,6 +13,20 @@
   font-weight: 400;
   color: #fff;
 }
+.SocialMedia {
+  margin-top: 10px;
+}
+
+.SocialMedia a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 24px; /* Tamaño del ícono */
+}
+
+.SocialMedia a:hover {
+  color: #61dafb; /* Color al pasar el mouse */
+}
 @media (max-width: 768px) {
   .Footer {
     font-size: 10px;

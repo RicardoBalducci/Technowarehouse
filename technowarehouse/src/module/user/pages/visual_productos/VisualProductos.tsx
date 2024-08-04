@@ -2,6 +2,8 @@ import { useState } from "react";
 import ProductList from "./components/ProductList";
 import styles from "./ProductosPage.module.css";
 import Cabecera from "../../components/menu";
+import Footer from "../../../portada/components/Footer";
+
 function ProductosPage() {
   const [showCategoryFilter, setShowCategoryFilter] = useState(false);
 
@@ -15,8 +17,12 @@ function ProductosPage() {
       <div className={styles.content_wrapper}>
         <main className={styles.main_content}>
           <h2 className={styles.section_title}>Productos Destacados</h2>
-          <ProductList />{" "}
+          <ProductList />
         </main>
+      </div>
+      <div className={styles.footer}>
+        <p></p>
+        <Footer />
       </div>
     </div>
   );

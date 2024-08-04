@@ -6,6 +6,8 @@ import { supabase } from "../../../../services/supabase";
 import Cabecera from "../../components/menu";
 import styles from "./informacion.module.css";
 import Footer from "../../../portada/components/Footer";
+import { useContador } from "../../ts/contador";
+import Error from "./components/error";
 
 function Informacion() {
   const navigate = useNavigate();
@@ -13,16 +15,32 @@ function Informacion() {
   const productId = new URLSearchParams(location.search).get("id");
   const [product, setProduct] = useState<Product | null>(null);
   const [cantidad, setCantidad] = useState<number | null>(null);
+  const { contador, setContador } = useContador(); // Usar el contexto
+  const [openError, setOpenError] = useState(false); // Estado para controlar la visualización del error
+
+  const manejarClick = () => {
+    setContador(contador + 1); // Aumentar el contador en el contexto
+  };
 
   const handleCantidadChange = () => {
-    const nuevoStock = (product?.stock ?? 0) - (cantidad ?? 0);
+    // Validar que la cantidad no sea nula, 0 o menor
+    if (!cantidad || cantidad <= 0) {
+      setOpenError(true); // Mostrar el error
+      return; // Salir de la función si la cantidad no es válida
+    }
+
+    const nuevoStock = (product?.stock ?? 0) - cantidad;
+    manejarClick();
 
     if (nuevoStock >= 0) {
-      navigate("/Carrito", {
-        state: { producto: product, cantidad: cantidad },
-      });
+      // Guardar en localStorage
+      const carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
+      carrito.push({ producto: product, cantidad });
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+
+      navigate("/Carrito");
     } else {
-      alert("No hay suficiente stock disponible.");
+      setOpenError(true); // Mostrar el error si no hay suficiente stock
     }
   };
 
@@ -40,9 +58,14 @@ function Informacion() {
 
   const CambioBs = product?.precio ? product.precio * 36.6667 : 0;
 
+  const handleCloseError = () => {
+    setOpenError(false); // Cerrar la alerta
+  };
+
   return (
     <div>
       <Cabecera />
+      <Error open={openError} handleClose={handleCloseError} />
       <div className={styles.container}>
         <div className={styles.cuadroImg}>
           <img
@@ -78,7 +101,6 @@ function Informacion() {
 }
 
 export default Informacion;
-
 /*// Actualizar la cantidad en la base de datos utilizando supabase
       supabase
         .from(Tables.product)

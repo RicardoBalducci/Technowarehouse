@@ -1,15 +1,50 @@
 import React from "react";
-import styles from "./footter.module.css";
+import styles from "./footer.module.css"; // Asegúrate de que el nombre del archivo sea correcto
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons"; // Importar íconos de redes sociales
 
 const Footer: React.FC = () => {
   return (
-    <>
-      <footer className={styles.Footer}>
-        <h1 className={styles.Texto}>
-          © 2024 TechnoWarehouse. All rights reserved.
-        </h1>
-      </footer>
-    </>
+    <footer className={styles.Footer}>
+      <h1 className={styles.Texto}>
+        © 2024 TechnoWarehouse. All rights reserved.
+      </h1>
+      <div className={styles.SocialMedia}>
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faFacebook} />
+        </a>
+        <a
+          href="https://www.twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faTwitter} />
+        </a>
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faInstagram} />
+        </a>
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faLinkedin} />
+        </a>
+      </div>
+    </footer>
   );
 };
 
