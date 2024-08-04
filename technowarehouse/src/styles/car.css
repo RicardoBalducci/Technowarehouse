@@ -1,0 +1,67 @@
+.btn-p{
+    background-color: #2C7DA0; /* Color de fondo del botón */
+      border: none; /* Sin borde */
+      color: white; /* Color del texto */
+      padding: 12px 24px; /* Relleno interno del botón */
+      text-align: center; /* Alineación del texto */
+      text-decoration: none; /* Sin subrayado */
+      font-size: 12px; /* Tamaño de fuente */
+      margin: 4px 2px; /* Margen entre los botones */
+      cursor: pointer; /* Cambiar el cursor a "mano" al pasar el mouse */
+      border-radius: 10px;
+
+
+}
+ul{
+    list-style: none;
+}
+.product {
+
+    border-bottom: 1px solid #012A4A ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.md{
+    
+  text-align:center;
+  font-weight: bold;
+ 
+}
+.iz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh; /* Altura del 100% de la ventana gráfica */
+    color: rgb(0, 0, 0);
+    
+  }
+.btn-eliminar{
+
+    background-image:url(../../public/delete.png);
+    background-size: cover;
+    background-color: transparent;
+    background-position: center;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.total-car{
+    border: 3px;
+    justify-content: center;
+    text-align: center;
+}
+.btn-pagar{
+
+  background-color: #2C7DA0; /* Color de fondo del botón */
+  border: none; /* Sin borde */
+  color: white; /* Color del texto */
+  padding: 12px 24px; /* Relleno interno del botón */
+  text-align: center; /* Alineación del texto */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 16px; /* Tamaño de fuente */
+  margin: 4px 2px; /* Margen entre los botones */
+  cursor: pointer; /* Cambiar el cursor a "mano" al pasar el mouse */
+  border-radius: 10px;
+}
