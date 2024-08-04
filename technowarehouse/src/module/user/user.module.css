@@ -1,261 +1,131 @@
+/* Container for the entire user info section */
 .container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #e7e7e7;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  max-width: 800px;
+  margin: 20px auto; /* Combined margin for top and bottom */
 }
 
-/*Lateral*/
-.lateral {
-  text-align: center;
-  width: auto;
-  margin-right: 10px;
-}
-.user_icon {
-  margin: 50px;
-  font-size: 50px;
-  padding: 40px;
-  border-radius: 100%;
-  color: #2a6f97;
-  border: 3px solid #2a6f97;
-  transition: background-color 0.9s ease;
-}
-
-.user_icon:hover {
-  background-color: #2a6f97;
-  color: #fff;
-  border-color: #2a6f97;
-  transition: background-color 0.9s ease;
-}
-
+/* Welcome message styling */
 .TxtBienvenida {
-  font-size: 20px;
-  font-weight: 500;
-  color: #2a6f97;
-}
-/*Responsive*/
-@media (max-width: 1000px) {
-  .container {
-    grid-template-columns: 300px 1fr;
-  }
-  .lateral {
-    width: 100%;
-    margin: 0;
-  }
-  .user_icon {
-    margin: 20px;
-    font-size: clamp(30px, 5vw, 60px);
-    padding: clamp(30px, 5vw, 60px);
-  }
-  .TxtBienvenida {
-    margin-bottom: 20px;
-    font-size: clamp(20px, 5vw, 30px);
-  }
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 5px; /* Space above the welcome message */
+  color: #333; /* Color for better visibility */
 }
 
-/*Panel del usuario*/
-
-.titulo {
-  padding: 20px;
-}
-
-.p {
-  padding: 10px;
-  display: block;
-}
-
-.informacion {
-  flex: 1;
-}
-.inlineInputs {
+/* Lateral section for user icon and welcome message */
+.lateral {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px;
-  padding: 20px;
-}
-.inlineInputss {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px;
-  padding: 20px;
-}
-
-.inputGroup {
-  width: 250px;
-}
-
-.input {
-  width: 200px;
-  padding: 20px;
-  margin: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.BtnGrupo {
-  text-align: center;
-  margin: 30px;
-}
-
-.Boton {
-  padding: 10px 120px 10px 120px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 1px solid #2a6f97;
-  background-color: #2a6f97;
-  color: #fff;
-}
-
-.Boton:hover {
-  background-color: #3498db;
-}
-
-.footer {
-  width: 100%;
-}
-@media (max-width: 1000px) {
-  .inlineInputs {
-    margin: 0;
-  }
-  .inlineInputss {
-    margin: 0;
-  }
-  .inputGroup {
-    width: 100%;
-  }
-  .input {
-    padding: auto;
-    width: 80%; /* Ajustar el ancho en pantallas medianas */
-    margin-bottom: 30px;
-    margin-left: 10px;
-  }
-}
-.footer {
-  text-align: center;
-  padding: 20px;
-  color: #fff;
-}
-
-@media (max-width: 580px) {
-  .footer {
-    margin-top: 10px;
-    color: red;
-  }
-  .inputGroup {
-    width: 100%;
-  }
-  .inlineInputs {
-    margin-bottom: 0;
-  }
-  .input {
-    width: auto; /* Permitir que el ancho se ajuste automáticamente en pantallas pequeñas */
-    margin-bottom: 30px;
-    padding-right: 110px; /* Ajustar el padding según tus necesidades */
-  }
-}
-
-@media (max-width: 380px) {
-  .inlineInputs .inputGroup .inlineInputss {
-    margin: 0;
-  }
-  .input {
-    width: auto; /* Permitir que el ancho se ajuste automáticamente en pantallas pequeñas */
-    margin-bottom: 30px;
-    padding-right: 110px; /* Ajustar el padding según tus necesidades */
-  }
-}
-/*BOTON*/
-/*
-
-
-
-.inlineInputs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.inputGroup {
+  flex-direction: column; /* Stack icon and welcome message vertically */
+  align-items: center; /* Center align items */
   margin-bottom: 20px;
+}
+
+/* User icon styling */
+.user_icon {
+  font-size: 2rem;
+  margin-bottom: 5px; /* Space between icon and welcome message */
+  color: #007bff; /* Primary color for the icon */
+}
+
+/* Title styling */
+.titulo {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Grouping input fields */
+.inlineInputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Individual input group styling */
+.inputGroup {
+  flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis */
+  margin-bottom: 15px;
   padding: 10px;
 }
 
+/* Input label styling */
+.p {
+  margin: 0;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Input field styling */
 .input {
-  padding: 20px;
-  width: 100%;
-  border: 1px solid red;
-  border-radius: 4px;
-  border: 2px solid rgb(219, 216, 216);
-}
-
-.input:hover {
-  background-color: #ddd;
-}
-
-.inputGroup p {
-  margin-right: 10px;
-  margin-bottom: 0;
-}
-
-.Boton {
   padding: 10px;
-  background-color: #007bff;
-  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   width: 100%;
+  box-sizing: border-box;
+  background-color: #e9ecef; /* Light gray for disabled inputs */
+}
+
+/* Button group styling */
+.BtnGrupo {
+  margin-top: 20px;
+}
+
+/* Button styling */
+.Boton {
+  padding: 10px 20px;
+  background-color: #007bff; /* Primary button color */
+  color: white;
   border: none;
+  width: 100%;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  text-align: center;
-  border: 1px solid transparent;
-  justify-content: center;
-  margin: 10px auto 60px;
-  display: block;
 }
 
 .Boton:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker shade on hover */
 }
 
+/* Footer styling */
+.footer {
+  margin-top: 20px;
+  text-align: center;
+}
 
-
-@media (min-width: 1300px) {
+/* Responsive adjustments */
+@media (max-width: 1200px) {
   .container {
-    grid-template-columns: 300px 1fr;
+    margin: 30px;
   }
-  .input {
-    width: 100%;
+  .informacion {
+    width: 100%; /* Full width for smaller screens */
   }
-}
 
-@media (max-width: 780px) {
+  .inlineInputs {
+    flex-direction: column; /* Stack inputs vertically */
+    width: 100%; /* Ensure the container takes full width */
+  }
+
   .inputGroup {
-    width: 100%;
+    flex: 100%; /* Make input groups take full width */
+    margin-bottom: 15px; /* Space between input groups */
   }
-  .input {
-    width: 100%;
-  }
+
   .Boton {
-    margin-bottom: 130px;
+    width: 100%; /* Button takes full width */
+    padding: 12px; /* Increase padding for better touch targets */
+    font-size: 1rem; /* Adjust font size for readability */
   }
-}
 
-@media (min-width: 1300px) {
-  .container {
-    grid-template-columns: 300px 1fr;
-  }
-  .input {
-    width: 80%;
+  .footer {
+    margin-top: 100px; /* Adjust footer margin for better spacing */
   }
 }
-
-@media (max-width: 700px) {
-  .container {
-    display: block;
-  }
-  .lateral {
-    margin: 0 0 10px 0;
-    border-right: none;
-    border-bottom: 1px solid #9c9c9c;
-  }
-}
-*/

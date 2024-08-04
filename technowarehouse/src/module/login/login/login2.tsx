@@ -1,12 +1,10 @@
 import styles from "./login.module.css";
-
 import { useState } from "react";
 import { viewDataLogin } from "../../../services/supabase"; // Import the viewDataLogin function
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Tables } from "../../../types/core";
-//import Footer from "../../portada/components/Footer";
-//import Cabecera from "../../portada/components/Cabecera";
+
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
@@ -20,6 +18,10 @@ function Login() {
 
     try {
       if (user) {
+        // Store user data in local storage
+        localStorage.setItem("userData", JSON.stringify(user));
+
+        // Navigate to User page
         navigate("/User", { replace: true, state: { user: user } });
       } else {
         Swal.fire({
@@ -111,6 +113,7 @@ function Login() {
 }
 
 export default Login;
+
 /*
 <Cabecera />
       <h1>Login</h1>
