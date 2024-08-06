@@ -45,6 +45,12 @@ export const Menu = () => {
               <p className={styles.titulo}>Pedidos</p>
             </li>
           </Link>
+          <Link to="/UsuariosAdmin">
+            <li>
+              <FontAwesomeIcon icon={faUser} className={styles.icon} />{" "}
+              <p className={styles.titulo}>Usuarios</p>
+            </li>
+          </Link>
           <Link to="/">
             <li>
               <FontAwesomeIcon icon={faInbox} className={styles.icon} />{" "}

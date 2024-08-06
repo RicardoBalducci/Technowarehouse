@@ -9,7 +9,16 @@ function Portada() {
   return (
     <>
       <Cabecera />
-      <div className={styles.Principal}>
+
+      <Footer />
+    </>
+  );
+}
+
+export default Portada;
+/*
+      
+<div className={styles.Principal}>
         <div>
           <p className={styles.Titulo}>
             Descubre los últimos productos tecnológicos
@@ -26,15 +35,6 @@ function Portada() {
       <Productos />
       <Mision />
       <Vision />
-      <Footer />
-    </>
-  );
-}
-
-export default Portada;
-/*
-      
-
      
 
       

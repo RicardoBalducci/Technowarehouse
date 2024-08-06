@@ -23,6 +23,8 @@ import ProductosPage from "./module/user/pages/visual_productos/VisualProductos"
 import Carrito from "./module/user/pages/carrito/carritoCompra";
 import Pedido from "./module/admin/pages/pedidos/pedido";
 import { ContadorProvider } from "./module/user/ts/contador";
+import UsuarioAdministrador from "./module/admin/pages/usuarios/usuarios";
+
 function App() {
   return (
     <ContadorProvider>
@@ -32,9 +34,12 @@ function App() {
           {/* Ruta para la página de inicio */}
           <Route path="/" element={<Portada />} />
           <Route path="/admin" element={<Admin />} />
+
           <Route path="/PrincipalAdmin" element={<PrincipalAdmin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/SignIn" element={<SignIn />} />
+          {/* UsuarioAdministrador */}
+          <Route path="/UsuariosAdmin" element={<UsuarioAdministrador />} />
           <Route path="/User" element={<UserPrincipal />} />
           <Route path="/Informacion" element={<Informacion />} />
           <Route path="/PageProducts" element={<ProductosPage />} />

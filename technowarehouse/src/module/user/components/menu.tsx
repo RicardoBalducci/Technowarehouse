@@ -82,8 +82,9 @@ const Cabecera = () => {
           <li className="Cabecera-li">
             <a href="/Carrito" className="Cabecera-a">
               <FontAwesomeIcon icon={faCartShopping} />
+
+              <p className="Cabecera-p">{cantidadProductos}</p>
             </a>
-            <p className="Cabecera-p">{cantidadProductos}</p>
           </li>
           <li className="Cabecera-li">
             <a

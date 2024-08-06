@@ -82,18 +82,138 @@
   font-size: 2.5em;
 }
 
+.P {
+  display: inline-block;
+}
+
+.btnEliminar {
+  background-color: #dc3545; /* Bootstrap danger color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btnEliminar:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.btnCantidad {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px; /* Adjust padding for better size */
+  cursor: pointer;
+  margin: 0 5px; /* Space between buttons */
+  font-size: 16px; /* Font size for better readability */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.btnCantidad:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.btnCantidad:disabled {
+  background-color: #ccc; /* Grey out button when disabled */
+  cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+
+.footer {
+  margin-top: 20px;
+}
 /* Responsive Styles */
 @media (max-width: 600px) {
-  .table,
+  .P {
+    display: block; /* Bloquear el botón para que se ajuste a la altura de la celda */
+    margin: 10px 0; /* Añadir un poco de margen inferior */
+  }
   .totalContainer {
-    width: 90%; /* Increase width for smaller screens */
+    width: 90%; /* Aumentar el ancho para pantallas más pequeñas */
+    margin: 10px auto; /* Centrar el contenedor */
+    padding: 10px; /* Añadir un poco de padding para mejor apariencia */
+    border: 1px solid #ccc; /* Añadir un borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo suave */
   }
 
-  .th {
-    font-size: 15px;
+  .table {
+    font-size: 12px; /* Ajustar tamaño de fuente para mejor ajuste */
+    width: 100%; /* Asegurarse de que la tabla ocupe todo el ancho */
+    max-width: 500px; /* Limitar el ancho máximo de la tabla */
+    border-collapse: collapse; /* Colapsar bordes para una mejor apariencia */
   }
+
+  .table th,
+  .table td {
+    padding: 8px; /* Aumentar padding para mejor legibilidad */
+    font-size: 10px; /* Ajustar tamaño de fuente */
+    border: 1px solid #ddd; /* Añadir borde a las celdas */
+  }
+
   .btn {
-    width: 90%; /* Make button wider on mobile */
-    font-size: 16px; /* Slightly smaller font size */
+    width: 90%; /* Hacer el botón más ancho en móvil */
+    font-size: 16px; /* Mantener un tamaño de fuente legible */
+    padding: 12px; /* Ajustar padding para mejor área de toque */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+  }
+
+  .btn:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+  }
+
+  .h1 {
+    font-size: 1.8em; /* Ajustar tamaño del encabezado para pantallas más pequeñas */
+    margin: 10px 0; /* Añadir margen para espaciado */
+    text-align: center; /* Centrar el texto */
+  }
+
+  .btnCantidad {
+    padding: 8px; /* Ajustar padding para botones de cantidad */
+    font-size: 14px; /* Tamaño de fuente legible */
+    text-align: center;
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    width: 30px; /* Ancho fijo para los botones */
+    height: 30px; /* Altura fija para los botones */
+    display: inline-block; /* Asegurarse de que los botones se alineen correctamente */
+    text-align: center; /* Centrar el texto dentro del botón */
+    margin: 0 5px; /* Espaciado entre los botones */
+  }
+
+  .cantidad {
+    font-size: 14px; /* Tamaño de fuente para la cantidad */
+    display: inline-block; /* Asegurarse de que el texto se alinee correctamente */
+    width: 30px; /* Ancho fijo para la cantidad */
+    text-align: center; /* Centrar el texto de la cantidad */
+  }
+
+  .btnEliminar {
+    padding: 8px; /* Ajustar padding para botón de eliminar */
+    font-size: 10px; /* Tamaño de fuente ligeramente más grande */
+    background-color: #dc3545; /* Color de fondo rojo */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+  }
+
+  .btnEliminar:hover {
+    background-color: #c82333; /* Color de fondo al pasar el mouse */
+  }
+}
+
+@media (max-width: 100px) {
+  .footer {
+    margin-top: 150px;
   }
 }
