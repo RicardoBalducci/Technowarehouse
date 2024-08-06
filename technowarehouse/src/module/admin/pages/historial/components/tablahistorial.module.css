@@ -11,11 +11,11 @@
 }
 
 /* Estilos para las cabeceras de la tabla */
-th {
-  background-color: #4c90af; /* Color de fondo verde */
+.th {
+  background-color: #4caf50; /* Color de fondo verde */
   color: white; /* Color del texto */
   padding: 10px; /* Espaciado interno */
-  text-align: center; /* Alinear texto a la izquierda */
+  text-align: left; /* Alinear texto a la izquierda */
 }
 
 /* Estilos para las filas de la tabla */
@@ -25,7 +25,6 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #ddd; /* Color de fondo al pasar el mouse */
-  cursor: pointer;
 }
 
 /* Estilos para las celdas */
@@ -58,4 +57,28 @@ td {
 .footer {
   margin-top: 20px; /* Margen superior */
   text-align: center; /* Centrar texto */
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.pagination button.active {
+  background-color: #0056b3; /* Active page color */
 }

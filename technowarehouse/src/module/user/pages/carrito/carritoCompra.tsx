@@ -6,8 +6,11 @@ import { CartItem } from "./interface/Carrito.interface";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import { Producto } from "./interface/Carrito.interface";
+import { supabase } from "../../../../services/supabase"; // Asegúrate de importar tu cliente de Supabase
+import { Tables } from "../../../../types/core";
+import { useLocation } from "react-router-dom";
+import PaymentModal from "../pasarela/pasarela";
 
-// Alert component with forwarded ref
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
   ref
@@ -16,9 +19,12 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 });
 
 function Carrito() {
+  const [isModalOpen, setModalOpen] = useState(false);
   const [carrito, setCarrito] = useState<CartItem[]>([]);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
+  const location = useLocation();
+  const { user } = location.state || {}; // Obtener los datos del usuario
 
   useEffect(() => {
     const storedCarrito = JSON.parse(localStorage.getItem("carrito") || "[]");
@@ -80,6 +86,58 @@ function Carrito() {
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
   };
+  // Crear un nuevo pedido basado en el carrito
+  const nuevoPedido = {
+    cedula_user: user.cedula, // Usar la cédula del usuario logueado
+    name_user: user.nombre, // Usar el nombre del usuario logueado
+    estado: "pendiente", // Estado inicial del pedido
+    total: total,
+    cantidad: carrito.reduce((acc, item) => acc + item.cantidad, 0), // Total de productos
+    fecha: new Date().toISOString().split("T")[0], // Fecha de hoy en formato YYYY-MM-DD
+  };
+
+  const MODAL = async () => {
+    setModalOpen(true);
+  };
+
+  //////AGREGAR PEDIDO
+  const agregarPedido = async () => {
+    if (!user) {
+      setSnackbarMessage("No se ha encontrado información del usuario.");
+      setSnackbarOpen(true);
+      return;
+    }
+    if (carrito.length === 0) {
+      setSnackbarMessage(
+        "El carrito está vacío. Agrega productos antes de confirmar el pedido."
+      );
+      setSnackbarOpen(true);
+      return;
+    }
+    try {
+      setModalOpen(true);
+      // Insertar el nuevo pedido en la base de datos
+      const { error } = await supabase
+        .from(Tables.pedido)
+        .insert([nuevoPedido]);
+
+      if (error) {
+        console.error("Error al agregar el pedido:", error);
+        setSnackbarMessage("Error al agregar el pedido.");
+      } else {
+        setSnackbarMessage("Pedido agregado exitosamente.");
+        limpiarCarrito(); // Limpiar el carrito después de agregar el pedido
+      }
+      setSnackbarOpen(true); // Mostrar el snackbar con el mensaje
+    } catch (err) {
+      console.error("Error inesperado:", err);
+      setSnackbarMessage("Error inesperado al agregar el pedido.");
+      setSnackbarOpen(true);
+    }
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <div>
@@ -99,6 +157,20 @@ function Carrito() {
         </Alert>
       </Snackbar>
       <h1 className={styles.h1}>Carrito de Compras</h1>
+      {user && (
+        <div className={styles.userInfo}>
+          <h2>Información del Usuario</h2>
+          <p>
+            <strong>Nombre:</strong> {user.nombre}
+          </p>
+          <p>
+            <strong>Email:</strong> {user.email}
+          </p>
+          <p>
+            <strong>Cédula:</strong> {user.cedula}
+          </p>
+        </div>
+      )}
       {carrito.length > 0 ? (
         <table className={styles.table}>
           <thead>
@@ -149,7 +221,7 @@ function Carrito() {
           </tbody>
         </table>
       ) : (
-        <p>No hay productos en el carrito.</p>
+        <p className={styles.h1}>No hay productos en el carrito.</p>
       )}
 
       <div className={styles.totalContainer}>
@@ -167,6 +239,17 @@ function Carrito() {
       <button onClick={limpiarCarrito} className={styles.btn}>
         Limpiar Carrito
       </button>
+      <button onClick={MODAL} className={styles.btn}>
+        Confirmar Pedido
+      </button>
+      {isModalOpen && (
+        <PaymentModal
+          isOpen={isModalOpen}
+          closeModal={closeModal}
+          user={user}
+          agregarPedido={agregarPedido}
+        />
+      )}
       <div className={styles.footer}>
         <Footer />
       </div>

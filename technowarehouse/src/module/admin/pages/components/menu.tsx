@@ -9,6 +9,7 @@ import {
   faInbox,
   faTruckField,
   faCartArrowDown,
+  faClipboardCheck,
   //faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -43,6 +44,15 @@ export const Menu = () => {
             <li>
               <FontAwesomeIcon icon={faCartArrowDown} className={styles.icon} />{" "}
               <p className={styles.titulo}>Pedidos</p>
+            </li>
+          </Link>
+          <Link to="/Historial">
+            <li>
+              <FontAwesomeIcon
+                icon={faClipboardCheck}
+                className={styles.icon}
+              />{" "}
+              <p className={styles.titulo}>Historial</p>
             </li>
           </Link>
           <Link to="/UsuariosAdmin">

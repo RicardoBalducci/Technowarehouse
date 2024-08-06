@@ -3,9 +3,8 @@ import styles from "./footer.module.css"; // Asegúrate de que el nombre del arc
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faTwitter,
   faInstagram,
-  faLinkedin,
+  faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons"; // Importar íconos de redes sociales
 
 const Footer: React.FC = () => {
@@ -27,7 +26,7 @@ const Footer: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FontAwesomeIcon icon={faTwitter} />
+          <FontAwesomeIcon icon={faWhatsapp} />
         </a>
         <a
           href="https://www.instagram.com"
@@ -35,13 +34,6 @@ const Footer: React.FC = () => {
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faInstagram} />
-        </a>
-        <a
-          href="https://www.linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faLinkedin} />
         </a>
       </div>
     </footer>

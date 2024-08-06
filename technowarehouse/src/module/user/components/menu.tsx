@@ -9,15 +9,15 @@ import { useContador } from "../ts/contador";
 interface User {
   name: string;
   email: string;
-  // Add other properties as needed
+  cedula: string; // Asegúrate de que la cédula esté incluida
 }
 
 const Cabecera = () => {
   const navigate = useNavigate();
-  const [userData, setUserData] = useState<User | null>(null); // Use User type
+  const [userData, setUserData] = useState<User | null>(null);
   const [menu, setMenu] = useState(false);
-  const { contador } = useContador(); // Usar el contexto
-  const [cantidadProductos, setCantidadProductos] = useState(0); // Estado para la cantidad de productos únicos
+  const { contador } = useContador();
+  const [cantidadProductos, setCantidadProductos] = useState(0);
 
   useEffect(() => {
     // Retrieve user data from local storage
@@ -28,7 +28,7 @@ const Cabecera = () => {
   }, []);
 
   const toggleMenu = () => {
-    setMenu(!menu);
+    setMenu((prevMenu) => !prevMenu);
   };
 
   const handleUserNavigation = () => {
@@ -37,17 +37,24 @@ const Cabecera = () => {
     }
   };
 
+  const handleCartNavigation = () => {
+    navigate("/Carrito", {
+      replace: true,
+      state: { cantidadProductos, user: userData }, // Enviar datos del usuario
+    });
+  };
+
   const handleLogout = () => {
-    localStorage.removeItem("userData"); // Clear user data from local storage
+    localStorage.removeItem("userData");
     navigate("/"); // Navigate to the home page
   };
 
   useEffect(() => {
-    // Leer el carrito del localStorage y contar los productos únicos
+    // Read the cart from localStorage and count unique products
     const storedCarrito = JSON.parse(localStorage.getItem("carrito") || "[]");
-    const totalProductos = storedCarrito.length; // Contar la cantidad de productos únicos
+    const totalProductos = storedCarrito.length; // Count the number of unique products
     setCantidadProductos(totalProductos);
-  }, [contador]); // Actualizar cuando el contador cambie
+  }, [contador]);
 
   return (
     <header className="Cabecera">
@@ -72,6 +79,7 @@ const Cabecera = () => {
           />
         </svg>
       </button>
+
       <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
         <ul className="Cabecera-ul">
           <li className="Cabecera-li">
@@ -80,9 +88,12 @@ const Cabecera = () => {
             </a>
           </li>
           <li className="Cabecera-li">
-            <a href="/Carrito" className="Cabecera-a">
+            <a
+              href="/Carrito"
+              className="Cabecera-a"
+              onClick={handleCartNavigation}
+            >
               <FontAwesomeIcon icon={faCartShopping} />
-
               <p className="Cabecera-p">{cantidadProductos}</p>
             </a>
           </li>
@@ -92,12 +103,12 @@ const Cabecera = () => {
               onClick={handleUserNavigation}
               className="Cabecera-a"
             >
-              user
+              User
             </a>
           </li>
           <li className="Cabecera-li">
             <a href="/" onClick={handleLogout} className="Cabecera-a">
-              Cerrar Sesion
+              Cerrar Sesión
             </a>
           </li>
         </ul>

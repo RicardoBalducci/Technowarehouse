@@ -29,8 +29,9 @@
 }
 @media (max-width: 768px) {
   .Footer {
+    margin-top: 200000px;
     font-size: 10px;
-    padding: 90px 0 20px 0;
+    padding: 20px 0 20px 0;
   }
   .Texto {
     font-size: clamp(10px, 5vw, 15px);

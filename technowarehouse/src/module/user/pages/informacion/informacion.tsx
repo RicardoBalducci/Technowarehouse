@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Tables } from "../../../../types/core";
 import { Product } from "../../../../interface/Product.interface";
@@ -8,9 +8,9 @@ import styles from "./informacion.module.css";
 import Footer from "../../../portada/components/Footer";
 import { useContador } from "../../ts/contador";
 import Error from "./components/error";
+import Swal from "sweetalert2";
 
 function Informacion() {
-  const navigate = useNavigate();
   const location = useLocation();
   const productId = new URLSearchParams(location.search).get("id");
   const [product, setProduct] = useState<Product | null>(null);
@@ -37,8 +37,11 @@ function Informacion() {
       const carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
       carrito.push({ producto: product, cantidad });
       localStorage.setItem("carrito", JSON.stringify(carrito));
-
-      navigate("/Carrito");
+      Swal.fire({
+        title: "Excelente",
+        text: "El producto ya se encuentra en el carrito",
+        icon: "success",
+      });
     } else {
       setOpenError(true); // Mostrar el error si no hay suficiente stock
     }

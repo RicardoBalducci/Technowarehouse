@@ -5,6 +5,7 @@ export interface Pedido {
   estado: string;
   total: number;
   cantidad: number;
+  fecha: Date;
 }
 
 export interface Usuario {

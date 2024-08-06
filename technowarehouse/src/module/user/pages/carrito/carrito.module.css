@@ -8,7 +8,32 @@
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+.userInfo {
+  background-color: #f9f9f9; /* Fondo claro */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  margin: 20px auto; /* Margen superior e inferior, centrado horizontalmente */
+  max-width: 600px; /* Ancho máximo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
 
+.userInfo h2 {
+  margin-bottom: 15px; /* Espacio debajo del título */
+  font-size: 1.5rem; /* Tamaño de fuente del título */
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+}
+
+.userInfo p {
+  margin: 10px 0; /* Espacio vertical entre párrafos */
+  font-size: 1rem; /* Tamaño de fuente del párrafo */
+  color: #555; /* Color del texto */
+}
+
+.userInfo strong {
+  color: #007bff; /* Color azul para el texto en negrita */
+}
 .table th,
 .table td {
   padding: 15px;
@@ -35,7 +60,7 @@
   width: 220px;
   margin: 20px auto;
   padding: 12px;
-  background-color: #28a745;
+  background-color: #007bff; /* Color de fondo del botón */
   color: white;
   border: none;
   border-radius: 5px;
@@ -45,7 +70,7 @@
 }
 
 .btn:hover {
-  background-color: #218838;
+  background-color: #0069d9; /* Darker blue on hover */
   transform: scale(1.05);
 }
 
@@ -158,7 +183,6 @@
     width: 90%; /* Hacer el botón más ancho en móvil */
     font-size: 16px; /* Mantener un tamaño de fuente legible */
     padding: 12px; /* Ajustar padding para mejor área de toque */
-    background-color: #007bff; /* Color de fondo del botón */
     color: white; /* Color del texto del botón */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
@@ -210,10 +234,41 @@
   .btnEliminar:hover {
     background-color: #c82333; /* Color de fondo al pasar el mouse */
   }
+  .footer {
+    margin-top: 150px;
+  }
 }
 
 @media (max-width: 100px) {
   .footer {
     margin-top: 150px;
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #ff0000;
 }

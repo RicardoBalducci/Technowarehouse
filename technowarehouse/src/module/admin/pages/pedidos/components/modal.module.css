@@ -10,9 +10,40 @@
   align-items: center;
 }
 
+.detalles {
+  font-size: 35px;
+  margin: 20px;
+}
+.info {
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: justify;
+  margin-left: 20px;
+}
+
 .modal {
   background: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.closeButton {
+  font-size: 20px;
+  cursor: pointer;
+  margin: 20px;
+  background-color: #c43333;
+}
+
+.closeButton:hover {
+  background-color: #a52a2a;
+}
+
+.cancelButton {
+  background-color: rgb(32, 209, 61);
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.cancelButton:hover {
+  background-color: rgb(32, 192, 57);
 }

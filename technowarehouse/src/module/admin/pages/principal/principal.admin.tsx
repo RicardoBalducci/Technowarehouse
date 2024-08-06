@@ -14,13 +14,14 @@ import {
   faDollarSign,
 } from "@fortawesome/free-solid-svg-icons";
 import Grafica from "./components/grafica";
+import useTotalCanceledOrders from "./hook/useGananciaData";
 
 function PrincipalAdmin() {
   const totalStock = useStockData();
   const totalProveedor = useProveedorData();
   const totalPrecio = usePrecioData();
   const totalUsers = useUserData();
-
+  const Ganancia = useTotalCanceledOrders();
   const TasaBs = 36.559;
   // Calcular el precio promedio
 
@@ -61,7 +62,9 @@ function PrincipalAdmin() {
             <p>{totalPrecio} $</p>
           </div>
           <div className={`${styles.cuadro} ${styles.five}`}>
-            <p>Precio Promedio</p>
+            <FontAwesomeIcon icon={faDollarSign} />
+            <p>Ingresos de Venta</p>
+            <p>{Ganancia} $</p>
           </div>
           <div className={`${styles.cuadro} ${styles.six}`}>
             <div className={styles.cuadro}>
