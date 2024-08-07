@@ -33,6 +33,7 @@ function PortadaUser() {
       <Vision />
       <div style={{ margin: "40px 0" }} /> {/* Separación */}
       <Contactanos />
+      <div style={{ margin: "40px 0" }} /> {/* Separación */}
       <div className={styles.footer}>
         <Footer />
       </div>

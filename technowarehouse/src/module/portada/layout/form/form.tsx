@@ -8,7 +8,7 @@ function Contactanos() {
     user_email: "",
     emailDetails: "",
     from_name: "", // Sender's name
-    to_name: "", // Recipient's name
+    to_name: "Your Name", // Replace with your name or recipient's name
     tlf_user: "", // User's phone
   });
 
@@ -38,7 +38,7 @@ function Contactanos() {
       .then(
         (response) => {
           Swal.fire({
-            title: "Excelente!",
+            title: "¡Excelente!",
             text: "Mensaje enviado exitosamente",
             icon: "success",
           });
@@ -48,7 +48,7 @@ function Contactanos() {
             user_email: "",
             emailDetails: "",
             from_name: "",
-            to_name: "",
+            to_name: "Your Name", // Reset to your name or recipient's name
             tlf_user: "",
           });
         },
@@ -56,7 +56,7 @@ function Contactanos() {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Something went wrong!",
+            text: "¡Algo salió mal!",
           });
           console.error("Error:", err);
         }
@@ -67,8 +67,8 @@ function Contactanos() {
     <div>
       <h1 className={styles.title}>Contáctanos</h1>
       <p className={styles.subtitle}>
-        Si deseas contactarnos, completá el formulario y nos pondremos en
-        contacto con usted en breve.
+        Si deseas contactarnos, completa el formulario y nos pondremos en
+        contacto contigo en breve.
       </p>
       <div className={styles.container}>
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -82,7 +82,7 @@ function Contactanos() {
             className={styles.input}
           />
           <input
-            type="text"
+            type="email"
             name="user_email"
             placeholder="Ingrese su correo"
             required

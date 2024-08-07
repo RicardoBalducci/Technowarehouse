@@ -97,6 +97,7 @@ function UserPrincipal() {
           </div>
         </div>
       </div>
+      <div style={{ margin: "90px 0 0 0" }} /> {/* Separación */}
       <div className={styles.footer}>
         <p></p>
         <Footer />
