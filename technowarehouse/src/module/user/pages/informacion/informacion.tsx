@@ -80,11 +80,11 @@ function Informacion() {
         <div className={styles.CuadroTxt}>
           <p className={styles.Titulo}>{product?.name}</p>
           <p className={styles.SubTitulo}>Descripcion</p>
-          <p className={styles.P}>{product?.description}</p>
+          <p className={styles.Pe}>{product?.description}</p>
           <p className={styles.SubTitulo}>Marca: {product?.Marca}</p>
           <p className={styles.SubTitulo}>Costo</p>
-          <p className={styles.P}>{product?.precio} $ </p>
-          <p className={styles.P}>{CambioBs.toFixed(2)}Bs</p>
+          <p className={styles.Pe}>{product?.precio} $ </p>
+          <p className={styles.Pe}>{CambioBs.toFixed(2)}Bs</p>
           <input
             type="number"
             className={styles.input}
@@ -98,7 +98,9 @@ function Informacion() {
           </button>
         </div>
       </div>
-      <Footer />
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </div>
   );
 }

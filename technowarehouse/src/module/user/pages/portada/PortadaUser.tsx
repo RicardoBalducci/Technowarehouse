@@ -1,11 +1,12 @@
-import Cabecera from "./components/Cabecera";
-import Footer from "./components/Footer";
-import Contactanos from "./layout/form/form";
-import Mision from "./layout/Mision/Mision";
-import Productos from "./layout/producto/productos";
-import Vision from "./layout/Vision/Vision";
-import styles from "./styles.module.css";
-function Portada() {
+import Footer from "../../../portada/components/Footer";
+import Contactanos from "../../../portada/layout/form/form";
+import Mision from "../../../portada/layout/Mision/Mision";
+
+import Vision from "../../../portada/layout/Vision/Vision";
+import Cabecera from "../../components/menu";
+import ProductosUser from "./components/productsportada";
+import styles from "./portadaUser.module.css";
+function PortadaUser() {
   return (
     <>
       <Cabecera />
@@ -20,12 +21,12 @@ function Portada() {
             accesorios de audio y más, tenemos todo lo que necesitas para
             mantenerte a la vanguardia de la tecnología.
           </p>
-          <a href="/Login" rel="noopener noreferrer">
+          <a href="/PageProducts" rel="noopener noreferrer">
             <button className={styles.Btn}>Comprar Ahora</button>
           </a>
         </div>
       </div>
-      <Productos />
+      <ProductosUser />
       <div style={{ margin: "40px 0" }} /> {/* Separación */}
       <Mision />
       <div style={{ margin: "40px 0" }} /> {/* Separación */}
@@ -39,16 +40,4 @@ function Portada() {
   );
 }
 
-export default Portada;
-/*
-      
- <Productos />
-      <Mision />
-      <Vision />
-      <p className={styles.p}></p>
-
-      
-
-import Vision from "./components/vision";
-      <Vision />
-*/
+export default PortadaUser;

@@ -33,6 +33,11 @@
   cursor: pointer;
 }
 
+.btn1:hover {
+  background-color: #f3ba2f; /* Green color on hover */
+  color: #141b15; /* Green color */
+}
+
 .btn3 {
   margin: 10px;
 
@@ -111,6 +116,28 @@
 
 .button.tab:hover {
   color: #0056b3; /* Darker shade on hover */
+}
+
+.btn2 {
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 15px 10px;
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 20px;
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+  margin: 10px;
+  margin-top: 15px;
+  background-color: #f1f1f1;
+}
+
+.btn2:hover {
+  background-color: #b1b9c2; /* Color de fondo al pasar el mouse */
+}
+
+.img {
+  width: 100px;
+  height: 26px;
 }
 
 /* Tab content styles */

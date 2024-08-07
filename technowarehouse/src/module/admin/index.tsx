@@ -39,7 +39,7 @@ function Admin() {
   return (
     <div className={styles.container}>
       <div className={styles.contenedor}>
-        <h1>Admin Panel</h1>
+        <h1 className={styles.h1}>Admin Panel</h1>
         <p>Welcome to the admin panel!</p>
         <input
           type="text"

@@ -146,11 +146,11 @@ function SignIn() {
                     value={values.direccion}
                     onChange={handleChange}
                     className={styles.input}
-                    placeholder="Ingrese su dirección "
+                    placeholder="Ingrese su dirección"
                     required
                   />
                 </div>
-                <button className={styles.button}>Boton</button>
+                <button className={styles.button}>Aceptar</button>
                 <div className={styles.register_link}>
                   <p>
                     ¿Ya tiene cuenta?{" "}

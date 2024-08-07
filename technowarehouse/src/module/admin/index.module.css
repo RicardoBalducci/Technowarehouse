@@ -29,6 +29,10 @@
   box-sizing: border-box;
 }
 
+.h1 {
+  color: #fff;
+  font-size: 30px;
+}
 .boton {
   width: 400px;
   background-color: #4caf50; /* Green */

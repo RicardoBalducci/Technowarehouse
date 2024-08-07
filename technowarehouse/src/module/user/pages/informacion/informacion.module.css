@@ -27,10 +27,10 @@
   margin: 20px;
 }
 
-.P {
+.Pe {
   margin: 20px;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .img {
@@ -46,24 +46,26 @@
 .btn {
   margin: 2% 20px;
   width: 100%;
-  padding: 3%;
-  background-color: rgb(97, 214, 93);
+  padding: 10px;
+  background-color: #0056b3;
   border: 1px solid transparent;
   border-radius: 5px;
-  font-size: 25px;
+  font-size: 20px;
   color: white;
   cursor: pointer;
 }
 .btn:hover {
-  background-color: rgb(77, 167, 74);
+  background-color: #1170ce;
 }
-
+.footer {
+  padding: 50px;
+}
 @media (max-width: 420px) {
   .container {
     margin-bottom: 800px;
   }
   .input {
-    width: 80%;
+    width: 85%;
     padding: 10px;
   }
 }
@@ -102,7 +104,9 @@
   }
   .btn {
     width: 90%;
-    padding: 5%;
+  }
+  .footer {
+    padding-top: 5px;
   }
 }
 

@@ -19,7 +19,7 @@ export const Menu = () => {
       <nav>
         <div className={styles.portada}>
           <FontAwesomeIcon icon={faUser} className={styles.icon_bar} />
-          <h1>Bienvenido</h1>{" "}
+          <h1 className={styles.h1}>Bienvenido</h1>{" "}
         </div>
         <ul>
           <Link to="/PrincipalAdmin">

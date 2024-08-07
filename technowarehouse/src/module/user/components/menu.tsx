@@ -59,7 +59,7 @@ const Cabecera = () => {
   return (
     <header className="Cabecera">
       <h1 className="Cabecera-h1">
-        <a href="/PageProducts" className="Cabecera-a">
+        <a href="/PortadaUser" className="Cabecera-a">
           Technowarehouse
         </a>
       </h1>

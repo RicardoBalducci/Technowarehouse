@@ -125,8 +125,9 @@ function Carrito() {
         console.error("Error al agregar el pedido:", error);
         setSnackbarMessage("Error al agregar el pedido.");
       } else {
-        setSnackbarMessage("Pedido agregado exitosamente.");
+        window.location.reload(); // Actualiza la página
         limpiarCarrito(); // Limpiar el carrito después de agregar el pedido
+        setSnackbarMessage("Pedido agregado exitosamente.");
       }
       setSnackbarOpen(true); // Mostrar el snackbar con el mensaje
     } catch (err) {

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styles from "./pasarela.module.css"; // Adjust the path as necessary
 import PagoMovil from "./components/PagoMovil/PagoMovil";
 import Binance from "./components/binance/Binance";
-
+import MercantilImg from "../../../../assets/Banco_Mercantil_Logo.png";
+import Mercantil from "./components/Mercantil/Mercantil";
 interface PaymentModalProps {
   isOpen: boolean;
   closeModal: () => void;
@@ -34,7 +35,12 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             <Binance />
           </>
         );
-
+      case "tab2":
+        return (
+          <>
+            <Mercantil />
+          </>
+        );
       case "tab3":
         return (
           <>
@@ -56,6 +62,13 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
           <h2 className={styles.Titulo}>Pasarela de Pago</h2>
           <button onClick={() => setActiveTab("tab1")} className={styles.btn1}>
             Binance
+          </button>
+          <button onClick={() => setActiveTab("tab2")} className={styles.btn2}>
+            <img
+              src={MercantilImg}
+              alt="Pago por mercantil"
+              className={styles.img}
+            />
           </button>
           <button onClick={() => setActiveTab("tab3")} className={styles.btn3}>
             Pago Movil

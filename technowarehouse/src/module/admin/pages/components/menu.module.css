@@ -15,7 +15,10 @@
 .sidebar li .submenu:hover {
   background-color: #c3b299;
 }
-
+.h1 {
+  color: #fff;
+  font-size: 30px;
+}
 .icon {
   padding-right: 10px;
   font-size: 15px;

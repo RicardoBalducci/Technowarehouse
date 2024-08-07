@@ -25,6 +25,7 @@ import Pedido from "./module/admin/pages/pedidos/pedido";
 import { ContadorProvider } from "./module/user/ts/contador";
 import UsuarioAdministrador from "./module/admin/pages/usuarios/usuarios";
 import Historial from "./module/admin/pages/historial/historial";
+import PortadaUser from "./module/user/pages/portada/PortadaUser";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/Informacion" element={<Informacion />} />
           <Route path="/PageProducts" element={<ProductosPage />} />
           <Route path="/HomePageUser" element={<ProductosPage />} />
+          <Route path="/PortadaUser" element={<PortadaUser />} />
           <Route path="/ModificarUser" element={<ModificarUsuario />} />
           <Route path="/Pedido" element={<Pedido />} />
           <Route path="/Carrito" element={<Carrito />} />
