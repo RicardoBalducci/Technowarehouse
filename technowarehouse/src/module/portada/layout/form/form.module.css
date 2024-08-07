@@ -1,0 +1,135 @@
+.container {
+  max-width: 500px; /* Maximum width of the container */
+  margin: 20px auto; /* Center the container */
+  padding: 20px; /* Internal spacing */
+  border: 1px solid #ccc; /* Border of the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #ffffff; /* Background color */
+  width: 100%; /* Full width on smaller screens */
+  position: relative; /* Ensure it stays in place */
+}
+
+.title {
+  font-size: 50px;
+  text-align: center;
+  color: #5993d4;
+  font-weight: bold;
+  margin: 20px; /* Top and bottom spacing */
+}
+
+.subtitle {
+  font-size: 20px;
+  text-align: center;
+  color: #615f5f;
+  font-weight: 500;
+  margin: 20px; /* Top and bottom spacing */
+}
+
+.form {
+  display: flex; /* Use flexbox for the form */
+  flex-direction: column; /* Stack elements in a column */
+  width: 100%; /* Ensure the form takes full width of the container */
+}
+
+.input,
+.textarea {
+  margin-bottom: 15px; /* Space between fields */
+  padding: 10px; /* Internal spacing */
+  border: 1px solid #ccc; /* Border of the fields */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  transition: border-color 0.3s; /* Smooth transition for border */
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #007bff; /* Border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.textarea {
+  height: 200px; /* Fixed height for textarea */
+  resize: none; /* Disable resizing */
+}
+
+.btn {
+  padding: 10px 15px; /* Internal spacing of the button */
+  background-color: #007bff; /* Background color of the button */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Background color on hover */
+}
+
+.texto {
+  margin: 20px;
+  font-size: 20px;
+}
+
+@media (max-width: 1000px) {
+  .title {
+    font-size: 24px; /* Smaller title font size on small screens */
+  }
+  .container {
+    width: 100%; /* Full width on smaller screens */
+  }
+  .input,
+  .textarea {
+    font-size: 14px; /* Smaller font size for inputs */
+  }
+
+  .btn {
+    font-size: 14px; /* Smaller button font size */
+  }
+
+  .texto {
+    font-size: 12px; /* Smaller text size */
+    text-align: justify;
+    margin: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 24px; /* Smaller title font size on small screens */
+    margin: 0;
+    padding: 10px; /* Add padding for better spacing */
+  }
+
+  .container {
+    width: 90%; /* Increased width for better use of space */
+    margin: 0 auto; /* Center the container */
+    padding: 15px; /* Add padding for better spacing */
+    border-radius: 8px; /* Rounded corners for a modern look */
+  }
+
+  .input,
+  .textarea {
+    font-size: 14px; /* Smaller font size for inputs */
+    padding: 8px; /* Add padding for better usability */
+    border-radius: 4px; /* Rounded corners for inputs */
+  }
+
+  .btn {
+    font-size: 14px; /* Smaller button font size */
+    padding: 10px 15px; /* Add padding for better clickability */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners for buttons */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+
+  .texto {
+    font-size: 12px; /* Smaller text size */
+    text-align: justify; /* Justify text for better readability */
+    margin: 0;
+    line-height: 1.5; /* Improved line height for readability */
+  }
+}

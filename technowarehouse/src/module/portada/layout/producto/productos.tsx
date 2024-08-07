@@ -43,11 +43,7 @@ function Productos() {
               </div>
               <div className={styles.cuadro}>
                 <h2 className={styles.Nombre}>{producto.name}</h2>
-                <h3 className={styles.Descripcion}>
-                  {producto.description.length > 100
-                    ? `${producto.description.substring(0, 100)}...`
-                    : producto.description}
-                </h3>{" "}
+
                 <div className={styles.contenedor}>
                   <h3 className={styles.Precio}>${producto.precio}</h3>
                   <button className={styles.button} onClick={HandleClick}>

@@ -1,0 +1,50 @@
+.Contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 400px; /* Limit width for larger screens */
+  margin: auto; /* Center the container */
+}
+
+h1 {
+  font-size: 24px;
+  color: #333; /* Dark text color */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.titulo {
+  font-size: 27px;
+  font-weight: bold;
+  color: #555; /* Slightly lighter text color */
+  margin: 10px 0 5px; /* Space around titles */
+}
+
+.datos {
+  font-size: 25px;
+  color: #007bff; /* Bootstrap primary color for data */
+  margin-bottom: 15px; /* Space below data */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .Contenedor {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  h1 {
+    font-size: 20px; /* Smaller heading on mobile */
+  }
+
+  .titulo {
+    font-size: 16px; /* Smaller title on mobile */
+  }
+
+  .datos {
+    font-size: 14px; /* Smaller data text on mobile */
+  }
+}

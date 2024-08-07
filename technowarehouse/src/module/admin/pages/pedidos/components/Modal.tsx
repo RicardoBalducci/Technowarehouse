@@ -36,7 +36,7 @@ function Modal({ pedido, onClose, onCancel, showAlert }: ModalProps) {
           </p>
         </div>
         <div className={styles.buttonContainer}>
-          <button onClick={onClose} className={styles.closeButton}>
+          <button onClick={onClose} className={styles.boton}>
             Cerrar
           </button>
           {!pedido.estado.includes("Pagado") && ( // Cambia la lógica según tu estado

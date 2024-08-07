@@ -16,6 +16,9 @@
   background-repeat: no-repeat;
   overflow: hidden;
 }
+.p {
+  margin-top: 50px;
+}
 
 .Btn {
   background-color: #fff;
@@ -50,13 +53,18 @@
   display: block;
   color: #fff;
 }
-@media (max-width: 1400px) {
+
+.footer {
+  padding: 80px;
+}
+@media (max-width: 1000px) {
   .Principal {
     margin: 0;
     padding: 0;
     background-size: cover;
     overflow: hidden;
-    height: 30vh;
+    height: 50vh;
+    width: 600px;
   }
   .Principal {
     width: auto;

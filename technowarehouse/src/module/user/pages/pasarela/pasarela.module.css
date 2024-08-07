@@ -11,6 +11,14 @@
   z-index: 1000; /* Ensure it appears above other content */
 }
 
+.btn {
+  margin: 10px;
+  padding: 15px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 /* Modal styles */
 .modal {
   background-color: white;
@@ -23,10 +31,6 @@
 }
 
 /* Modal content styles */
-.modalContent {
-  display: flex;
-  flex-direction: column;
-}
 
 /* Close button styles */
 .close {
@@ -43,7 +47,7 @@
 }
 
 /* Button styles */
-button {
+.button {
   background-color: #007bff; /* Bootstrap primary color */
   color: white;
   border: none;
@@ -52,14 +56,17 @@ button {
   margin: 5px 0; /* Space between buttons */
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 20px;
 }
 
-button:hover {
+.button:hover {
   background-color: #0056b3; /* Darker shade on hover */
 }
 
 /* Tab button styles */
-button.tab {
+.button.tab {
   background-color: transparent; /* Transparent background for tab buttons */
   color: #007bff; /* Primary color */
   border: none;
@@ -68,11 +75,17 @@ button.tab {
   transition: color 0.3s;
 }
 
-button.tab:hover {
+.button.tab:hover {
   color: #0056b3; /* Darker shade on hover */
 }
 
 /* Tab content styles */
 .tabContent {
   margin-top: 15px; /* Space above tab content */
+}
+
+.Titulo {
+  text-align: center;
+  font-weight: 700;
+  font-size: 35px;
 }

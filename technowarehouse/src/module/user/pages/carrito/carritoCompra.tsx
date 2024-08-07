@@ -140,116 +140,120 @@ function Carrito() {
   };
 
   return (
-    <div>
-      <Cabecera />
-      <Snackbar
-        open={snackbarOpen}
-        autoHideDuration={6000}
-        onClose={handleSnackbarClose}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-      >
-        <Alert
-          onClose={handleSnackbarClose}
-          severity="info"
-          sx={{ width: "100%" }}
-        >
-          {snackbarMessage}
-        </Alert>
-      </Snackbar>
-      <h1 className={styles.h1}>Carrito de Compras</h1>
-      {user && (
-        <div className={styles.userInfo}>
-          <h2>Información del Usuario</h2>
-          <p>
-            <strong>Nombre:</strong> {user.nombre}
-          </p>
-          <p>
-            <strong>Email:</strong> {user.email}
-          </p>
-          <p>
-            <strong>Cédula:</strong> {user.cedula}
-          </p>
-        </div>
-      )}
-      {carrito.length > 0 ? (
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th className={styles.th}>Producto</th>
-              <th className={styles.th}>Cantidad</th>
-              <th className={styles.th}>Precio Unitario</th>
-              <th className={styles.th}>Total</th>
-              <th className={styles.th}>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {carrito.map((item, index) => (
-              <tr key={index}>
-                <td>{(item.producto as Producto).name}</td>
-                <td>
-                  <button
-                    onClick={() => disminuirCantidad(index)}
-                    className={styles.btnCantidad}
-                  >
-                    -
-                  </button>
-                  <p className={styles.P}>{item.cantidad}</p>
-                  <button
-                    onClick={() => aumentarCantidad(index)}
-                    className={styles.btnCantidad}
-                  >
-                    +
-                  </button>
-                </td>
-                <td>{(item.producto as Producto).precio.toFixed(2)} $</td>
-                <td>
-                  {((item.producto as Producto).precio * item.cantidad).toFixed(
-                    2
-                  )}{" "}
-                  $
-                </td>
-                <td>
-                  <button
-                    onClick={() => eliminarItem(index)}
-                    className={styles.btnEliminar}
-                  >
-                    Eliminar
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p className={styles.h1}>No hay productos en el carrito.</p>
-      )}
-
-      <div className={styles.totalContainer}>
-        <h2>Total</h2>
-        <table className={styles.totalTable}>
-          <tbody>
-            <tr>
-              <td>Total:</td>
-              <td>{total.toFixed(2)} $</td>
-            </tr>
-          </tbody>
-        </table>
+    <div className={styles.Grid}>
+      <div className={styles.Cabecera}>
+        <Cabecera />
       </div>
+      <div className={styles.Contenido}>
+        <Snackbar
+          open={snackbarOpen}
+          autoHideDuration={6000}
+          onClose={handleSnackbarClose}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        >
+          <Alert
+            onClose={handleSnackbarClose}
+            severity="info"
+            sx={{ width: "100%" }}
+          >
+            {snackbarMessage}
+          </Alert>
+        </Snackbar>
+        <h1 className={styles.h1}>Carrito de Compras</h1>
+        {user && (
+          <div className={styles.userInfo}>
+            <h2>Información del Usuario</h2>
+            <p>
+              <strong>Nombre:</strong> {user.nombre}
+            </p>
+            <p>
+              <strong>Email:</strong> {user.email}
+            </p>
+            <p>
+              <strong>Cédula:</strong> {user.cedula}
+            </p>
+          </div>
+        )}
+        {carrito.length > 0 ? (
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th className={styles.th}>Producto</th>
+                <th className={styles.th}>Cantidad</th>
+                <th className={styles.th}>Precio Unitario</th>
+                <th className={styles.th}>Total</th>
+                <th className={styles.th}>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {carrito.map((item, index) => (
+                <tr key={index}>
+                  <td>{(item.producto as Producto).name}</td>
+                  <td>
+                    <button
+                      onClick={() => disminuirCantidad(index)}
+                      className={styles.btnCantidad}
+                    >
+                      -
+                    </button>
+                    <p className={styles.P}>{item.cantidad}</p>
+                    <button
+                      onClick={() => aumentarCantidad(index)}
+                      className={styles.btnCantidad}
+                    >
+                      +
+                    </button>
+                  </td>
+                  <td>{(item.producto as Producto).precio.toFixed(2)} $</td>
+                  <td>
+                    {(
+                      (item.producto as Producto).precio * item.cantidad
+                    ).toFixed(2)}{" "}
+                    $
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => eliminarItem(index)}
+                      className={styles.btnEliminar}
+                    >
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p className={styles.h1}>No hay productos en el carrito.</p>
+        )}
 
-      <button onClick={limpiarCarrito} className={styles.btn}>
-        Limpiar Carrito
-      </button>
-      <button onClick={MODAL} className={styles.btn}>
-        Confirmar Pedido
-      </button>
-      {isModalOpen && (
-        <PaymentModal
-          isOpen={isModalOpen}
-          closeModal={closeModal}
-          user={user}
-          agregarPedido={agregarPedido}
-        />
-      )}
+        <div className={styles.totalContainer}>
+          <h2>Total</h2>
+          <table className={styles.totalTable}>
+            <tbody>
+              <tr>
+                <td>Total:</td>
+                <td>{total.toFixed(2)} $</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button onClick={limpiarCarrito} className={styles.btn}>
+          Limpiar Carrito
+        </button>
+        <button onClick={MODAL} className={styles.btn}>
+          Confirmar Pedido
+        </button>
+        {isModalOpen && (
+          <PaymentModal
+            isOpen={isModalOpen}
+            closeModal={closeModal}
+            user={user}
+            agregarPedido={agregarPedido}
+          />
+        )}
+      </div>
       <div className={styles.footer}>
         <Footer />
       </div>

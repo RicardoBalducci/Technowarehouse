@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "./pasarela.module.css"; // Adjust the path as necessary
+import PagoMovil from "./components/PagoMovil/PagoMovil";
+import Binance from "./components/binance/Binance";
 
 interface PaymentModalProps {
   isOpen: boolean;
@@ -29,8 +31,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
       case "tab1":
         return (
           <>
-            <h1>Contenido de la Pestaña 1</h1>
-            <h2>Binance</h2>
+            <Binance />
           </>
         );
       case "tab2":
@@ -42,9 +43,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
       case "tab3":
         return (
           <>
-            <h1>Pago Movil</h1>
-            <p>Nombre: {user.nombre}</p>
-            <p>Email: {user.email}</p>
+            <PagoMovil />
           </>
         );
       default:
@@ -59,19 +58,20 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
           <span className={styles.close} onClick={closeModal}>
             &times;
           </span>
-          <h2>Pasarela de Pago</h2>
-          <button onClick={() => setActiveTab("tab1")} className="">
-            Pestaña 1
+          <h2 className={styles.Titulo}>Pasarela de Pago</h2>
+          <button onClick={() => setActiveTab("tab1")} className={styles.btn}>
+            Binance
           </button>
-          <button onClick={() => setActiveTab("tab2")} className="">
+          <button onClick={() => setActiveTab("tab2")} className={styles.btn}>
             Pestaña 2
           </button>
-          <button onClick={() => setActiveTab("tab3")} className="">
-            Pestaña 3
+          <button onClick={() => setActiveTab("tab3")} className={styles.btn}>
+            Pago Movil
           </button>
           <div>{renderTabContent()}</div>
-          <p>Producto: {user.nombre}</p>
-          <button onClick={agregarPedido}>Pagar</button>
+          <button onClick={agregarPedido} className={styles.button}>
+            Pagar
+          </button>
         </div>
       </div>
     </div>

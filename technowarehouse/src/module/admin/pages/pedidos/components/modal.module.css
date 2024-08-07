@@ -34,6 +34,16 @@
   background-color: #c43333;
 }
 
+.boton {
+  font-size: 20px;
+  cursor: pointer;
+  margin: 20px;
+  color: #fff;
+  padding: 20px 50px;
+  background-color: #c43333;
+  border-radius: 10px;
+}
+
 .closeButton:hover {
   background-color: #a52a2a;
 }
@@ -41,6 +51,9 @@
 .cancelButton {
   background-color: rgb(32, 209, 61);
   font-size: 20px;
+  border-radius: 10px;
+  color: #fff;
+  padding: 20px 50px;
   cursor: pointer;
   margin-right: 20px;
 }
