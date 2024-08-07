@@ -1,4 +1,3 @@
-import React from "react";
 import VisionImage from "../../../../assets/undraw_vision.svg";
 import styles from "./Vision.module.css"; // Import the CSS file
 

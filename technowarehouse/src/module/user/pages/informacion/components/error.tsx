@@ -2,7 +2,13 @@ import React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
-const Error = ({ open, handleClose }) => {
+// Definición de la interfaz para las props del componente Error
+interface ErrorProps {
+  open: boolean; // Indica si el Snackbar está abierto
+  handleClose: () => void; // Función para cerrar el Snackbar
+}
+
+const Error: React.FC<ErrorProps> = ({ open, handleClose }) => {
   return (
     <Snackbar
       open={open}

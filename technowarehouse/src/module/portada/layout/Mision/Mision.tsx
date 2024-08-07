@@ -1,4 +1,3 @@
-import React from "react";
 import MisionImage from "../../../../assets/undraw_mision.svg";
 import styles from "./Mision.module.css"; // Import the CSS file
 

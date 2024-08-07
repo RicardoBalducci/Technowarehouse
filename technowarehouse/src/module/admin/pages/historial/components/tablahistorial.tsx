@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Pedido } from "../../pedidos/interface/pedido.interface";
 import { viewData } from "../../../../../services/supabase";
 import { Tables } from "../../../../../types/core";

@@ -32,7 +32,7 @@ function Modal({ pedido, onClose, onCancel, showAlert }: ModalProps) {
             <strong>Monto a Consumir: </strong> {pedido.total.toFixed(2)} $
           </p>
           <p className={styles.info}>
-            <strong>Fecha:</strong> {pedido.fecha}
+            <strong>Fecha:</strong> {pedido.fecha.toLocaleDateString()}
           </p>
         </div>
         <div className={styles.buttonContainer}>

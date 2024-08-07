@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { viewData } from "../../../../../services/supabase";
 import { Tables } from "../../../../../types/core";
 import DataTable from "react-data-table-component"; // Importa DataTable

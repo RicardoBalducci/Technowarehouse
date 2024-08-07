@@ -6,11 +6,12 @@ import { Product } from "../../../../../interface/Product.interface";
 
 const ProductDetails: React.FC<{ product: Product }> = ({ product }) => {
   const navigate = useNavigate();
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [, setSelectedProduct] = useState<Product | null>(null);
 
   const handleProductClick: React.MouseEventHandler<HTMLButtonElement> = (
     event
   ) => {
+    event.preventDefault(); // Usar event para prevenir el comportamiento predeterminado
     setSelectedProduct(product);
     navigate(`/Informacion?id=${product.id}`);
   };

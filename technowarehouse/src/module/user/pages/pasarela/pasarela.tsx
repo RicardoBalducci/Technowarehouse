@@ -16,7 +16,7 @@ interface PaymentModalProps {
 const PaymentModal: React.FC<PaymentModalProps> = ({
   isOpen,
   closeModal,
-  user,
+
   agregarPedido,
 }) => {
   // Ensure useState is called at the top level

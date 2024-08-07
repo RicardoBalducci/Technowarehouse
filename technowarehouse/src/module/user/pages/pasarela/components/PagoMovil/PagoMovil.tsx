@@ -4,6 +4,8 @@ function PagoMovil() {
     <>
       <div className={styles.Contenedor}>
         <h1>Pago Movil</h1>
+        <p className={styles.titulo}>Banco</p>
+        <p className={styles.datos}>Banco de Venezuela</p>
         <p className={styles.titulo}>Teléfono </p>
         <p className={styles.datos}>04121167473</p>
         <p className={styles.titulo}>Cédula</p>

@@ -1,16 +1,9 @@
-import { useState } from "react";
 import ProductList from "./components/ProductList";
 import styles from "./ProductosPage.module.css";
 import Cabecera from "../../components/menu";
 import Footer from "../../../portada/components/Footer";
 
 function ProductosPage() {
-  const [showCategoryFilter, setShowCategoryFilter] = useState(false);
-
-  const handleCategoryFilterClick = async () => {
-    setShowCategoryFilter(!showCategoryFilter);
-  };
-
   return (
     <div className={styles.productos_page}>
       <Cabecera />
