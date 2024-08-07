@@ -5,6 +5,7 @@ import { insertData } from "../../../services/supabase";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../portada/components/Footer";
 import Cabecera from "../../portada/components/Cabecera";
+import styles from "./signup.module.css";
 function SignIn() {
   const navigate = useNavigate();
 
@@ -52,54 +53,61 @@ function SignIn() {
   return (
     <>
       <Cabecera />
-      <h1>Registrarse</h1>
-      <form action="" onSubmit={handleSubmit}>
-        <p>Email</p>
-        <input
-          type="text"
-          name="email"
-          value={values.email}
-          onChange={handleChange}
-        />
-        <p>Cedula</p>
-        <input
-          type="text"
-          name="cedula"
-          value={values.cedula}
-          onChange={handleChange}
-        />
-        <p>nombre</p>
-        <input
-          type="text"
-          name="nombre"
-          value={values.nombre}
-          onChange={handleChange}
-        />
-        <p>Password</p>
-        <input
-          type="text"
-          name="password"
-          value={values.password}
-          onChange={handleChange}
-        />
+      <h1 className={styles.titulo}>Registrarse</h1>
+      <div className={styles.container}>
+        <form action="" onSubmit={handleSubmit} className={styles.formulario}>
+          <p className={styles.p}>Email *</p>
+          <input
+            type="text"
+            name="email"
+            value={values.email}
+            onChange={handleChange}
+            className={styles.input}
+          />
+          <p className={styles.p}>Cédula *</p>
+          <input
+            type="text"
+            name="cedula"
+            value={values.cedula}
+            onChange={handleChange}
+            className={styles.input}
+          />
+          <p className={styles.p}>Nombre *</p>
+          <input
+            type="text"
+            name="nombre"
+            value={values.nombre}
+            onChange={handleChange}
+            className={styles.input}
+          />
+          <p className={styles.p}>Password</p>
+          <input
+            type="text"
+            name="password"
+            value={values.password}
+            onChange={handleChange}
+            className={styles.input}
+          />
 
-        <p>Telefono</p>
-        <input
-          type="text"
-          name="telefono"
-          value={values.telefono}
-          onChange={handleChange}
-        />
-        <p>direccion</p>
-        <input
-          type="text"
-          name="direccion"
-          value={values.direccion}
-          onChange={handleChange}
-        />
-        <button>Boton</button>
-      </form>
-
+          <p className={styles.p}>Teléfono </p>
+          <input
+            type="text"
+            name="telefono"
+            value={values.telefono}
+            onChange={handleChange}
+            className={styles.input}
+          />
+          <p className={styles.p}>Dirección</p>
+          <input
+            type="text"
+            name="direccion"
+            value={values.direccion}
+            onChange={handleChange}
+            className={styles.input}
+          />
+          <button className={styles.BTn}>Boton</button>
+        </form>
+      </div>
       <Footer />
     </>
   );
