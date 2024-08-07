@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           <FontAwesomeIcon icon={faFacebook} />
         </a>
         <a
-          href="https://www.twitter.com"
+          href="https://wa.me/584120951000"
           target="_blank"
           rel="noopener noreferrer"
         >

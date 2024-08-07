@@ -34,12 +34,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             <Binance />
           </>
         );
-      case "tab2":
-        return (
-          <>
-            <h1>Contenido de la Pestaña 2</h1>
-          </>
-        );
+
       case "tab3":
         return (
           <>
@@ -59,13 +54,10 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             &times;
           </span>
           <h2 className={styles.Titulo}>Pasarela de Pago</h2>
-          <button onClick={() => setActiveTab("tab1")} className={styles.btn}>
+          <button onClick={() => setActiveTab("tab1")} className={styles.btn1}>
             Binance
           </button>
-          <button onClick={() => setActiveTab("tab2")} className={styles.btn}>
-            Pestaña 2
-          </button>
-          <button onClick={() => setActiveTab("tab3")} className={styles.btn}>
+          <button onClick={() => setActiveTab("tab3")} className={styles.btn3}>
             Pago Movil
           </button>
           <div>{renderTabContent()}</div>

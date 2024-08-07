@@ -19,6 +19,40 @@
   font-weight: 600;
 }
 
+.btn1 {
+  background-color: #141b15; /* Green color */
+  color: #f3ba2f; /* White text color */
+  border: none;
+  border-radius: 4px;
+  padding: 15px 10px;
+  margin: 5px 0; /* Space between buttons */
+  transition: background-color 0.3s;
+  outline: none;
+  margin: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn3 {
+  margin: 10px;
+
+  background-color: #007bff; /* Color de fondo azul */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 15px 10px;
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 20px;
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+.btn3:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.btn3:active {
+  transform: scale(0.95); /* Efecto de pulsación al hacer clic */
+}
 /* Modal styles */
 .modal {
   background-color: white;

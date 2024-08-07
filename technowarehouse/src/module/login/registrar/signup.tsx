@@ -3,8 +3,17 @@ import Swal from "sweetalert2";
 import { Tables } from "../../../types/core";
 import { insertData } from "../../../services/supabase";
 import { useNavigate } from "react-router-dom";
-import Footer from "../../portada/components/Footer";
-import Cabecera from "../../portada/components/Cabecera";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faIdCard,
+  faLocationDot,
+  faLock,
+  faPhone,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons"; // Cambiado a free-solid-svg-icons
+
 import styles from "./signup.module.css";
 function SignIn() {
   const navigate = useNavigate();
@@ -52,63 +61,108 @@ function SignIn() {
 
   return (
     <>
-      <Cabecera />
-      <h1 className={styles.titulo}>Registrarse</h1>
       <div className={styles.container}>
-        <form action="" onSubmit={handleSubmit} className={styles.formulario}>
-          <p className={styles.p}>Email *</p>
-          <input
-            type="text"
-            name="email"
-            value={values.email}
-            onChange={handleChange}
-            className={styles.input}
-          />
-          <p className={styles.p}>Cédula *</p>
-          <input
-            type="text"
-            name="cedula"
-            value={values.cedula}
-            onChange={handleChange}
-            className={styles.input}
-          />
-          <p className={styles.p}>Nombre *</p>
-          <input
-            type="text"
-            name="nombre"
-            value={values.nombre}
-            onChange={handleChange}
-            className={styles.input}
-          />
-          <p className={styles.p}>Password</p>
-          <input
-            type="text"
-            name="password"
-            value={values.password}
-            onChange={handleChange}
-            className={styles.input}
-          />
-
-          <p className={styles.p}>Teléfono </p>
-          <input
-            type="text"
-            name="telefono"
-            value={values.telefono}
-            onChange={handleChange}
-            className={styles.input}
-          />
-          <p className={styles.p}>Dirección</p>
-          <input
-            type="text"
-            name="direccion"
-            value={values.direccion}
-            onChange={handleChange}
-            className={styles.input}
-          />
-          <button className={styles.BTn}>Boton</button>
-        </form>
+        <center>
+          <div className={styles.wrapper}>
+            <div className={styles.lad_logo}>
+              <img className={styles.logo} src="logo.png" alt="Logo" />
+              <h1>TECHNO WAREHOUSE</h1>
+              <p className={styles.etiqueta}>
+                © 2024 Techno Warehouse. Todos los derechos reservados.
+              </p>
+            </div>
+            <div className={styles.login}>
+              <form action="" onSubmit={handleSubmit}>
+                <h2 className={styles.h2}>REGISTRARSE</h2>
+                <div className={styles.input_box}>
+                  <FontAwesomeIcon icon={faEnvelope} className={styles.icono} />
+                  <input
+                    type="text"
+                    name="email"
+                    value={values.email}
+                    onChange={handleChange}
+                    className={styles.input}
+                    placeholder="Ingrese su correo electrónico"
+                    required
+                  />
+                </div>
+                <div className={styles.input_box}>
+                  <FontAwesomeIcon icon={faIdCard} className={styles.icono} />
+                  <input
+                    type="text"
+                    name="cedula"
+                    value={values.cedula}
+                    onChange={handleChange}
+                    className={styles.input}
+                    placeholder="Ingrese su número de cédula"
+                    required
+                  />
+                </div>
+                <div className={styles.input_box}>
+                  <FontAwesomeIcon icon={faUser} className={styles.icono} />
+                  <input
+                    type="text"
+                    name="nombre"
+                    value={values.nombre}
+                    onChange={handleChange}
+                    className={styles.input}
+                    placeholder="Ingrese su nombre"
+                    required
+                  />
+                </div>
+                <div className={styles.input_box}>
+                  <FontAwesomeIcon icon={faLock} className={styles.icono} />
+                  <input
+                    type="text"
+                    name="password"
+                    value={values.password}
+                    onChange={handleChange}
+                    className={styles.input}
+                    placeholder="Ingrese su contraseña"
+                    required
+                  />
+                </div>
+                <div className={styles.input_box}>
+                  <FontAwesomeIcon icon={faPhone} className={styles.icono} />
+                  <input
+                    type="text"
+                    name="telefono"
+                    value={values.telefono}
+                    onChange={handleChange}
+                    className={styles.input}
+                    placeholder="Ingrese su número de teléfono "
+                    required
+                  />
+                </div>
+                <div className={styles.input_box}>
+                  <FontAwesomeIcon
+                    icon={faLocationDot}
+                    className={styles.icono}
+                  />
+                  <input
+                    type="text"
+                    name="direccion"
+                    value={values.direccion}
+                    onChange={handleChange}
+                    className={styles.input}
+                    placeholder="Ingrese su dirección "
+                    required
+                  />
+                </div>
+                <button className={styles.button}>Boton</button>
+                <div className={styles.register_link}>
+                  <p>
+                    ¿Ya tiene cuenta?{" "}
+                    <a href="/login" className={styles.a}>
+                      Iniciar sesión
+                    </a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </center>
       </div>
-      <Footer />
     </>
   );
 }

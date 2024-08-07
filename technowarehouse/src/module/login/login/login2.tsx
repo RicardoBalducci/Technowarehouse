@@ -4,6 +4,9 @@ import { viewDataLogin } from "../../../services/supabase"; // Import the viewDa
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Tables } from "../../../types/core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"; // Cambiado a free-solid-svg-icons
+import { faLock } from "@fortawesome/free-solid-svg-icons"; // Importar el icono de candado
 
 function Login() {
   const navigate = useNavigate();
@@ -55,14 +58,11 @@ function Login() {
             <div className={styles.login}>
               <form action="" onSubmit={handleButtonClick}>
                 <h2 className={styles.h2}>INICIAR SESIÓN</h2>
-                <img
-                  className={styles.access}
-                  src="icono3.png"
-                  alt="icono login"
-                />
+
                 <div className={styles.input_box}>
+                  <FontAwesomeIcon icon={faEnvelope} className={styles.icono} />
                   <input
-                    id="value"
+                    id="email"
                     type="email"
                     placeholder="Ingrese su email"
                     value={email}
@@ -70,26 +70,17 @@ function Login() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
-                  <img
-                    className={styles.icono}
-                    src="icono1.png"
-                    alt="icono email"
-                  />
                 </div>
                 <div className={styles.input_box}>
+                  <FontAwesomeIcon icon={faLock} className={styles.icono} />
                   <input
-                    id="value"
+                    id="password"
                     type="password"
                     placeholder="Ingrese su contraseña"
                     className={styles.input}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                  />
-                  <img
-                    className={styles.icono}
-                    src="icono2.png"
-                    alt="icono password"
                   />
                 </div>
                 <button type="submit" className={styles.button}>
