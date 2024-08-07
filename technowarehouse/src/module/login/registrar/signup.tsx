@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import { Tables } from "../../../types/core";
 import { insertData } from "../../../services/supabase";
 import { useNavigate } from "react-router-dom";
+import logoImage from "../../../assets/logo.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -65,7 +66,7 @@ function SignIn() {
         <center>
           <div className={styles.wrapper}>
             <div className={styles.lad_logo}>
-              <img className={styles.logo} src="logo.png" alt="Logo" />
+              <img className={styles.logo} src={logoImage} alt="Logo" />
               <h1>TECHNO WAREHOUSE</h1>
               <p className={styles.etiqueta}>
                 © 2024 Techno Warehouse. Todos los derechos reservados.

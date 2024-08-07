@@ -7,7 +7,7 @@ import { Tables } from "../../../types/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"; // Cambiado a free-solid-svg-icons
 import { faLock } from "@fortawesome/free-solid-svg-icons"; // Importar el icono de candado
-
+import logoImage from "../../../assets/logo.png";
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
@@ -49,7 +49,7 @@ function Login() {
         <center>
           <div className={styles.wrapper}>
             <div className={styles.lad_logo}>
-              <img className={styles.logo} src="logo.png" alt="Logo" />
+              <img className={styles.logo} src={logoImage} alt="Logo" />
               <h1>TECHNO WAREHOUSE</h1>
               <p className={styles.etiqueta}>
                 © 2024 Techno Warehouse. Todos los derechos reservados.
