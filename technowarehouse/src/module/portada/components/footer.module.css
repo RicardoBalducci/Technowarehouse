@@ -1,0 +1,49 @@
+.Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2c7da0;
+  padding: 20px;
+  text-align: center;
+  margin-top: 600px;
+}
+.Texto {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+.SocialMedia {
+  margin-top: 10px;
+}
+
+.SocialMedia a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 24px; /* Tamaño del ícono */
+}
+
+.SocialMedia a:hover {
+  color: #61dafb; /* Color al pasar el mouse */
+}
+@media (max-width: 768px) {
+  .Footer {
+    margin-top: 200000px;
+    font-size: 10px;
+    padding: 20px 0 20px 0;
+  }
+  .Texto {
+    font-size: clamp(10px, 5vw, 15px);
+  }
+}
+
+@media (max-width: 500px) {
+  .Footer {
+    font-size: clamp(10px, 5vw, 13px);
+    padding: 10px 0 20px 0;
+  }
+  .Texto {
+    font-size: clamp(10px, 5vw, 13px);
+  }
+}

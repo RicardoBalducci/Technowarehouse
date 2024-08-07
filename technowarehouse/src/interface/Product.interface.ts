@@ -5,8 +5,8 @@ export interface Product {
   image: string;
   stock: number;
   proveedor: string;
+  Marca: string;
+  categoria: string;
   precio: number;
+  imageUrl: string;
 }
-/*
-
-*/

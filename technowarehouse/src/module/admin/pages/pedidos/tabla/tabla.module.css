@@ -1,0 +1,61 @@
+.container {
+  padding: 20px;
+  background-color: #f9f9f9; /* Color de fondo suave */
+}
+
+/* Estilos para la tabla */
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Eliminar espacios entre celdas */
+  margin-top: 20px;
+}
+
+/* Estilos para las cabeceras de la tabla */
+th {
+  background-color: #4c90af; /* Color de fondo verde */
+  color: white; /* Color del texto */
+  padding: 10px; /* Espaciado interno */
+  text-align: center; /* Alinear texto a la izquierda */
+}
+
+/* Estilos para las filas de la tabla */
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+tr:hover {
+  background-color: #ddd; /* Color de fondo al pasar el mouse */
+  cursor: pointer;
+}
+
+/* Estilos para las celdas */
+td {
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ddd; /* Borde de las celdas */
+}
+
+/* Estilos para los botones */
+.btnEliminar {
+  background-color: #f44336; /* Color de fondo rojo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 5px 10px; /* Espaciado interno */
+  cursor: pointer; /* Cambiar cursor al pasar el mouse */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.btnEliminar:hover {
+  background-color: #d32f2f; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilos para el título */
+.h1 {
+  font-size: 24px; /* Tamaño de fuente */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilos para el footer */
+.footer {
+  margin-top: 20px; /* Margen superior */
+  text-align: center; /* Centrar texto */
+}

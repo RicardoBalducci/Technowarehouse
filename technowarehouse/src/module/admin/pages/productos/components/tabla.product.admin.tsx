@@ -4,6 +4,7 @@ import { viewData } from "../../../../../services/supabase";
 import { Product } from "../../../../../interface/Product.interface";
 import { Tables } from "../../../../../types/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faPencil,
   faTrash,
@@ -50,6 +51,8 @@ function TablaProductos() {
         const stock = row.stock.toString();
         const proveedor = row.proveedor.toString();
         const image = row.image.toString();
+        const marca = row.Marca.toString();
+        const categoria = row.categoria.toString();
         const queryParams = new URLSearchParams();
         queryParams.append("id", id);
         queryParams.append("name", name);
@@ -58,7 +61,8 @@ function TablaProductos() {
         queryParams.append("stock", stock);
         queryParams.append("proveedor", proveedor);
         queryParams.append("image", image);
-
+        queryParams.append("Marca", marca);
+        queryParams.append("categoria", categoria);
         const url = `/ProductsModificar?${queryParams.toString()}`;
         navigate(url);
       }
@@ -86,26 +90,40 @@ function TablaProductos() {
       }
     });
   };
-
   const columns = [
     {
       name: "Nombre",
       selector: (row: Product) => row.name,
       sortable: true,
     },
-    {
+    /*{
       name: "Descripción",
       selector: (row: Product) => row.description,
       sortable: true,
-    },
+    },*/
     {
-      name: "Imagen",
-      selector: (row: Product) => row.image,
+      name: "Imagenes",
+      cell: (row: Product) => (
+        <div>
+          {Array.isArray(row.image) ? (
+            row.image.map((image: string, id: number) => (
+              <img key={id} src={image} alt={row.name} className={styles.img} />
+            ))
+          ) : (
+            <img src={row.image} alt={row.name} className={styles.img} />
+          )}
+        </div>
+      ),
       sortable: true,
     },
     {
       name: "Proveedor",
       selector: (row: Product) => row.proveedor,
+      sortable: true,
+    },
+    {
+      name: "Marca",
+      selector: (row: Product) => row.Marca,
       sortable: true,
     },
     {
@@ -127,7 +145,6 @@ function TablaProductos() {
             onClick={() => handleEdit(row)}
             className={styles.btn_edit}
           />
-
           <FontAwesomeIcon
             icon={faTrash}
             onClick={() => handleDelete(row)}
@@ -152,9 +169,17 @@ function TablaProductos() {
   const customStyles = {
     headRow: {
       style: {
-        backgroundColor: "#468FAF", // Color de fondo negro
-        color: "white", // Texto en color blanco
-        fontWeight: "bold", // Texto en negrita
+        backgroundColor: "#468FAF",
+        color: "white",
+        fontWeight: "bold",
+      },
+    },
+    cells: {
+      style: {
+        maxWidth: "50px", // Ajusta el ancho máximo según sea necesario
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
       },
     },
   };
@@ -176,7 +201,7 @@ function TablaProductos() {
         columns={columns}
         data={filteredData}
         pagination
-        paginationPerPage={10}
+        paginationPerPage={5}
         customStyles={customStyles} // Aplicar los estilos personalizados
       />
     </div>

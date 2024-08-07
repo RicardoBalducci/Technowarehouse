@@ -1,0 +1,162 @@
+.container {
+  border: 1px solid black;
+  display: flex;
+  margin: 90px;
+  border-radius: 5px;
+}
+
+.cuadroImg {
+  justify-content: end;
+  margin: 30px 10px 30px 30px;
+}
+
+.CuadroTxt {
+  margin: 30px 30px 30px 0;
+  width: 100%;
+}
+
+.Titulo {
+  margin: 20px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.SubTitulo {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.P {
+  margin: 20px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.img {
+  max-width: 500px;
+  text-align: center;
+}
+.input {
+  margin: 2% 20px;
+  width: 90%;
+  padding: 2.5%;
+}
+
+.btn {
+  margin: 2% 20px;
+  width: 100%;
+  padding: 3%;
+  background-color: rgb(97, 214, 93);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(77, 167, 74);
+}
+
+@media (max-width: 420px) {
+  .container {
+    margin-bottom: 800px;
+  }
+  .input {
+    width: 80%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    margin: 30px 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .cuadroImg {
+    text-align: center;
+    margin: 30px;
+  }
+  .img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1032px) {
+  .container {
+    margin-bottom: 100px;
+  }
+  .cuadroImg {
+    text-align: center;
+    margin: 0px;
+  }
+  .CuadroTxt {
+    margin: 0;
+  }
+  .img {
+    width: 100%;
+  }
+  .input {
+    margin-top: 10px;
+  }
+  .btn {
+    width: 90%;
+    padding: 5%;
+  }
+}
+
+/*
+.container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 90px;
+}
+
+.cuadroImg {
+  justify-content: end;
+  border: 1px solid blue;
+  margin: 30px 10px 30px 30px;
+}
+
+.CuadroTxt {
+  margin: 30px 30px 30px 0;
+  width: 100%;
+  display: inline;
+
+  border: 1px solid red;
+}
+
+.Titulo {
+  margin: 20px;
+  font-size: 25px;
+  font-weight: 700;
+  border: 1px solid peru;
+}
+
+.img {
+  max-width: 500px;
+  text-align: justify;
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin: 30px 10px;
+  }
+  .img {
+    width: 100%;
+  }
+  .cuadroImg {
+    margin: 30px;
+  }
+  .CuadroTxt {
+    display: block;
+    margin-top: 0px;
+  }
+  .Titulo {
+    margin: 20px;
+  }
+}
+
+*/

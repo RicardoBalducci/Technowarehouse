@@ -1,0 +1,86 @@
+.container {
+  display: grid;
+  place-items: center;
+  height: auto;
+  padding: 20px;
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  transition: all 0.3s ease; /* Agregamos una transición para animar los cambios */
+}
+
+.texto {
+  text-align: center;
+  color: #0056b3;
+}
+.form p {
+  margin: 0;
+}
+
+.input {
+  width: 90%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Aumentamos el radio de borde para un aspecto más suave */
+  transition: all 0.3s ease; /* Agregamos una transición para animar los cambios */
+}
+
+.input:focus {
+  border-color: #007bff; /* Cambiamos el color del borde al enfocar el input */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Agregamos un efecto de sombra al enfocar el input */
+}
+
+.btn {
+  padding: 15px 20px; /* Aumentamos el padding para un aspecto más llamativo */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* Aumentamos el radio de borde para un aspecto más suave */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Agregamos una transición para animar los cambios */
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+.btn:hover {
+  background-color: #0056b3; /* Cambiamos el color de fondo al pasar el mouse sobre el botón */
+}
+
+@media (max-width: 780px) {
+  .container {
+    margin: 60px;
+  }
+  .form {
+    max-width: 100%;
+  }
+  .input {
+    width: 90%;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    margin-top: 40px; /* Adjust footer margin for better spacing */
+  }
+  .container {
+    margin: 10px;
+  }
+  .form {
+    max-width: 100%;
+  }
+  .input {
+    width: 90%;
+    margin-right: 10px;
+  }
+}

@@ -4,22 +4,25 @@ import { login } from "../../services/supabase"; // Import the login function
 import Swal from "sweetalert2";
 
 function Admin() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //Constante para poder navegar
   const handleButtonClick = async () => {
-    const emailInput = document.getElementById("email") as HTMLInputElement;
+    //funcion al hacer click en el boton
+    const emailInput = document.getElementById("email") as HTMLInputElement; //adquirimos los datos de email
     const passwordInput = document.getElementById(
       "password"
-    ) as HTMLInputElement;
+    ) as HTMLInputElement; //y contraseña
 
     if (emailInput && passwordInput) {
-      const email = emailInput.value;
-      const password = passwordInput.value;
+      const email = emailInput.value; //guardamos en variables
+      const password = passwordInput.value; //guardamos en variables
 
       try {
-        const user = await login({ email, password });
+        const user = await login({ email, password }); //llamamos al metodo login
         if (user) {
+          //si es verdad me redirecciona
           navigate("/PrincipalAdmin", { replace: true });
         } else {
+          //si no me muestra mensaje de error
           Swal.fire({
             icon: "error",
             title: "Oops...",

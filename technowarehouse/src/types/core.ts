@@ -3,6 +3,9 @@ export enum Tables {
   product = "product",
   user = "user",
   proveedor = "proveedor",
+  technowarehouse = "Technowarehouse",
+  pedido = "pedido",
+  carrito = "carrito",
 }
 
 export enum Product {

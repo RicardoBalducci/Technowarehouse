@@ -1,0 +1,131 @@
+/* Container for the entire user info section */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #e7e7e7;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  max-width: 800px;
+  margin: 20px auto; /* Combined margin for top and bottom */
+}
+
+/* Welcome message styling */
+.TxtBienvenida {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 5px; /* Space above the welcome message */
+  color: #333; /* Color for better visibility */
+}
+
+/* Lateral section for user icon and welcome message */
+.lateral {
+  display: flex;
+  flex-direction: column; /* Stack icon and welcome message vertically */
+  align-items: center; /* Center align items */
+  margin-bottom: 20px;
+}
+
+/* User icon styling */
+.user_icon {
+  font-size: 2rem;
+  margin-bottom: 5px; /* Space between icon and welcome message */
+  color: #007bff; /* Primary color for the icon */
+}
+
+/* Title styling */
+.titulo {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Grouping input fields */
+.inlineInputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Individual input group styling */
+.inputGroup {
+  flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis */
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+/* Input label styling */
+.p {
+  margin: 0;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Input field styling */
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #e9ecef; /* Light gray for disabled inputs */
+}
+
+/* Button group styling */
+.BtnGrupo {
+  margin-top: 20px;
+}
+
+/* Button styling */
+.Boton {
+  padding: 10px 20px;
+  background-color: #007bff; /* Primary button color */
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.Boton:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Footer styling */
+.footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .container {
+    margin: 30px;
+  }
+  .informacion {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  .inlineInputs {
+    flex-direction: column; /* Stack inputs vertically */
+    width: 100%; /* Ensure the container takes full width */
+  }
+
+  .inputGroup {
+    flex: 100%; /* Make input groups take full width */
+    margin-bottom: 15px; /* Space between input groups */
+  }
+
+  .Boton {
+    width: 100%; /* Button takes full width */
+    padding: 12px; /* Increase padding for better touch targets */
+    font-size: 1rem; /* Adjust font size for readability */
+  }
+
+  .footer {
+    margin-top: 100px; /* Adjust footer margin for better spacing */
+  }
+}

@@ -7,6 +7,11 @@
   background-color: #68df39;
   cursor: pointer;
 }
+.img {
+  width: 100px;
+  height: 100px;
+}
+
 .btn_delete {
   margin: 10px 0px 10px 10px;
   color: #fff;

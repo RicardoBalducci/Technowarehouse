@@ -1,0 +1,28 @@
+.btn_edit {
+  margin: 10px 0px 10px 0;
+  color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #68df39;
+  cursor: pointer;
+}
+.btn_delete {
+  margin: 10px 0px 10px 10px;
+  color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #e62c2c;
+}
+.searchContainer {
+  text-align: end; /* Centrar el input */
+  margin: 10px 0 0 0;
+}
+
+.search_input {
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+}

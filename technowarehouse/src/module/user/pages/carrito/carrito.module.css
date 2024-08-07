@@ -1,0 +1,274 @@
+.table {
+  width: 90%;
+  max-width: 800px; /* Set a max width for larger screens */
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.userInfo {
+  background-color: #f9f9f9; /* Fondo claro */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  margin: 20px auto; /* Margen superior e inferior, centrado horizontalmente */
+  max-width: 600px; /* Ancho máximo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.userInfo h2 {
+  margin-bottom: 15px; /* Espacio debajo del título */
+  font-size: 1.5rem; /* Tamaño de fuente del título */
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+}
+
+.userInfo p {
+  margin: 10px 0; /* Espacio vertical entre párrafos */
+  font-size: 1rem; /* Tamaño de fuente del párrafo */
+  color: #555; /* Color del texto */
+}
+
+.userInfo strong {
+  color: #007bff; /* Color azul para el texto en negrita */
+}
+.table th,
+.table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table td {
+  color: #333;
+}
+
+.btn {
+  display: block;
+  width: 220px;
+  margin: 20px auto;
+  padding: 12px;
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #0069d9; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+.totalContainer {
+  width: 90%;
+  max-width: 800px; /* Set a max width for larger screens */
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.totalTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.totalTable td {
+  padding: 10px;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+}
+
+.totalTable td:first-child {
+  text-align: left;
+  font-weight: bold;
+}
+
+.h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+  font-size: 2.5em;
+}
+
+.P {
+  display: inline-block;
+}
+
+.btnEliminar {
+  background-color: #dc3545; /* Bootstrap danger color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btnEliminar:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.btnCantidad {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px; /* Adjust padding for better size */
+  cursor: pointer;
+  margin: 0 5px; /* Space between buttons */
+  font-size: 16px; /* Font size for better readability */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.btnCantidad:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.btnCantidad:disabled {
+  background-color: #ccc; /* Grey out button when disabled */
+  cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+
+.footer {
+  margin-top: 150px;
+}
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .P {
+    display: block; /* Bloquear el botón para que se ajuste a la altura de la celda */
+    margin: 10px 0; /* Añadir un poco de margen inferior */
+  }
+  .totalContainer {
+    width: 90%; /* Aumentar el ancho para pantallas más pequeñas */
+    margin: 10px auto; /* Centrar el contenedor */
+    padding: 10px; /* Añadir un poco de padding para mejor apariencia */
+    border: 1px solid #ccc; /* Añadir un borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo suave */
+  }
+
+  .table {
+    font-size: 12px; /* Ajustar tamaño de fuente para mejor ajuste */
+    width: 100%; /* Asegurarse de que la tabla ocupe todo el ancho */
+    max-width: 500px; /* Limitar el ancho máximo de la tabla */
+    border-collapse: collapse; /* Colapsar bordes para una mejor apariencia */
+  }
+
+  .table th,
+  .table td {
+    padding: 8px; /* Aumentar padding para mejor legibilidad */
+    font-size: 10px; /* Ajustar tamaño de fuente */
+    border: 1px solid #ddd; /* Añadir borde a las celdas */
+  }
+
+  .btn {
+    width: 90%; /* Hacer el botón más ancho en móvil */
+    font-size: 16px; /* Mantener un tamaño de fuente legible */
+    padding: 12px; /* Ajustar padding para mejor área de toque */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+  }
+
+  .btn:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+  }
+
+  .h1 {
+    font-size: 1.8em; /* Ajustar tamaño del encabezado para pantallas más pequeñas */
+    margin: 10px 0; /* Añadir margen para espaciado */
+    text-align: center; /* Centrar el texto */
+  }
+
+  .btnCantidad {
+    padding: 8px; /* Ajustar padding para botones de cantidad */
+    font-size: 14px; /* Tamaño de fuente legible */
+    text-align: center;
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    width: 30px; /* Ancho fijo para los botones */
+    height: 30px; /* Altura fija para los botones */
+    display: inline-block; /* Asegurarse de que los botones se alineen correctamente */
+    text-align: center; /* Centrar el texto dentro del botón */
+    margin: 0 5px; /* Espaciado entre los botones */
+  }
+
+  .cantidad {
+    font-size: 14px; /* Tamaño de fuente para la cantidad */
+    display: inline-block; /* Asegurarse de que el texto se alinee correctamente */
+    width: 30px; /* Ancho fijo para la cantidad */
+    text-align: center; /* Centrar el texto de la cantidad */
+  }
+
+  .btnEliminar {
+    padding: 8px; /* Ajustar padding para botón de eliminar */
+    font-size: 10px; /* Tamaño de fuente ligeramente más grande */
+    background-color: #dc3545; /* Color de fondo rojo */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+  }
+
+  .btnEliminar:hover {
+    background-color: #c82333; /* Color de fondo al pasar el mouse */
+  }
+  .footer {
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 100px) {
+  .footer {
+    margin-top: 150px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #ff0000;
+}
