@@ -36,12 +36,11 @@ function PrincipalAdmin() {
           <div className={`${styles.cuadro} ${styles.one}`}>
             <div className={`${styles.cuadro} ${styles.totalProductos}`}>
               <FontAwesomeIcon icon={faBoxesStacked} />
-              <p>Total productos</p>
-              <p className={styles.Numero}>{totalStock}</p>
+              <p>Total de productos</p>
+              <p>{totalStock}</p>
             </div>
           </div>
           <div className={`${styles.cuadro} ${styles.two}`}>
-            {" "}
             <div className={styles.cuadro}>
               <FontAwesomeIcon icon={faUserGroup} />
               <p>Total de usuarios</p>
@@ -49,32 +48,29 @@ function PrincipalAdmin() {
             </div>
           </div>
           <div className={`${styles.cuadro} ${styles.seven}`}>
-            {" "}
             <FontAwesomeIcon icon={faTruckField} />
-            <p>Proveedor</p>
+            <p>Proveedores</p>
             <p>{totalProveedor}</p>
           </div>
           <div className={`${styles.cuadro} ${styles.for}`}>
-            {" "}
             <FontAwesomeIcon icon={faDollarSign} />
-            <p>Inversion: </p>
+            <p>Inversión:</p>
             <p>{totalPrecio} $</p>
           </div>
           <div className={`${styles.cuadro} ${styles.five}`}>
             <FontAwesomeIcon icon={faDollarSign} />
-            <p>Ingresos de Venta</p>
+            <p>Ingresos de venta</p>
             <p>{Ganancia} $</p>
           </div>
           <div className={`${styles.cuadro} ${styles.six}`}>
             <div className={styles.cuadro}>
               <FontAwesomeIcon icon={faCommentsDollar} />
-              <p>Tasa del Dia</p>
+              <p>Tasa del día</p>
               <p>{TasaBs} Bs</p>
             </div>
           </div>
           <div className={`${styles.cuadro} ${styles.tres}`}>
-            {" "}
-            <p>Grafica esperadas en 2024-2025</p>
+            <p>Gráficas esperadas en 2024-2025</p>
             <Grafica />
           </div>
         </div>

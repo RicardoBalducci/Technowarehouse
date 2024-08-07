@@ -28,19 +28,17 @@ function TablaPedido() {
   }, []);
 
   const cancelarPedido = async (id: number) => {
-    // Actualiza el estado del pedido en Supabase
     const { error } = await supabase
       .from(Tables.pedido)
-      .update({ estado: "cancelado" }) // Cambia el estado a 'cancelado'
-      .eq("id", id); // Filtra por el ID del pedido
+      .update({ estado: "cancelado" })
+      .eq("id", id);
 
     if (error) {
       console.error("Error al cancelar el pedido:", error);
     } else {
-      // Actualiza el estado local
       setPedidos(pedidos.filter((pedido) => pedido.id !== id));
       setPedidoSeleccionado(null);
-      mostrarAlerta(); // Mostrar alerta al cancelar
+      mostrarAlerta();
     }
   };
 
@@ -59,7 +57,6 @@ function TablaPedido() {
     }, 3000);
   };
 
-  // Filtrar pedidos que no están cancelados
   const pedidosNoCancelados = pedidos.filter(
     (pedido) => pedido.estado !== "cancelado"
   );
@@ -77,7 +74,7 @@ function TablaPedido() {
             <th>Cédula</th>
             <th>Nombre</th>
             <th>Estado</th>
-            <th>Total</th>
+            <th>Precio a Pagar $</th>
             <th>Cantidad</th>
             <th>Acciones</th>
           </tr>
@@ -89,7 +86,13 @@ function TablaPedido() {
                 <td>{pedido.id}</td>
                 <td>{pedido.cedula_user}</td>
                 <td>{pedido.name_user}</td>
-                <td>{pedido.estado}</td>
+                <td
+                  className={
+                    pedido.estado === "pendiente" ? styles.estadoPendiente : ""
+                  }
+                >
+                  {pedido.estado}
+                </td>
                 <td>{pedido.total}</td>
                 <td>{pedido.cantidad}</td>
                 <td>
@@ -116,7 +119,7 @@ function TablaPedido() {
         <Modal
           pedido={pedidoSeleccionado}
           onClose={cerrarModal}
-          onCancel={cancelarPedido} // Asegúrate de pasar onCancel aquí
+          onCancel={cancelarPedido}
           showAlert={mostrarAlerta}
         />
       )}
